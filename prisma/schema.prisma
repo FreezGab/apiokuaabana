@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Association {
+  id           String        @id @default(uuid())
+  name         String
+  createdAt    DateTime      @default(now())
+  members      Member[]
+  cotisations  Cotisation[]
+  activities   Activity[]
+  invitations  Invitation[]  // Added relation field for Invitation
+}
+
+model Member {
+  id             String   @id @default(uuid())
+  name           String
+  email          String   @unique
+  role           String
+  associationId  String
+  association    Association @relation(fields: [associationId], references: [id])
+  user           User[]      @relation("UserMembers")
+  cotisations    Cotisation[]
+  activities     Activity[]
+  presences      Presence[]  // Added relation field for Presence
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Cotisation {
+  id             String   @id @default(uuid())
+  amount         Float
+  paidAt         DateTime
+  memberId       String
+  associationId  String
+  member         Member @relation(fields: [memberId], references: [id])
+  association    Association @relation(fields: [associationId], references: [id])
+}
+
+model Activity {
+  id             String   @id @default(uuid())
+  title          String
+  date           DateTime
+  description    String?
+  associationId  String
+  memberId       String?
+  association    Association @relation(fields: [associationId], references: [id])
+  member         Member? @relation(fields: [memberId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  presences      Presence[]
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String?
+  email         String   @unique
+  password      String
+  emailVerified DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  memberId      String?
+  member        Member?  @relation("UserMembers", fields: [memberId], references: [id])
+}
+
+model Invitation {
+  id             String   @id @default(cuid())
+  email          String
+  role           String
+  token          String   @unique
+  expiresAt      DateTime
+  used           Boolean  @default(false)
+  associationId  String
+  association    Association @relation(fields: [associationId], references: [id])
+  createdAt      DateTime @default(now())
+}
+
+model Presence {
+  id         String   @id @default(cuid())
+  activity   Activity @relation(fields: [activityId], references: [id])
+  activityId String
+  member     Member   @relation(fields: [memberId], references: [id])
+  memberId   String
+  present    Boolean
+  createdAt  DateTime @default(now())
+
+  @@unique([activityId, memberId])
+}
