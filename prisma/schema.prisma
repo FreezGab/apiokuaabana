@@ -5,13 +5,15 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client-ts"
   output   = "../generated/prisma"
 }
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model Association {
   id          String      @id @default(cuid())
   name        String
@@ -31,7 +33,6 @@ model Member {
   fees           Fee[]
   createdAt      DateTime     @default(now())
 }
-
 model Fee {
   id             String       @id @default(cuid())
   amount         Float
