@@ -1,0 +1,12 @@
+# Exported from Render on 2025-07-10T20:38:09Z
+services:
+- type: web
+  name: apiokuaabana
+  runtime: node
+  repo: https://github.com/FreezGab/apiokuaabana
+  plan: free
+  region: oregon
+  buildCommand: pnpm install --frozen-lockfile; pnpm run build
+  startCommand: npx ts-node index.ts
+  autoDeployTrigger: commit
+version: "1"
