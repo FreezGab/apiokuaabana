@@ -15,88 +15,43 @@ datasource db {
 }
 
 model Association {
-  id          String       @id @default(uuid())
+  id          String     @id @default(cuid())
   name        String
-  createdAt   DateTime     @default(now())
+  description String?
   members     Member[]
-  cotisations Cotisation[]
   activities  Activity[]
-  invitations Invitation[] // Added relation field for Invitation
+  fees        Fee[]
+  createdAt   DateTime   @default(now())
 }
 
 model Member {
-  id            String       @id @default(uuid())
-  name          String
-  email         String       @unique
-  role          String
+  id            String      @id @default(cuid())
+  fullName      String
+  email         String      @unique
   associationId String
-  association   Association  @relation(fields: [associationId], references: [id])
-  user          User[]       @relation("UserMembers")
-  cotisations   Cotisation[]
-  activities    Activity[]
-  presences     Presence[] // Added relation field for Presence
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
+  association   Association @relation(fields: [associationId], references: [id])
+  fees          Fee[]
+  createdAt     DateTime    @default(now())
 }
 
-model Cotisation {
-  id            String      @id @default(uuid())
+model Fee {
+  id            String      @id @default(cuid())
   amount        Float
-  paidAt        DateTime
+  paid          Boolean     @default(false)
+  dueDate       DateTime
   memberId      String
-  associationId String
   member        Member      @relation(fields: [memberId], references: [id])
+  associationId String
   association   Association @relation(fields: [associationId], references: [id])
+  createdAt     DateTime    @default(now())
 }
 
 model Activity {
-  id            String      @id @default(uuid())
-  title         String
-  date          DateTime
-  description   String?
-  associationId String
-  memberId      String?
-  association   Association @relation(fields: [associationId], references: [id])
-  member        Member?     @relation(fields: [memberId], references: [id])
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-
-  presences Presence[]
-}
-
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  password      String
-  emailVerified DateTime?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  memberId String?
-  member   Member? @relation("UserMembers", fields: [memberId], references: [id])
-}
-
-model Invitation {
   id            String      @id @default(cuid())
-  email         String
-  role          String
-  token         String      @unique
-  expiresAt     DateTime
-  used          Boolean     @default(false)
+  title         String
+  description   String?
+  date          DateTime
   associationId String
   association   Association @relation(fields: [associationId], references: [id])
   createdAt     DateTime    @default(now())
-}
-
-model Presence {
-  id         String   @id @default(cuid())
-  activity   Activity @relation(fields: [activityId], references: [id])
-  activityId String
-  member     Member   @relation(fields: [memberId], references: [id])
-  memberId   String
-  present    Boolean
-  createdAt  DateTime @default(now())
-
-  @@unique([activityId, memberId])
 }

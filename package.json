@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon src/index.js",
+    "build": "echo 'Build étape non nécessaire pour Express'",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "6.11.1",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/nodemailer": "^6.4.17",
     "bcrypt": "^6.0.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
@@ -25,6 +29,7 @@
     "pdfkit": "^0.17.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "prisma": "6.11.1"
   }
 }

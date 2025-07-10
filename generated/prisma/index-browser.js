@@ -123,65 +123,34 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.AssociationScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  description: 'description',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.MemberScalarFieldEnum = {
   id: 'id',
-  name: 'name',
+  fullName: 'fullName',
   email: 'email',
-  role: 'role',
   associationId: 'associationId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  createdAt: 'createdAt'
 };
 
-exports.Prisma.CotisationScalarFieldEnum = {
+exports.Prisma.FeeScalarFieldEnum = {
   id: 'id',
   amount: 'amount',
-  paidAt: 'paidAt',
+  paid: 'paid',
+  dueDate: 'dueDate',
   memberId: 'memberId',
-  associationId: 'associationId'
+  associationId: 'associationId',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.ActivityScalarFieldEnum = {
   id: 'id',
   title: 'title',
-  date: 'date',
   description: 'description',
+  date: 'date',
   associationId: 'associationId',
-  memberId: 'memberId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.UserScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  email: 'email',
-  password: 'password',
-  emailVerified: 'emailVerified',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  memberId: 'memberId'
-};
-
-exports.Prisma.InvitationScalarFieldEnum = {
-  id: 'id',
-  email: 'email',
-  role: 'role',
-  token: 'token',
-  expiresAt: 'expiresAt',
-  used: 'used',
-  associationId: 'associationId',
-  createdAt: 'createdAt'
-};
-
-exports.Prisma.PresenceScalarFieldEnum = {
-  id: 'id',
-  activityId: 'activityId',
-  memberId: 'memberId',
-  present: 'present',
   createdAt: 'createdAt'
 };
 
@@ -204,11 +173,8 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   Association: 'Association',
   Member: 'Member',
-  Cotisation: 'Cotisation',
-  Activity: 'Activity',
-  User: 'User',
-  Invitation: 'Invitation',
-  Presence: 'Presence'
+  Fee: 'Fee',
+  Activity: 'Activity'
 };
 
 /**

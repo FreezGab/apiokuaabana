@@ -24,30 +24,15 @@ export type Association = $Result.DefaultSelection<Prisma.$AssociationPayload>
  */
 export type Member = $Result.DefaultSelection<Prisma.$MemberPayload>
 /**
- * Model Cotisation
+ * Model Fee
  * 
  */
-export type Cotisation = $Result.DefaultSelection<Prisma.$CotisationPayload>
+export type Fee = $Result.DefaultSelection<Prisma.$FeePayload>
 /**
  * Model Activity
  * 
  */
 export type Activity = $Result.DefaultSelection<Prisma.$ActivityPayload>
-/**
- * Model User
- * 
- */
-export type User = $Result.DefaultSelection<Prisma.$UserPayload>
-/**
- * Model Invitation
- * 
- */
-export type Invitation = $Result.DefaultSelection<Prisma.$InvitationPayload>
-/**
- * Model Presence
- * 
- */
-export type Presence = $Result.DefaultSelection<Prisma.$PresencePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -195,14 +180,14 @@ export class PrismaClient<
   get member(): Prisma.MemberDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.cotisation`: Exposes CRUD operations for the **Cotisation** model.
+   * `prisma.fee`: Exposes CRUD operations for the **Fee** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Cotisations
-    * const cotisations = await prisma.cotisation.findMany()
+    * // Fetch zero or more Fees
+    * const fees = await prisma.fee.findMany()
     * ```
     */
-  get cotisation(): Prisma.CotisationDelegate<ExtArgs, ClientOptions>;
+  get fee(): Prisma.FeeDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.activity`: Exposes CRUD operations for the **Activity** model.
@@ -213,36 +198,6 @@ export class PrismaClient<
     * ```
     */
   get activity(): Prisma.ActivityDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.user`: Exposes CRUD operations for the **User** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Users
-    * const users = await prisma.user.findMany()
-    * ```
-    */
-  get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.invitation`: Exposes CRUD operations for the **Invitation** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Invitations
-    * const invitations = await prisma.invitation.findMany()
-    * ```
-    */
-  get invitation(): Prisma.InvitationDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.presence`: Exposes CRUD operations for the **Presence** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Presences
-    * const presences = await prisma.presence.findMany()
-    * ```
-    */
-  get presence(): Prisma.PresenceDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -685,11 +640,8 @@ export namespace Prisma {
   export const ModelName: {
     Association: 'Association',
     Member: 'Member',
-    Cotisation: 'Cotisation',
-    Activity: 'Activity',
-    User: 'User',
-    Invitation: 'Invitation',
-    Presence: 'Presence'
+    Fee: 'Fee',
+    Activity: 'Activity'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -708,7 +660,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "association" | "member" | "cotisation" | "activity" | "user" | "invitation" | "presence"
+      modelProps: "association" | "member" | "fee" | "activity"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -860,77 +812,77 @@ export namespace Prisma {
           }
         }
       }
-      Cotisation: {
-        payload: Prisma.$CotisationPayload<ExtArgs>
-        fields: Prisma.CotisationFieldRefs
+      Fee: {
+        payload: Prisma.$FeePayload<ExtArgs>
+        fields: Prisma.FeeFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.CotisationFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload> | null
+            args: Prisma.FeeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.CotisationFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           findFirst: {
-            args: Prisma.CotisationFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload> | null
+            args: Prisma.FeeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.CotisationFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           findMany: {
-            args: Prisma.CotisationFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>[]
+            args: Prisma.FeeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>[]
           }
           create: {
-            args: Prisma.CotisationCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           createMany: {
-            args: Prisma.CotisationCreateManyArgs<ExtArgs>
+            args: Prisma.FeeCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.CotisationCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>[]
+            args: Prisma.FeeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>[]
           }
           delete: {
-            args: Prisma.CotisationDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           update: {
-            args: Prisma.CotisationUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           deleteMany: {
-            args: Prisma.CotisationDeleteManyArgs<ExtArgs>
+            args: Prisma.FeeDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.CotisationUpdateManyArgs<ExtArgs>
+            args: Prisma.FeeUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.CotisationUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>[]
+            args: Prisma.FeeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>[]
           }
           upsert: {
-            args: Prisma.CotisationUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$CotisationPayload>
+            args: Prisma.FeeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FeePayload>
           }
           aggregate: {
-            args: Prisma.CotisationAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateCotisation>
+            args: Prisma.FeeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFee>
           }
           groupBy: {
-            args: Prisma.CotisationGroupByArgs<ExtArgs>
-            result: $Utils.Optional<CotisationGroupByOutputType>[]
+            args: Prisma.FeeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FeeGroupByOutputType>[]
           }
           count: {
-            args: Prisma.CotisationCountArgs<ExtArgs>
-            result: $Utils.Optional<CotisationCountAggregateOutputType> | number
+            args: Prisma.FeeCountArgs<ExtArgs>
+            result: $Utils.Optional<FeeCountAggregateOutputType> | number
           }
         }
       }
@@ -1005,228 +957,6 @@ export namespace Prisma {
           count: {
             args: Prisma.ActivityCountArgs<ExtArgs>
             result: $Utils.Optional<ActivityCountAggregateOutputType> | number
-          }
-        }
-      }
-      User: {
-        payload: Prisma.$UserPayload<ExtArgs>
-        fields: Prisma.UserFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.UserFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          findFirst: {
-            args: Prisma.UserFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          findMany: {
-            args: Prisma.UserFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
-          }
-          create: {
-            args: Prisma.UserCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          createMany: {
-            args: Prisma.UserCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.UserCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
-          }
-          delete: {
-            args: Prisma.UserDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          update: {
-            args: Prisma.UserUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          deleteMany: {
-            args: Prisma.UserDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.UserUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.UserUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
-          }
-          upsert: {
-            args: Prisma.UserUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          aggregate: {
-            args: Prisma.UserAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateUser>
-          }
-          groupBy: {
-            args: Prisma.UserGroupByArgs<ExtArgs>
-            result: $Utils.Optional<UserGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.UserCountArgs<ExtArgs>
-            result: $Utils.Optional<UserCountAggregateOutputType> | number
-          }
-        }
-      }
-      Invitation: {
-        payload: Prisma.$InvitationPayload<ExtArgs>
-        fields: Prisma.InvitationFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.InvitationFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.InvitationFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          findFirst: {
-            args: Prisma.InvitationFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.InvitationFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          findMany: {
-            args: Prisma.InvitationFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>[]
-          }
-          create: {
-            args: Prisma.InvitationCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          createMany: {
-            args: Prisma.InvitationCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.InvitationCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>[]
-          }
-          delete: {
-            args: Prisma.InvitationDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          update: {
-            args: Prisma.InvitationUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          deleteMany: {
-            args: Prisma.InvitationDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.InvitationUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.InvitationUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>[]
-          }
-          upsert: {
-            args: Prisma.InvitationUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$InvitationPayload>
-          }
-          aggregate: {
-            args: Prisma.InvitationAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateInvitation>
-          }
-          groupBy: {
-            args: Prisma.InvitationGroupByArgs<ExtArgs>
-            result: $Utils.Optional<InvitationGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.InvitationCountArgs<ExtArgs>
-            result: $Utils.Optional<InvitationCountAggregateOutputType> | number
-          }
-        }
-      }
-      Presence: {
-        payload: Prisma.$PresencePayload<ExtArgs>
-        fields: Prisma.PresenceFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.PresenceFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.PresenceFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          findFirst: {
-            args: Prisma.PresenceFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.PresenceFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          findMany: {
-            args: Prisma.PresenceFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>[]
-          }
-          create: {
-            args: Prisma.PresenceCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          createMany: {
-            args: Prisma.PresenceCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.PresenceCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>[]
-          }
-          delete: {
-            args: Prisma.PresenceDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          update: {
-            args: Prisma.PresenceUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          deleteMany: {
-            args: Prisma.PresenceDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.PresenceUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.PresenceUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>[]
-          }
-          upsert: {
-            args: Prisma.PresenceUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PresencePayload>
-          }
-          aggregate: {
-            args: Prisma.PresenceAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePresence>
-          }
-          groupBy: {
-            args: Prisma.PresenceGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PresenceGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.PresenceCountArgs<ExtArgs>
-            result: $Utils.Optional<PresenceCountAggregateOutputType> | number
           }
         }
       }
@@ -1316,11 +1046,8 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     association?: AssociationOmit
     member?: MemberOmit
-    cotisation?: CotisationOmit
+    fee?: FeeOmit
     activity?: ActivityOmit
-    user?: UserOmit
-    invitation?: InvitationOmit
-    presence?: PresenceOmit
   }
 
   /* Types for Logging */
@@ -1416,16 +1143,14 @@ export namespace Prisma {
 
   export type AssociationCountOutputType = {
     members: number
-    cotisations: number
     activities: number
-    invitations: number
+    fees: number
   }
 
   export type AssociationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     members?: boolean | AssociationCountOutputTypeCountMembersArgs
-    cotisations?: boolean | AssociationCountOutputTypeCountCotisationsArgs
     activities?: boolean | AssociationCountOutputTypeCountActivitiesArgs
-    invitations?: boolean | AssociationCountOutputTypeCountInvitationsArgs
+    fees?: boolean | AssociationCountOutputTypeCountFeesArgs
   }
 
   // Custom InputTypes
@@ -1449,13 +1174,6 @@ export namespace Prisma {
   /**
    * AssociationCountOutputType without action
    */
-  export type AssociationCountOutputTypeCountCotisationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CotisationWhereInput
-  }
-
-  /**
-   * AssociationCountOutputType without action
-   */
   export type AssociationCountOutputTypeCountActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ActivityWhereInput
   }
@@ -1463,8 +1181,8 @@ export namespace Prisma {
   /**
    * AssociationCountOutputType without action
    */
-  export type AssociationCountOutputTypeCountInvitationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: InvitationWhereInput
+  export type AssociationCountOutputTypeCountFeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeeWhereInput
   }
 
 
@@ -1473,17 +1191,11 @@ export namespace Prisma {
    */
 
   export type MemberCountOutputType = {
-    user: number
-    cotisations: number
-    activities: number
-    presences: number
+    fees: number
   }
 
   export type MemberCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | MemberCountOutputTypeCountUserArgs
-    cotisations?: boolean | MemberCountOutputTypeCountCotisationsArgs
-    activities?: boolean | MemberCountOutputTypeCountActivitiesArgs
-    presences?: boolean | MemberCountOutputTypeCountPresencesArgs
+    fees?: boolean | MemberCountOutputTypeCountFeesArgs
   }
 
   // Custom InputTypes
@@ -1500,60 +1212,8 @@ export namespace Prisma {
   /**
    * MemberCountOutputType without action
    */
-  export type MemberCountOutputTypeCountUserArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-  }
-
-  /**
-   * MemberCountOutputType without action
-   */
-  export type MemberCountOutputTypeCountCotisationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CotisationWhereInput
-  }
-
-  /**
-   * MemberCountOutputType without action
-   */
-  export type MemberCountOutputTypeCountActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ActivityWhereInput
-  }
-
-  /**
-   * MemberCountOutputType without action
-   */
-  export type MemberCountOutputTypeCountPresencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PresenceWhereInput
-  }
-
-
-  /**
-   * Count Type ActivityCountOutputType
-   */
-
-  export type ActivityCountOutputType = {
-    presences: number
-  }
-
-  export type ActivityCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    presences?: boolean | ActivityCountOutputTypeCountPresencesArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ActivityCountOutputType without action
-   */
-  export type ActivityCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ActivityCountOutputType
-     */
-    select?: ActivityCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ActivityCountOutputType without action
-   */
-  export type ActivityCountOutputTypeCountPresencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PresenceWhereInput
+  export type MemberCountOutputTypeCountFeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeeWhereInput
   }
 
 
@@ -1574,18 +1234,21 @@ export namespace Prisma {
   export type AssociationMinAggregateOutputType = {
     id: string | null
     name: string | null
+    description: string | null
     createdAt: Date | null
   }
 
   export type AssociationMaxAggregateOutputType = {
     id: string | null
     name: string | null
+    description: string | null
     createdAt: Date | null
   }
 
   export type AssociationCountAggregateOutputType = {
     id: number
     name: number
+    description: number
     createdAt: number
     _all: number
   }
@@ -1594,18 +1257,21 @@ export namespace Prisma {
   export type AssociationMinAggregateInputType = {
     id?: true
     name?: true
+    description?: true
     createdAt?: true
   }
 
   export type AssociationMaxAggregateInputType = {
     id?: true
     name?: true
+    description?: true
     createdAt?: true
   }
 
   export type AssociationCountAggregateInputType = {
     id?: true
     name?: true
+    description?: true
     createdAt?: true
     _all?: true
   }
@@ -1685,6 +1351,7 @@ export namespace Prisma {
   export type AssociationGroupByOutputType = {
     id: string
     name: string
+    description: string | null
     createdAt: Date
     _count: AssociationCountAggregateOutputType | null
     _min: AssociationMinAggregateOutputType | null
@@ -1708,38 +1375,40 @@ export namespace Prisma {
   export type AssociationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    description?: boolean
     createdAt?: boolean
     members?: boolean | Association$membersArgs<ExtArgs>
-    cotisations?: boolean | Association$cotisationsArgs<ExtArgs>
     activities?: boolean | Association$activitiesArgs<ExtArgs>
-    invitations?: boolean | Association$invitationsArgs<ExtArgs>
+    fees?: boolean | Association$feesArgs<ExtArgs>
     _count?: boolean | AssociationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["association"]>
 
   export type AssociationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    description?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["association"]>
 
   export type AssociationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    description?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["association"]>
 
   export type AssociationSelectScalar = {
     id?: boolean
     name?: boolean
+    description?: boolean
     createdAt?: boolean
   }
 
-  export type AssociationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt", ExtArgs["result"]["association"]>
+  export type AssociationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "createdAt", ExtArgs["result"]["association"]>
   export type AssociationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     members?: boolean | Association$membersArgs<ExtArgs>
-    cotisations?: boolean | Association$cotisationsArgs<ExtArgs>
     activities?: boolean | Association$activitiesArgs<ExtArgs>
-    invitations?: boolean | Association$invitationsArgs<ExtArgs>
+    fees?: boolean | Association$feesArgs<ExtArgs>
     _count?: boolean | AssociationCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type AssociationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1749,13 +1418,13 @@ export namespace Prisma {
     name: "Association"
     objects: {
       members: Prisma.$MemberPayload<ExtArgs>[]
-      cotisations: Prisma.$CotisationPayload<ExtArgs>[]
       activities: Prisma.$ActivityPayload<ExtArgs>[]
-      invitations: Prisma.$InvitationPayload<ExtArgs>[]
+      fees: Prisma.$FeePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
+      description: string | null
       createdAt: Date
     }, ExtArgs["result"]["association"]>
     composites: {}
@@ -2152,9 +1821,8 @@ export namespace Prisma {
   export interface Prisma__AssociationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     members<T extends Association$membersArgs<ExtArgs> = {}>(args?: Subset<T, Association$membersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    cotisations<T extends Association$cotisationsArgs<ExtArgs> = {}>(args?: Subset<T, Association$cotisationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     activities<T extends Association$activitiesArgs<ExtArgs> = {}>(args?: Subset<T, Association$activitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    invitations<T extends Association$invitationsArgs<ExtArgs> = {}>(args?: Subset<T, Association$invitationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fees<T extends Association$feesArgs<ExtArgs> = {}>(args?: Subset<T, Association$feesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2186,6 +1854,7 @@ export namespace Prisma {
   interface AssociationFieldRefs {
     readonly id: FieldRef<"Association", 'String'>
     readonly name: FieldRef<"Association", 'String'>
+    readonly description: FieldRef<"Association", 'String'>
     readonly createdAt: FieldRef<"Association", 'DateTime'>
   }
     
@@ -2599,30 +2268,6 @@ export namespace Prisma {
   }
 
   /**
-   * Association.cotisations
-   */
-  export type Association$cotisationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Cotisation
-     */
-    select?: CotisationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Cotisation
-     */
-    omit?: CotisationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CotisationInclude<ExtArgs> | null
-    where?: CotisationWhereInput
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
-    cursor?: CotisationWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: CotisationScalarFieldEnum | CotisationScalarFieldEnum[]
-  }
-
-  /**
    * Association.activities
    */
   export type Association$activitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2647,27 +2292,27 @@ export namespace Prisma {
   }
 
   /**
-   * Association.invitations
+   * Association.fees
    */
-  export type Association$invitationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Association$feesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Invitation
+     * Select specific fields to fetch from the Fee
      */
-    select?: InvitationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Invitation
+     * Omit specific fields from the Fee
      */
-    omit?: InvitationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: InvitationInclude<ExtArgs> | null
-    where?: InvitationWhereInput
-    orderBy?: InvitationOrderByWithRelationInput | InvitationOrderByWithRelationInput[]
-    cursor?: InvitationWhereUniqueInput
+    include?: FeeInclude<ExtArgs> | null
+    where?: FeeWhereInput
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
+    cursor?: FeeWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: InvitationScalarFieldEnum | InvitationScalarFieldEnum[]
+    distinct?: FeeScalarFieldEnum | FeeScalarFieldEnum[]
   }
 
   /**
@@ -2701,64 +2346,52 @@ export namespace Prisma {
 
   export type MemberMinAggregateOutputType = {
     id: string | null
-    name: string | null
+    fullName: string | null
     email: string | null
-    role: string | null
     associationId: string | null
     createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type MemberMaxAggregateOutputType = {
     id: string | null
-    name: string | null
+    fullName: string | null
     email: string | null
-    role: string | null
     associationId: string | null
     createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type MemberCountAggregateOutputType = {
     id: number
-    name: number
+    fullName: number
     email: number
-    role: number
     associationId: number
     createdAt: number
-    updatedAt: number
     _all: number
   }
 
 
   export type MemberMinAggregateInputType = {
     id?: true
-    name?: true
+    fullName?: true
     email?: true
-    role?: true
     associationId?: true
     createdAt?: true
-    updatedAt?: true
   }
 
   export type MemberMaxAggregateInputType = {
     id?: true
-    name?: true
+    fullName?: true
     email?: true
-    role?: true
     associationId?: true
     createdAt?: true
-    updatedAt?: true
   }
 
   export type MemberCountAggregateInputType = {
     id?: true
-    name?: true
+    fullName?: true
     email?: true
-    role?: true
     associationId?: true
     createdAt?: true
-    updatedAt?: true
     _all?: true
   }
 
@@ -2836,12 +2469,10 @@ export namespace Prisma {
 
   export type MemberGroupByOutputType = {
     id: string
-    name: string
+    fullName: string
     email: string
-    role: string
     associationId: string
     createdAt: Date
-    updatedAt: Date
     _count: MemberCountAggregateOutputType | null
     _min: MemberMinAggregateOutputType | null
     _max: MemberMaxAggregateOutputType | null
@@ -2863,59 +2494,45 @@ export namespace Prisma {
 
   export type MemberSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    fullName?: boolean
     email?: boolean
-    role?: boolean
     associationId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    user?: boolean | Member$userArgs<ExtArgs>
-    cotisations?: boolean | Member$cotisationsArgs<ExtArgs>
-    activities?: boolean | Member$activitiesArgs<ExtArgs>
-    presences?: boolean | Member$presencesArgs<ExtArgs>
+    fees?: boolean | Member$feesArgs<ExtArgs>
     _count?: boolean | MemberCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["member"]>
 
   export type MemberSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    fullName?: boolean
     email?: boolean
-    role?: boolean
     associationId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["member"]>
 
   export type MemberSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    fullName?: boolean
     email?: boolean
-    role?: boolean
     associationId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["member"]>
 
   export type MemberSelectScalar = {
     id?: boolean
-    name?: boolean
+    fullName?: boolean
     email?: boolean
-    role?: boolean
     associationId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
   }
 
-  export type MemberOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "role" | "associationId" | "createdAt" | "updatedAt", ExtArgs["result"]["member"]>
+  export type MemberOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fullName" | "email" | "associationId" | "createdAt", ExtArgs["result"]["member"]>
   export type MemberInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    user?: boolean | Member$userArgs<ExtArgs>
-    cotisations?: boolean | Member$cotisationsArgs<ExtArgs>
-    activities?: boolean | Member$activitiesArgs<ExtArgs>
-    presences?: boolean | Member$presencesArgs<ExtArgs>
+    fees?: boolean | Member$feesArgs<ExtArgs>
     _count?: boolean | MemberCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type MemberIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2929,19 +2546,14 @@ export namespace Prisma {
     name: "Member"
     objects: {
       association: Prisma.$AssociationPayload<ExtArgs>
-      user: Prisma.$UserPayload<ExtArgs>[]
-      cotisations: Prisma.$CotisationPayload<ExtArgs>[]
-      activities: Prisma.$ActivityPayload<ExtArgs>[]
-      presences: Prisma.$PresencePayload<ExtArgs>[]
+      fees: Prisma.$FeePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string
+      fullName: string
       email: string
-      role: string
       associationId: string
       createdAt: Date
-      updatedAt: Date
     }, ExtArgs["result"]["member"]>
     composites: {}
   }
@@ -3337,10 +2949,7 @@ export namespace Prisma {
   export interface Prisma__MemberClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     association<T extends AssociationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AssociationDefaultArgs<ExtArgs>>): Prisma__AssociationClient<$Result.GetResult<Prisma.$AssociationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    user<T extends Member$userArgs<ExtArgs> = {}>(args?: Subset<T, Member$userArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    cotisations<T extends Member$cotisationsArgs<ExtArgs> = {}>(args?: Subset<T, Member$cotisationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    activities<T extends Member$activitiesArgs<ExtArgs> = {}>(args?: Subset<T, Member$activitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    presences<T extends Member$presencesArgs<ExtArgs> = {}>(args?: Subset<T, Member$presencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fees<T extends Member$feesArgs<ExtArgs> = {}>(args?: Subset<T, Member$feesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3371,12 +2980,10 @@ export namespace Prisma {
    */
   interface MemberFieldRefs {
     readonly id: FieldRef<"Member", 'String'>
-    readonly name: FieldRef<"Member", 'String'>
+    readonly fullName: FieldRef<"Member", 'String'>
     readonly email: FieldRef<"Member", 'String'>
-    readonly role: FieldRef<"Member", 'String'>
     readonly associationId: FieldRef<"Member", 'String'>
     readonly createdAt: FieldRef<"Member", 'DateTime'>
-    readonly updatedAt: FieldRef<"Member", 'DateTime'>
   }
     
 
@@ -3773,99 +3380,27 @@ export namespace Prisma {
   }
 
   /**
-   * Member.user
+   * Member.fees
    */
-  export type Member$userArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Member$feesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the User
+     * Select specific fields to fetch from the Fee
      */
-    select?: UserSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the User
+     * Omit specific fields from the Fee
      */
-    omit?: UserOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    cursor?: UserWhereUniqueInput
+    include?: FeeInclude<ExtArgs> | null
+    where?: FeeWhereInput
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
+    cursor?: FeeWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * Member.cotisations
-   */
-  export type Member$cotisationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Cotisation
-     */
-    select?: CotisationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Cotisation
-     */
-    omit?: CotisationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CotisationInclude<ExtArgs> | null
-    where?: CotisationWhereInput
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
-    cursor?: CotisationWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: CotisationScalarFieldEnum | CotisationScalarFieldEnum[]
-  }
-
-  /**
-   * Member.activities
-   */
-  export type Member$activitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Activity
-     */
-    select?: ActivitySelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Activity
-     */
-    omit?: ActivityOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ActivityInclude<ExtArgs> | null
-    where?: ActivityWhereInput
-    orderBy?: ActivityOrderByWithRelationInput | ActivityOrderByWithRelationInput[]
-    cursor?: ActivityWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ActivityScalarFieldEnum | ActivityScalarFieldEnum[]
-  }
-
-  /**
-   * Member.presences
-   */
-  export type Member$presencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    where?: PresenceWhereInput
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    cursor?: PresenceWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: PresenceScalarFieldEnum | PresenceScalarFieldEnum[]
+    distinct?: FeeScalarFieldEnum | FeeScalarFieldEnum[]
   }
 
   /**
@@ -3888,251 +3423,273 @@ export namespace Prisma {
 
 
   /**
-   * Model Cotisation
+   * Model Fee
    */
 
-  export type AggregateCotisation = {
-    _count: CotisationCountAggregateOutputType | null
-    _avg: CotisationAvgAggregateOutputType | null
-    _sum: CotisationSumAggregateOutputType | null
-    _min: CotisationMinAggregateOutputType | null
-    _max: CotisationMaxAggregateOutputType | null
+  export type AggregateFee = {
+    _count: FeeCountAggregateOutputType | null
+    _avg: FeeAvgAggregateOutputType | null
+    _sum: FeeSumAggregateOutputType | null
+    _min: FeeMinAggregateOutputType | null
+    _max: FeeMaxAggregateOutputType | null
   }
 
-  export type CotisationAvgAggregateOutputType = {
+  export type FeeAvgAggregateOutputType = {
     amount: number | null
   }
 
-  export type CotisationSumAggregateOutputType = {
+  export type FeeSumAggregateOutputType = {
     amount: number | null
   }
 
-  export type CotisationMinAggregateOutputType = {
+  export type FeeMinAggregateOutputType = {
     id: string | null
     amount: number | null
-    paidAt: Date | null
+    paid: boolean | null
+    dueDate: Date | null
     memberId: string | null
     associationId: string | null
+    createdAt: Date | null
   }
 
-  export type CotisationMaxAggregateOutputType = {
+  export type FeeMaxAggregateOutputType = {
     id: string | null
     amount: number | null
-    paidAt: Date | null
+    paid: boolean | null
+    dueDate: Date | null
     memberId: string | null
     associationId: string | null
+    createdAt: Date | null
   }
 
-  export type CotisationCountAggregateOutputType = {
+  export type FeeCountAggregateOutputType = {
     id: number
     amount: number
-    paidAt: number
+    paid: number
+    dueDate: number
     memberId: number
     associationId: number
+    createdAt: number
     _all: number
   }
 
 
-  export type CotisationAvgAggregateInputType = {
+  export type FeeAvgAggregateInputType = {
     amount?: true
   }
 
-  export type CotisationSumAggregateInputType = {
+  export type FeeSumAggregateInputType = {
     amount?: true
   }
 
-  export type CotisationMinAggregateInputType = {
+  export type FeeMinAggregateInputType = {
     id?: true
     amount?: true
-    paidAt?: true
+    paid?: true
+    dueDate?: true
     memberId?: true
     associationId?: true
+    createdAt?: true
   }
 
-  export type CotisationMaxAggregateInputType = {
+  export type FeeMaxAggregateInputType = {
     id?: true
     amount?: true
-    paidAt?: true
+    paid?: true
+    dueDate?: true
     memberId?: true
     associationId?: true
+    createdAt?: true
   }
 
-  export type CotisationCountAggregateInputType = {
+  export type FeeCountAggregateInputType = {
     id?: true
     amount?: true
-    paidAt?: true
+    paid?: true
+    dueDate?: true
     memberId?: true
     associationId?: true
+    createdAt?: true
     _all?: true
   }
 
-  export type CotisationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Cotisation to aggregate.
+     * Filter which Fee to aggregate.
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Cotisations to fetch.
+     * Determine the order of Fees to fetch.
      */
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: CotisationWhereUniqueInput
+    cursor?: FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Cotisations from the position of the cursor.
+     * Take `±n` Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Cotisations.
+     * Skip the first `n` Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Cotisations
+     * Count returned Fees
     **/
-    _count?: true | CotisationCountAggregateInputType
+    _count?: true | FeeCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: CotisationAvgAggregateInputType
+    _avg?: FeeAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: CotisationSumAggregateInputType
+    _sum?: FeeSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: CotisationMinAggregateInputType
+    _min?: FeeMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: CotisationMaxAggregateInputType
+    _max?: FeeMaxAggregateInputType
   }
 
-  export type GetCotisationAggregateType<T extends CotisationAggregateArgs> = {
-        [P in keyof T & keyof AggregateCotisation]: P extends '_count' | 'count'
+  export type GetFeeAggregateType<T extends FeeAggregateArgs> = {
+        [P in keyof T & keyof AggregateFee]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateCotisation[P]>
-      : GetScalarType<T[P], AggregateCotisation[P]>
+        : GetScalarType<T[P], AggregateFee[P]>
+      : GetScalarType<T[P], AggregateFee[P]>
   }
 
 
 
 
-  export type CotisationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CotisationWhereInput
-    orderBy?: CotisationOrderByWithAggregationInput | CotisationOrderByWithAggregationInput[]
-    by: CotisationScalarFieldEnum[] | CotisationScalarFieldEnum
-    having?: CotisationScalarWhereWithAggregatesInput
+  export type FeeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FeeWhereInput
+    orderBy?: FeeOrderByWithAggregationInput | FeeOrderByWithAggregationInput[]
+    by: FeeScalarFieldEnum[] | FeeScalarFieldEnum
+    having?: FeeScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: CotisationCountAggregateInputType | true
-    _avg?: CotisationAvgAggregateInputType
-    _sum?: CotisationSumAggregateInputType
-    _min?: CotisationMinAggregateInputType
-    _max?: CotisationMaxAggregateInputType
+    _count?: FeeCountAggregateInputType | true
+    _avg?: FeeAvgAggregateInputType
+    _sum?: FeeSumAggregateInputType
+    _min?: FeeMinAggregateInputType
+    _max?: FeeMaxAggregateInputType
   }
 
-  export type CotisationGroupByOutputType = {
+  export type FeeGroupByOutputType = {
     id: string
     amount: number
-    paidAt: Date
+    paid: boolean
+    dueDate: Date
     memberId: string
     associationId: string
-    _count: CotisationCountAggregateOutputType | null
-    _avg: CotisationAvgAggregateOutputType | null
-    _sum: CotisationSumAggregateOutputType | null
-    _min: CotisationMinAggregateOutputType | null
-    _max: CotisationMaxAggregateOutputType | null
+    createdAt: Date
+    _count: FeeCountAggregateOutputType | null
+    _avg: FeeAvgAggregateOutputType | null
+    _sum: FeeSumAggregateOutputType | null
+    _min: FeeMinAggregateOutputType | null
+    _max: FeeMaxAggregateOutputType | null
   }
 
-  type GetCotisationGroupByPayload<T extends CotisationGroupByArgs> = Prisma.PrismaPromise<
+  type GetFeeGroupByPayload<T extends FeeGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<CotisationGroupByOutputType, T['by']> &
+      PickEnumerable<FeeGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof CotisationGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof FeeGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], CotisationGroupByOutputType[P]>
-            : GetScalarType<T[P], CotisationGroupByOutputType[P]>
+              : GetScalarType<T[P], FeeGroupByOutputType[P]>
+            : GetScalarType<T[P], FeeGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type CotisationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     amount?: boolean
-    paidAt?: boolean
+    paid?: boolean
+    dueDate?: boolean
     memberId?: boolean
     associationId?: boolean
+    createdAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["cotisation"]>
+  }, ExtArgs["result"]["fee"]>
 
-  export type CotisationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     amount?: boolean
-    paidAt?: boolean
+    paid?: boolean
+    dueDate?: boolean
     memberId?: boolean
     associationId?: boolean
+    createdAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["cotisation"]>
+  }, ExtArgs["result"]["fee"]>
 
-  export type CotisationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type FeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     amount?: boolean
-    paidAt?: boolean
+    paid?: boolean
+    dueDate?: boolean
     memberId?: boolean
     associationId?: boolean
+    createdAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["cotisation"]>
+  }, ExtArgs["result"]["fee"]>
 
-  export type CotisationSelectScalar = {
+  export type FeeSelectScalar = {
     id?: boolean
     amount?: boolean
-    paidAt?: boolean
+    paid?: boolean
+    dueDate?: boolean
     memberId?: boolean
     associationId?: boolean
+    createdAt?: boolean
   }
 
-  export type CotisationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "amount" | "paidAt" | "memberId" | "associationId", ExtArgs["result"]["cotisation"]>
-  export type CotisationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "amount" | "paid" | "dueDate" | "memberId" | "associationId" | "createdAt", ExtArgs["result"]["fee"]>
+  export type FeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
   }
-  export type CotisationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
   }
-  export type CotisationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
     association?: boolean | AssociationDefaultArgs<ExtArgs>
   }
 
-  export type $CotisationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Cotisation"
+  export type $FeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Fee"
     objects: {
       member: Prisma.$MemberPayload<ExtArgs>
       association: Prisma.$AssociationPayload<ExtArgs>
@@ -4140,139 +3697,141 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       amount: number
-      paidAt: Date
+      paid: boolean
+      dueDate: Date
       memberId: string
       associationId: string
-    }, ExtArgs["result"]["cotisation"]>
+      createdAt: Date
+    }, ExtArgs["result"]["fee"]>
     composites: {}
   }
 
-  type CotisationGetPayload<S extends boolean | null | undefined | CotisationDefaultArgs> = $Result.GetResult<Prisma.$CotisationPayload, S>
+  type FeeGetPayload<S extends boolean | null | undefined | FeeDefaultArgs> = $Result.GetResult<Prisma.$FeePayload, S>
 
-  type CotisationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<CotisationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: CotisationCountAggregateInputType | true
+  type FeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FeeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FeeCountAggregateInputType | true
     }
 
-  export interface CotisationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Cotisation'], meta: { name: 'Cotisation' } }
+  export interface FeeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Fee'], meta: { name: 'Fee' } }
     /**
-     * Find zero or one Cotisation that matches the filter.
-     * @param {CotisationFindUniqueArgs} args - Arguments to find a Cotisation
+     * Find zero or one Fee that matches the filter.
+     * @param {FeeFindUniqueArgs} args - Arguments to find a Fee
      * @example
-     * // Get one Cotisation
-     * const cotisation = await prisma.cotisation.findUnique({
+     * // Get one Fee
+     * const fee = await prisma.fee.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends CotisationFindUniqueArgs>(args: SelectSubset<T, CotisationFindUniqueArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends FeeFindUniqueArgs>(args: SelectSubset<T, FeeFindUniqueArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Cotisation that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Fee that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {CotisationFindUniqueOrThrowArgs} args - Arguments to find a Cotisation
+     * @param {FeeFindUniqueOrThrowArgs} args - Arguments to find a Fee
      * @example
-     * // Get one Cotisation
-     * const cotisation = await prisma.cotisation.findUniqueOrThrow({
+     * // Get one Fee
+     * const fee = await prisma.fee.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends CotisationFindUniqueOrThrowArgs>(args: SelectSubset<T, CotisationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends FeeFindUniqueOrThrowArgs>(args: SelectSubset<T, FeeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Cotisation that matches the filter.
+     * Find the first Fee that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationFindFirstArgs} args - Arguments to find a Cotisation
+     * @param {FeeFindFirstArgs} args - Arguments to find a Fee
      * @example
-     * // Get one Cotisation
-     * const cotisation = await prisma.cotisation.findFirst({
+     * // Get one Fee
+     * const fee = await prisma.fee.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends CotisationFindFirstArgs>(args?: SelectSubset<T, CotisationFindFirstArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends FeeFindFirstArgs>(args?: SelectSubset<T, FeeFindFirstArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Cotisation that matches the filter or
+     * Find the first Fee that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationFindFirstOrThrowArgs} args - Arguments to find a Cotisation
+     * @param {FeeFindFirstOrThrowArgs} args - Arguments to find a Fee
      * @example
-     * // Get one Cotisation
-     * const cotisation = await prisma.cotisation.findFirstOrThrow({
+     * // Get one Fee
+     * const fee = await prisma.fee.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends CotisationFindFirstOrThrowArgs>(args?: SelectSubset<T, CotisationFindFirstOrThrowArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends FeeFindFirstOrThrowArgs>(args?: SelectSubset<T, FeeFindFirstOrThrowArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Cotisations that matches the filter.
+     * Find zero or more Fees that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {FeeFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Cotisations
-     * const cotisations = await prisma.cotisation.findMany()
+     * // Get all Fees
+     * const fees = await prisma.fee.findMany()
      * 
-     * // Get first 10 Cotisations
-     * const cotisations = await prisma.cotisation.findMany({ take: 10 })
+     * // Get first 10 Fees
+     * const fees = await prisma.fee.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const cotisationWithIdOnly = await prisma.cotisation.findMany({ select: { id: true } })
+     * const feeWithIdOnly = await prisma.fee.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends CotisationFindManyArgs>(args?: SelectSubset<T, CotisationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends FeeFindManyArgs>(args?: SelectSubset<T, FeeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Cotisation.
-     * @param {CotisationCreateArgs} args - Arguments to create a Cotisation.
+     * Create a Fee.
+     * @param {FeeCreateArgs} args - Arguments to create a Fee.
      * @example
-     * // Create one Cotisation
-     * const Cotisation = await prisma.cotisation.create({
+     * // Create one Fee
+     * const Fee = await prisma.fee.create({
      *   data: {
-     *     // ... data to create a Cotisation
+     *     // ... data to create a Fee
      *   }
      * })
      * 
      */
-    create<T extends CotisationCreateArgs>(args: SelectSubset<T, CotisationCreateArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends FeeCreateArgs>(args: SelectSubset<T, FeeCreateArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Cotisations.
-     * @param {CotisationCreateManyArgs} args - Arguments to create many Cotisations.
+     * Create many Fees.
+     * @param {FeeCreateManyArgs} args - Arguments to create many Fees.
      * @example
-     * // Create many Cotisations
-     * const cotisation = await prisma.cotisation.createMany({
+     * // Create many Fees
+     * const fee = await prisma.fee.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends CotisationCreateManyArgs>(args?: SelectSubset<T, CotisationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends FeeCreateManyArgs>(args?: SelectSubset<T, FeeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Cotisations and returns the data saved in the database.
-     * @param {CotisationCreateManyAndReturnArgs} args - Arguments to create many Cotisations.
+     * Create many Fees and returns the data saved in the database.
+     * @param {FeeCreateManyAndReturnArgs} args - Arguments to create many Fees.
      * @example
-     * // Create many Cotisations
-     * const cotisation = await prisma.cotisation.createManyAndReturn({
+     * // Create many Fees
+     * const fee = await prisma.fee.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Cotisations and only return the `id`
-     * const cotisationWithIdOnly = await prisma.cotisation.createManyAndReturn({
+     * // Create many Fees and only return the `id`
+     * const feeWithIdOnly = await prisma.fee.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -4282,28 +3841,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends CotisationCreateManyAndReturnArgs>(args?: SelectSubset<T, CotisationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends FeeCreateManyAndReturnArgs>(args?: SelectSubset<T, FeeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Cotisation.
-     * @param {CotisationDeleteArgs} args - Arguments to delete one Cotisation.
+     * Delete a Fee.
+     * @param {FeeDeleteArgs} args - Arguments to delete one Fee.
      * @example
-     * // Delete one Cotisation
-     * const Cotisation = await prisma.cotisation.delete({
+     * // Delete one Fee
+     * const Fee = await prisma.fee.delete({
      *   where: {
-     *     // ... filter to delete one Cotisation
+     *     // ... filter to delete one Fee
      *   }
      * })
      * 
      */
-    delete<T extends CotisationDeleteArgs>(args: SelectSubset<T, CotisationDeleteArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends FeeDeleteArgs>(args: SelectSubset<T, FeeDeleteArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Cotisation.
-     * @param {CotisationUpdateArgs} args - Arguments to update one Cotisation.
+     * Update one Fee.
+     * @param {FeeUpdateArgs} args - Arguments to update one Fee.
      * @example
-     * // Update one Cotisation
-     * const cotisation = await prisma.cotisation.update({
+     * // Update one Fee
+     * const fee = await prisma.fee.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4313,30 +3872,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends CotisationUpdateArgs>(args: SelectSubset<T, CotisationUpdateArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends FeeUpdateArgs>(args: SelectSubset<T, FeeUpdateArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Cotisations.
-     * @param {CotisationDeleteManyArgs} args - Arguments to filter Cotisations to delete.
+     * Delete zero or more Fees.
+     * @param {FeeDeleteManyArgs} args - Arguments to filter Fees to delete.
      * @example
-     * // Delete a few Cotisations
-     * const { count } = await prisma.cotisation.deleteMany({
+     * // Delete a few Fees
+     * const { count } = await prisma.fee.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends CotisationDeleteManyArgs>(args?: SelectSubset<T, CotisationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends FeeDeleteManyArgs>(args?: SelectSubset<T, FeeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Cotisations.
+     * Update zero or more Fees.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {FeeUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Cotisations
-     * const cotisation = await prisma.cotisation.updateMany({
+     * // Update many Fees
+     * const fee = await prisma.fee.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4346,14 +3905,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends CotisationUpdateManyArgs>(args: SelectSubset<T, CotisationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends FeeUpdateManyArgs>(args: SelectSubset<T, FeeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Cotisations and returns the data updated in the database.
-     * @param {CotisationUpdateManyAndReturnArgs} args - Arguments to update many Cotisations.
+     * Update zero or more Fees and returns the data updated in the database.
+     * @param {FeeUpdateManyAndReturnArgs} args - Arguments to update many Fees.
      * @example
-     * // Update many Cotisations
-     * const cotisation = await prisma.cotisation.updateManyAndReturn({
+     * // Update many Fees
+     * const fee = await prisma.fee.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4362,8 +3921,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Cotisations and only return the `id`
-     * const cotisationWithIdOnly = await prisma.cotisation.updateManyAndReturn({
+     * // Update zero or more Fees and only return the `id`
+     * const feeWithIdOnly = await prisma.fee.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -4376,56 +3935,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends CotisationUpdateManyAndReturnArgs>(args: SelectSubset<T, CotisationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends FeeUpdateManyAndReturnArgs>(args: SelectSubset<T, FeeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Cotisation.
-     * @param {CotisationUpsertArgs} args - Arguments to update or create a Cotisation.
+     * Create or update one Fee.
+     * @param {FeeUpsertArgs} args - Arguments to update or create a Fee.
      * @example
-     * // Update or create a Cotisation
-     * const cotisation = await prisma.cotisation.upsert({
+     * // Update or create a Fee
+     * const fee = await prisma.fee.upsert({
      *   create: {
-     *     // ... data to create a Cotisation
+     *     // ... data to create a Fee
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Cotisation we want to update
+     *     // ... the filter for the Fee we want to update
      *   }
      * })
      */
-    upsert<T extends CotisationUpsertArgs>(args: SelectSubset<T, CotisationUpsertArgs<ExtArgs>>): Prisma__CotisationClient<$Result.GetResult<Prisma.$CotisationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends FeeUpsertArgs>(args: SelectSubset<T, FeeUpsertArgs<ExtArgs>>): Prisma__FeeClient<$Result.GetResult<Prisma.$FeePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Cotisations.
+     * Count the number of Fees.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationCountArgs} args - Arguments to filter Cotisations to count.
+     * @param {FeeCountArgs} args - Arguments to filter Fees to count.
      * @example
-     * // Count the number of Cotisations
-     * const count = await prisma.cotisation.count({
+     * // Count the number of Fees
+     * const count = await prisma.fee.count({
      *   where: {
-     *     // ... the filter for the Cotisations we want to count
+     *     // ... the filter for the Fees we want to count
      *   }
      * })
     **/
-    count<T extends CotisationCountArgs>(
-      args?: Subset<T, CotisationCountArgs>,
+    count<T extends FeeCountArgs>(
+      args?: Subset<T, FeeCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], CotisationCountAggregateOutputType>
+          : GetScalarType<T['select'], FeeCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Cotisation.
+     * Allows you to perform aggregations operations on a Fee.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {FeeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4445,13 +4004,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends CotisationAggregateArgs>(args: Subset<T, CotisationAggregateArgs>): Prisma.PrismaPromise<GetCotisationAggregateType<T>>
+    aggregate<T extends FeeAggregateArgs>(args: Subset<T, FeeAggregateArgs>): Prisma.PrismaPromise<GetFeeAggregateType<T>>
 
     /**
-     * Group by Cotisation.
+     * Group by Fee.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CotisationGroupByArgs} args - Group by arguments.
+     * @param {FeeGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4466,14 +4025,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends CotisationGroupByArgs,
+      T extends FeeGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: CotisationGroupByArgs['orderBy'] }
-        : { orderBy?: CotisationGroupByArgs['orderBy'] },
+        ? { orderBy: FeeGroupByArgs['orderBy'] }
+        : { orderBy?: FeeGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4522,20 +4081,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, CotisationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCotisationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, FeeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFeeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Cotisation model
+   * Fields of the Fee model
    */
-  readonly fields: CotisationFieldRefs;
+  readonly fields: FeeFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Cotisation.
+   * The delegate class that acts as a "Promise-like" for Fee.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__CotisationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__FeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     member<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     association<T extends AssociationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AssociationDefaultArgs<ExtArgs>>): Prisma__AssociationClient<$Result.GetResult<Prisma.$AssociationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
@@ -4565,425 +4124,427 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Cotisation model
+   * Fields of the Fee model
    */
-  interface CotisationFieldRefs {
-    readonly id: FieldRef<"Cotisation", 'String'>
-    readonly amount: FieldRef<"Cotisation", 'Float'>
-    readonly paidAt: FieldRef<"Cotisation", 'DateTime'>
-    readonly memberId: FieldRef<"Cotisation", 'String'>
-    readonly associationId: FieldRef<"Cotisation", 'String'>
+  interface FeeFieldRefs {
+    readonly id: FieldRef<"Fee", 'String'>
+    readonly amount: FieldRef<"Fee", 'Float'>
+    readonly paid: FieldRef<"Fee", 'Boolean'>
+    readonly dueDate: FieldRef<"Fee", 'DateTime'>
+    readonly memberId: FieldRef<"Fee", 'String'>
+    readonly associationId: FieldRef<"Fee", 'String'>
+    readonly createdAt: FieldRef<"Fee", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Cotisation findUnique
+   * Fee findUnique
    */
-  export type CotisationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter, which Cotisation to fetch.
+     * Filter, which Fee to fetch.
      */
-    where: CotisationWhereUniqueInput
+    where: FeeWhereUniqueInput
   }
 
   /**
-   * Cotisation findUniqueOrThrow
+   * Fee findUniqueOrThrow
    */
-  export type CotisationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter, which Cotisation to fetch.
+     * Filter, which Fee to fetch.
      */
-    where: CotisationWhereUniqueInput
+    where: FeeWhereUniqueInput
   }
 
   /**
-   * Cotisation findFirst
+   * Fee findFirst
    */
-  export type CotisationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter, which Cotisation to fetch.
+     * Filter, which Fee to fetch.
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Cotisations to fetch.
+     * Determine the order of Fees to fetch.
      */
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Cotisations.
+     * Sets the position for searching for Fees.
      */
-    cursor?: CotisationWhereUniqueInput
+    cursor?: FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Cotisations from the position of the cursor.
+     * Take `±n` Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Cotisations.
+     * Skip the first `n` Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Cotisations.
+     * Filter by unique combinations of Fees.
      */
-    distinct?: CotisationScalarFieldEnum | CotisationScalarFieldEnum[]
+    distinct?: FeeScalarFieldEnum | FeeScalarFieldEnum[]
   }
 
   /**
-   * Cotisation findFirstOrThrow
+   * Fee findFirstOrThrow
    */
-  export type CotisationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter, which Cotisation to fetch.
+     * Filter, which Fee to fetch.
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Cotisations to fetch.
+     * Determine the order of Fees to fetch.
      */
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Cotisations.
+     * Sets the position for searching for Fees.
      */
-    cursor?: CotisationWhereUniqueInput
+    cursor?: FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Cotisations from the position of the cursor.
+     * Take `±n` Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Cotisations.
+     * Skip the first `n` Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Cotisations.
+     * Filter by unique combinations of Fees.
      */
-    distinct?: CotisationScalarFieldEnum | CotisationScalarFieldEnum[]
+    distinct?: FeeScalarFieldEnum | FeeScalarFieldEnum[]
   }
 
   /**
-   * Cotisation findMany
+   * Fee findMany
    */
-  export type CotisationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter, which Cotisations to fetch.
+     * Filter, which Fees to fetch.
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Cotisations to fetch.
+     * Determine the order of Fees to fetch.
      */
-    orderBy?: CotisationOrderByWithRelationInput | CotisationOrderByWithRelationInput[]
+    orderBy?: FeeOrderByWithRelationInput | FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Cotisations.
+     * Sets the position for listing Fees.
      */
-    cursor?: CotisationWhereUniqueInput
+    cursor?: FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Cotisations from the position of the cursor.
+     * Take `±n` Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Cotisations.
+     * Skip the first `n` Fees.
      */
     skip?: number
-    distinct?: CotisationScalarFieldEnum | CotisationScalarFieldEnum[]
+    distinct?: FeeScalarFieldEnum | FeeScalarFieldEnum[]
   }
 
   /**
-   * Cotisation create
+   * Fee create
    */
-  export type CotisationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * The data needed to create a Cotisation.
+     * The data needed to create a Fee.
      */
-    data: XOR<CotisationCreateInput, CotisationUncheckedCreateInput>
+    data: XOR<FeeCreateInput, FeeUncheckedCreateInput>
   }
 
   /**
-   * Cotisation createMany
+   * Fee createMany
    */
-  export type CotisationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Cotisations.
+     * The data used to create many Fees.
      */
-    data: CotisationCreateManyInput | CotisationCreateManyInput[]
+    data: FeeCreateManyInput | FeeCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Cotisation createManyAndReturn
+   * Fee createManyAndReturn
    */
-  export type CotisationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelectCreateManyAndReturn<ExtArgs> | null
+    select?: FeeSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
-     * The data used to create many Cotisations.
+     * The data used to create many Fees.
      */
-    data: CotisationCreateManyInput | CotisationCreateManyInput[]
+    data: FeeCreateManyInput | FeeCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: FeeIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Cotisation update
+   * Fee update
    */
-  export type CotisationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * The data needed to update a Cotisation.
+     * The data needed to update a Fee.
      */
-    data: XOR<CotisationUpdateInput, CotisationUncheckedUpdateInput>
+    data: XOR<FeeUpdateInput, FeeUncheckedUpdateInput>
     /**
-     * Choose, which Cotisation to update.
+     * Choose, which Fee to update.
      */
-    where: CotisationWhereUniqueInput
+    where: FeeWhereUniqueInput
   }
 
   /**
-   * Cotisation updateMany
+   * Fee updateMany
    */
-  export type CotisationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Cotisations.
+     * The data used to update Fees.
      */
-    data: XOR<CotisationUpdateManyMutationInput, CotisationUncheckedUpdateManyInput>
+    data: XOR<FeeUpdateManyMutationInput, FeeUncheckedUpdateManyInput>
     /**
-     * Filter which Cotisations to update
+     * Filter which Fees to update
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
-     * Limit how many Cotisations to update.
+     * Limit how many Fees to update.
      */
     limit?: number
   }
 
   /**
-   * Cotisation updateManyAndReturn
+   * Fee updateManyAndReturn
    */
-  export type CotisationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: FeeSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
-     * The data used to update Cotisations.
+     * The data used to update Fees.
      */
-    data: XOR<CotisationUpdateManyMutationInput, CotisationUncheckedUpdateManyInput>
+    data: XOR<FeeUpdateManyMutationInput, FeeUncheckedUpdateManyInput>
     /**
-     * Filter which Cotisations to update
+     * Filter which Fees to update
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
-     * Limit how many Cotisations to update.
+     * Limit how many Fees to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: FeeIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Cotisation upsert
+   * Fee upsert
    */
-  export type CotisationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * The filter to search for the Cotisation to update in case it exists.
+     * The filter to search for the Fee to update in case it exists.
      */
-    where: CotisationWhereUniqueInput
+    where: FeeWhereUniqueInput
     /**
-     * In case the Cotisation found by the `where` argument doesn't exist, create a new Cotisation with this data.
+     * In case the Fee found by the `where` argument doesn't exist, create a new Fee with this data.
      */
-    create: XOR<CotisationCreateInput, CotisationUncheckedCreateInput>
+    create: XOR<FeeCreateInput, FeeUncheckedCreateInput>
     /**
-     * In case the Cotisation was found with the provided `where` argument, update it with this data.
+     * In case the Fee was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<CotisationUpdateInput, CotisationUncheckedUpdateInput>
+    update: XOR<FeeUpdateInput, FeeUncheckedUpdateInput>
   }
 
   /**
-   * Cotisation delete
+   * Fee delete
    */
-  export type CotisationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
     /**
-     * Filter which Cotisation to delete.
+     * Filter which Fee to delete.
      */
-    where: CotisationWhereUniqueInput
+    where: FeeWhereUniqueInput
   }
 
   /**
-   * Cotisation deleteMany
+   * Fee deleteMany
    */
-  export type CotisationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Cotisations to delete
+     * Filter which Fees to delete
      */
-    where?: CotisationWhereInput
+    where?: FeeWhereInput
     /**
-     * Limit how many Cotisations to delete.
+     * Limit how many Fees to delete.
      */
     limit?: number
   }
 
   /**
-   * Cotisation without action
+   * Fee without action
    */
-  export type CotisationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cotisation
+     * Select specific fields to fetch from the Fee
      */
-    select?: CotisationSelect<ExtArgs> | null
+    select?: FeeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cotisation
+     * Omit specific fields from the Fee
      */
-    omit?: CotisationOmit<ExtArgs> | null
+    omit?: FeeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CotisationInclude<ExtArgs> | null
+    include?: FeeInclude<ExtArgs> | null
   }
 
 
@@ -5000,34 +4561,28 @@ export namespace Prisma {
   export type ActivityMinAggregateOutputType = {
     id: string | null
     title: string | null
-    date: Date | null
     description: string | null
+    date: Date | null
     associationId: string | null
-    memberId: string | null
     createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type ActivityMaxAggregateOutputType = {
     id: string | null
     title: string | null
-    date: Date | null
     description: string | null
+    date: Date | null
     associationId: string | null
-    memberId: string | null
     createdAt: Date | null
-    updatedAt: Date | null
   }
 
   export type ActivityCountAggregateOutputType = {
     id: number
     title: number
-    date: number
     description: number
+    date: number
     associationId: number
-    memberId: number
     createdAt: number
-    updatedAt: number
     _all: number
   }
 
@@ -5035,34 +4590,28 @@ export namespace Prisma {
   export type ActivityMinAggregateInputType = {
     id?: true
     title?: true
-    date?: true
     description?: true
+    date?: true
     associationId?: true
-    memberId?: true
     createdAt?: true
-    updatedAt?: true
   }
 
   export type ActivityMaxAggregateInputType = {
     id?: true
     title?: true
-    date?: true
     description?: true
+    date?: true
     associationId?: true
-    memberId?: true
     createdAt?: true
-    updatedAt?: true
   }
 
   export type ActivityCountAggregateInputType = {
     id?: true
     title?: true
-    date?: true
     description?: true
+    date?: true
     associationId?: true
-    memberId?: true
     createdAt?: true
-    updatedAt?: true
     _all?: true
   }
 
@@ -5141,12 +4690,10 @@ export namespace Prisma {
   export type ActivityGroupByOutputType = {
     id: string
     title: string
-    date: Date
     description: string | null
+    date: Date
     associationId: string
-    memberId: string | null
     createdAt: Date
-    updatedAt: Date
     _count: ActivityCountAggregateOutputType | null
     _min: ActivityMinAggregateOutputType | null
     _max: ActivityMaxAggregateOutputType | null
@@ -5169,87 +4716,65 @@ export namespace Prisma {
   export type ActivitySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    date?: boolean
     description?: boolean
+    date?: boolean
     associationId?: boolean
-    memberId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
-    presences?: boolean | Activity$presencesArgs<ExtArgs>
-    _count?: boolean | ActivityCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["activity"]>
 
   export type ActivitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    date?: boolean
     description?: boolean
+    date?: boolean
     associationId?: boolean
-    memberId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
   }, ExtArgs["result"]["activity"]>
 
   export type ActivitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
-    date?: boolean
     description?: boolean
+    date?: boolean
     associationId?: boolean
-    memberId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
   }, ExtArgs["result"]["activity"]>
 
   export type ActivitySelectScalar = {
     id?: boolean
     title?: boolean
-    date?: boolean
     description?: boolean
+    date?: boolean
     associationId?: boolean
-    memberId?: boolean
     createdAt?: boolean
-    updatedAt?: boolean
   }
 
-  export type ActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "date" | "description" | "associationId" | "memberId" | "createdAt" | "updatedAt", ExtArgs["result"]["activity"]>
+  export type ActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "date" | "associationId" | "createdAt", ExtArgs["result"]["activity"]>
   export type ActivityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
-    presences?: boolean | Activity$presencesArgs<ExtArgs>
-    _count?: boolean | ActivityCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ActivityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
   }
   export type ActivityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     association?: boolean | AssociationDefaultArgs<ExtArgs>
-    member?: boolean | Activity$memberArgs<ExtArgs>
   }
 
   export type $ActivityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Activity"
     objects: {
       association: Prisma.$AssociationPayload<ExtArgs>
-      member: Prisma.$MemberPayload<ExtArgs> | null
-      presences: Prisma.$PresencePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       title: string
-      date: Date
       description: string | null
+      date: Date
       associationId: string
-      memberId: string | null
       createdAt: Date
-      updatedAt: Date
     }, ExtArgs["result"]["activity"]>
     composites: {}
   }
@@ -5645,8 +5170,6 @@ export namespace Prisma {
   export interface Prisma__ActivityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     association<T extends AssociationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AssociationDefaultArgs<ExtArgs>>): Prisma__AssociationClient<$Result.GetResult<Prisma.$AssociationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    member<T extends Activity$memberArgs<ExtArgs> = {}>(args?: Subset<T, Activity$memberArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    presences<T extends Activity$presencesArgs<ExtArgs> = {}>(args?: Subset<T, Activity$presencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5678,12 +5201,10 @@ export namespace Prisma {
   interface ActivityFieldRefs {
     readonly id: FieldRef<"Activity", 'String'>
     readonly title: FieldRef<"Activity", 'String'>
-    readonly date: FieldRef<"Activity", 'DateTime'>
     readonly description: FieldRef<"Activity", 'String'>
+    readonly date: FieldRef<"Activity", 'DateTime'>
     readonly associationId: FieldRef<"Activity", 'String'>
-    readonly memberId: FieldRef<"Activity", 'String'>
     readonly createdAt: FieldRef<"Activity", 'DateTime'>
-    readonly updatedAt: FieldRef<"Activity", 'DateTime'>
   }
     
 
@@ -6080,49 +5601,6 @@ export namespace Prisma {
   }
 
   /**
-   * Activity.member
-   */
-  export type Activity$memberArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
-    where?: MemberWhereInput
-  }
-
-  /**
-   * Activity.presences
-   */
-  export type Activity$presencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    where?: PresenceWhereInput
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    cursor?: PresenceWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: PresenceScalarFieldEnum | PresenceScalarFieldEnum[]
-  }
-
-  /**
    * Activity without action
    */
   export type ActivityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6138,3285 +5616,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: ActivityInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model User
-   */
-
-  export type AggregateUser = {
-    _count: UserCountAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  export type UserMinAggregateOutputType = {
-    id: string | null
-    name: string | null
-    email: string | null
-    password: string | null
-    emailVerified: Date | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    memberId: string | null
-  }
-
-  export type UserMaxAggregateOutputType = {
-    id: string | null
-    name: string | null
-    email: string | null
-    password: string | null
-    emailVerified: Date | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    memberId: string | null
-  }
-
-  export type UserCountAggregateOutputType = {
-    id: number
-    name: number
-    email: number
-    password: number
-    emailVerified: number
-    createdAt: number
-    updatedAt: number
-    memberId: number
-    _all: number
-  }
-
-
-  export type UserMinAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-    emailVerified?: true
-    createdAt?: true
-    updatedAt?: true
-    memberId?: true
-  }
-
-  export type UserMaxAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-    emailVerified?: true
-    createdAt?: true
-    updatedAt?: true
-    memberId?: true
-  }
-
-  export type UserCountAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-    emailVerified?: true
-    createdAt?: true
-    updatedAt?: true
-    memberId?: true
-    _all?: true
-  }
-
-  export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which User to aggregate.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Users
-    **/
-    _count?: true | UserCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: UserMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type GetUserAggregateType<T extends UserAggregateArgs> = {
-        [P in keyof T & keyof AggregateUser]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateUser[P]>
-      : GetScalarType<T[P], AggregateUser[P]>
-  }
-
-
-
-
-  export type UserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithAggregationInput | UserOrderByWithAggregationInput[]
-    by: UserScalarFieldEnum[] | UserScalarFieldEnum
-    having?: UserScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: UserCountAggregateInputType | true
-    _min?: UserMinAggregateInputType
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type UserGroupByOutputType = {
-    id: string
-    name: string | null
-    email: string
-    password: string
-    emailVerified: Date | null
-    createdAt: Date
-    updatedAt: Date
-    memberId: string | null
-    _count: UserCountAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  type GetUserGroupByPayload<T extends UserGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<UserGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof UserGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], UserGroupByOutputType[P]>
-            : GetScalarType<T[P], UserGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-    emailVerified?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    memberId?: boolean
-    member?: boolean | User$memberArgs<ExtArgs>
-  }, ExtArgs["result"]["user"]>
-
-  export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-    emailVerified?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    memberId?: boolean
-    member?: boolean | User$memberArgs<ExtArgs>
-  }, ExtArgs["result"]["user"]>
-
-  export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-    emailVerified?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    memberId?: boolean
-    member?: boolean | User$memberArgs<ExtArgs>
-  }, ExtArgs["result"]["user"]>
-
-  export type UserSelectScalar = {
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-    emailVerified?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    memberId?: boolean
-  }
-
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "emailVerified" | "createdAt" | "updatedAt" | "memberId", ExtArgs["result"]["user"]>
-  export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    member?: boolean | User$memberArgs<ExtArgs>
-  }
-  export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    member?: boolean | User$memberArgs<ExtArgs>
-  }
-  export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    member?: boolean | User$memberArgs<ExtArgs>
-  }
-
-  export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "User"
-    objects: {
-      member: Prisma.$MemberPayload<ExtArgs> | null
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      name: string | null
-      email: string
-      password: string
-      emailVerified: Date | null
-      createdAt: Date
-      updatedAt: Date
-      memberId: string | null
-    }, ExtArgs["result"]["user"]>
-    composites: {}
-  }
-
-  type UserGetPayload<S extends boolean | null | undefined | UserDefaultArgs> = $Result.GetResult<Prisma.$UserPayload, S>
-
-  type UserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: UserCountAggregateInputType | true
-    }
-
-  export interface UserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['User'], meta: { name: 'User' } }
-    /**
-     * Find zero or one User that matches the filter.
-     * @param {UserFindUniqueArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends UserFindUniqueArgs>(args: SelectSubset<T, UserFindUniqueArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one User that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {UserFindUniqueOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends UserFindUniqueOrThrowArgs>(args: SelectSubset<T, UserFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first User that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends UserFindFirstArgs>(args?: SelectSubset<T, UserFindFirstArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first User that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends UserFindFirstOrThrowArgs>(args?: SelectSubset<T, UserFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Users that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Users
-     * const users = await prisma.user.findMany()
-     * 
-     * // Get first 10 Users
-     * const users = await prisma.user.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends UserFindManyArgs>(args?: SelectSubset<T, UserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a User.
-     * @param {UserCreateArgs} args - Arguments to create a User.
-     * @example
-     * // Create one User
-     * const User = await prisma.user.create({
-     *   data: {
-     *     // ... data to create a User
-     *   }
-     * })
-     * 
-     */
-    create<T extends UserCreateArgs>(args: SelectSubset<T, UserCreateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Users.
-     * @param {UserCreateManyArgs} args - Arguments to create many Users.
-     * @example
-     * // Create many Users
-     * const user = await prisma.user.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends UserCreateManyArgs>(args?: SelectSubset<T, UserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Users and returns the data saved in the database.
-     * @param {UserCreateManyAndReturnArgs} args - Arguments to create many Users.
-     * @example
-     * // Create many Users
-     * const user = await prisma.user.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Users and only return the `id`
-     * const userWithIdOnly = await prisma.user.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends UserCreateManyAndReturnArgs>(args?: SelectSubset<T, UserCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a User.
-     * @param {UserDeleteArgs} args - Arguments to delete one User.
-     * @example
-     * // Delete one User
-     * const User = await prisma.user.delete({
-     *   where: {
-     *     // ... filter to delete one User
-     *   }
-     * })
-     * 
-     */
-    delete<T extends UserDeleteArgs>(args: SelectSubset<T, UserDeleteArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one User.
-     * @param {UserUpdateArgs} args - Arguments to update one User.
-     * @example
-     * // Update one User
-     * const user = await prisma.user.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends UserUpdateArgs>(args: SelectSubset<T, UserUpdateArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Users.
-     * @param {UserDeleteManyArgs} args - Arguments to filter Users to delete.
-     * @example
-     * // Delete a few Users
-     * const { count } = await prisma.user.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends UserDeleteManyArgs>(args?: SelectSubset<T, UserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Users
-     * const user = await prisma.user.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends UserUpdateManyArgs>(args: SelectSubset<T, UserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Users and returns the data updated in the database.
-     * @param {UserUpdateManyAndReturnArgs} args - Arguments to update many Users.
-     * @example
-     * // Update many Users
-     * const user = await prisma.user.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Users and only return the `id`
-     * const userWithIdOnly = await prisma.user.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends UserUpdateManyAndReturnArgs>(args: SelectSubset<T, UserUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one User.
-     * @param {UserUpsertArgs} args - Arguments to update or create a User.
-     * @example
-     * // Update or create a User
-     * const user = await prisma.user.upsert({
-     *   create: {
-     *     // ... data to create a User
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the User we want to update
-     *   }
-     * })
-     */
-    upsert<T extends UserUpsertArgs>(args: SelectSubset<T, UserUpsertArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserCountArgs} args - Arguments to filter Users to count.
-     * @example
-     * // Count the number of Users
-     * const count = await prisma.user.count({
-     *   where: {
-     *     // ... the filter for the Users we want to count
-     *   }
-     * })
-    **/
-    count<T extends UserCountArgs>(
-      args?: Subset<T, UserCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], UserCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends UserAggregateArgs>(args: Subset<T, UserAggregateArgs>): Prisma.PrismaPromise<GetUserAggregateType<T>>
-
-    /**
-     * Group by User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends UserGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserGroupByArgs['orderBy'] }
-        : { orderBy?: UserGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, UserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the User model
-   */
-  readonly fields: UserFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for User.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    member<T extends User$memberArgs<ExtArgs> = {}>(args?: Subset<T, User$memberArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the User model
-   */
-  interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'String'>
-    readonly name: FieldRef<"User", 'String'>
-    readonly email: FieldRef<"User", 'String'>
-    readonly password: FieldRef<"User", 'String'>
-    readonly emailVerified: FieldRef<"User", 'DateTime'>
-    readonly createdAt: FieldRef<"User", 'DateTime'>
-    readonly updatedAt: FieldRef<"User", 'DateTime'>
-    readonly memberId: FieldRef<"User", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * User findUnique
-   */
-  export type UserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where: UserWhereUniqueInput
-  }
-
-  /**
-   * User findUniqueOrThrow
-   */
-  export type UserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where: UserWhereUniqueInput
-  }
-
-  /**
-   * User findFirst
-   */
-  export type UserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * User findFirstOrThrow
-   */
-  export type UserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * User findMany
-   */
-  export type UserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which Users to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * User create
-   */
-  export type UserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The data needed to create a User.
-     */
-    data: XOR<UserCreateInput, UserUncheckedCreateInput>
-  }
-
-  /**
-   * User createMany
-   */
-  export type UserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Users.
-     */
-    data: UserCreateManyInput | UserCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * User createManyAndReturn
-   */
-  export type UserCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * The data used to create many Users.
-     */
-    data: UserCreateManyInput | UserCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * User update
-   */
-  export type UserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The data needed to update a User.
-     */
-    data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
-    /**
-     * Choose, which User to update.
-     */
-    where: UserWhereUniqueInput
-  }
-
-  /**
-   * User updateMany
-   */
-  export type UserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Users.
-     */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
-    /**
-     * Filter which Users to update
-     */
-    where?: UserWhereInput
-    /**
-     * Limit how many Users to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * User updateManyAndReturn
-   */
-  export type UserUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * The data used to update Users.
-     */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
-    /**
-     * Filter which Users to update
-     */
-    where?: UserWhereInput
-    /**
-     * Limit how many Users to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * User upsert
-   */
-  export type UserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The filter to search for the User to update in case it exists.
-     */
-    where: UserWhereUniqueInput
-    /**
-     * In case the User found by the `where` argument doesn't exist, create a new User with this data.
-     */
-    create: XOR<UserCreateInput, UserUncheckedCreateInput>
-    /**
-     * In case the User was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<UserUpdateInput, UserUncheckedUpdateInput>
-  }
-
-  /**
-   * User delete
-   */
-  export type UserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter which User to delete.
-     */
-    where: UserWhereUniqueInput
-  }
-
-  /**
-   * User deleteMany
-   */
-  export type UserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Users to delete
-     */
-    where?: UserWhereInput
-    /**
-     * Limit how many Users to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * User.member
-   */
-  export type User$memberArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
-    where?: MemberWhereInput
-  }
-
-  /**
-   * User without action
-   */
-  export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Invitation
-   */
-
-  export type AggregateInvitation = {
-    _count: InvitationCountAggregateOutputType | null
-    _min: InvitationMinAggregateOutputType | null
-    _max: InvitationMaxAggregateOutputType | null
-  }
-
-  export type InvitationMinAggregateOutputType = {
-    id: string | null
-    email: string | null
-    role: string | null
-    token: string | null
-    expiresAt: Date | null
-    used: boolean | null
-    associationId: string | null
-    createdAt: Date | null
-  }
-
-  export type InvitationMaxAggregateOutputType = {
-    id: string | null
-    email: string | null
-    role: string | null
-    token: string | null
-    expiresAt: Date | null
-    used: boolean | null
-    associationId: string | null
-    createdAt: Date | null
-  }
-
-  export type InvitationCountAggregateOutputType = {
-    id: number
-    email: number
-    role: number
-    token: number
-    expiresAt: number
-    used: number
-    associationId: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type InvitationMinAggregateInputType = {
-    id?: true
-    email?: true
-    role?: true
-    token?: true
-    expiresAt?: true
-    used?: true
-    associationId?: true
-    createdAt?: true
-  }
-
-  export type InvitationMaxAggregateInputType = {
-    id?: true
-    email?: true
-    role?: true
-    token?: true
-    expiresAt?: true
-    used?: true
-    associationId?: true
-    createdAt?: true
-  }
-
-  export type InvitationCountAggregateInputType = {
-    id?: true
-    email?: true
-    role?: true
-    token?: true
-    expiresAt?: true
-    used?: true
-    associationId?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type InvitationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Invitation to aggregate.
-     */
-    where?: InvitationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Invitations to fetch.
-     */
-    orderBy?: InvitationOrderByWithRelationInput | InvitationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: InvitationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Invitations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Invitations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Invitations
-    **/
-    _count?: true | InvitationCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: InvitationMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: InvitationMaxAggregateInputType
-  }
-
-  export type GetInvitationAggregateType<T extends InvitationAggregateArgs> = {
-        [P in keyof T & keyof AggregateInvitation]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateInvitation[P]>
-      : GetScalarType<T[P], AggregateInvitation[P]>
-  }
-
-
-
-
-  export type InvitationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: InvitationWhereInput
-    orderBy?: InvitationOrderByWithAggregationInput | InvitationOrderByWithAggregationInput[]
-    by: InvitationScalarFieldEnum[] | InvitationScalarFieldEnum
-    having?: InvitationScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: InvitationCountAggregateInputType | true
-    _min?: InvitationMinAggregateInputType
-    _max?: InvitationMaxAggregateInputType
-  }
-
-  export type InvitationGroupByOutputType = {
-    id: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date
-    used: boolean
-    associationId: string
-    createdAt: Date
-    _count: InvitationCountAggregateOutputType | null
-    _min: InvitationMinAggregateOutputType | null
-    _max: InvitationMaxAggregateOutputType | null
-  }
-
-  type GetInvitationGroupByPayload<T extends InvitationGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<InvitationGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof InvitationGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], InvitationGroupByOutputType[P]>
-            : GetScalarType<T[P], InvitationGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type InvitationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    role?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    used?: boolean
-    associationId?: boolean
-    createdAt?: boolean
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["invitation"]>
-
-  export type InvitationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    role?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    used?: boolean
-    associationId?: boolean
-    createdAt?: boolean
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["invitation"]>
-
-  export type InvitationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    role?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    used?: boolean
-    associationId?: boolean
-    createdAt?: boolean
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["invitation"]>
-
-  export type InvitationSelectScalar = {
-    id?: boolean
-    email?: boolean
-    role?: boolean
-    token?: boolean
-    expiresAt?: boolean
-    used?: boolean
-    associationId?: boolean
-    createdAt?: boolean
-  }
-
-  export type InvitationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "role" | "token" | "expiresAt" | "used" | "associationId" | "createdAt", ExtArgs["result"]["invitation"]>
-  export type InvitationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }
-  export type InvitationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }
-  export type InvitationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    association?: boolean | AssociationDefaultArgs<ExtArgs>
-  }
-
-  export type $InvitationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Invitation"
-    objects: {
-      association: Prisma.$AssociationPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      email: string
-      role: string
-      token: string
-      expiresAt: Date
-      used: boolean
-      associationId: string
-      createdAt: Date
-    }, ExtArgs["result"]["invitation"]>
-    composites: {}
-  }
-
-  type InvitationGetPayload<S extends boolean | null | undefined | InvitationDefaultArgs> = $Result.GetResult<Prisma.$InvitationPayload, S>
-
-  type InvitationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<InvitationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: InvitationCountAggregateInputType | true
-    }
-
-  export interface InvitationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Invitation'], meta: { name: 'Invitation' } }
-    /**
-     * Find zero or one Invitation that matches the filter.
-     * @param {InvitationFindUniqueArgs} args - Arguments to find a Invitation
-     * @example
-     * // Get one Invitation
-     * const invitation = await prisma.invitation.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends InvitationFindUniqueArgs>(args: SelectSubset<T, InvitationFindUniqueArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Invitation that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {InvitationFindUniqueOrThrowArgs} args - Arguments to find a Invitation
-     * @example
-     * // Get one Invitation
-     * const invitation = await prisma.invitation.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends InvitationFindUniqueOrThrowArgs>(args: SelectSubset<T, InvitationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Invitation that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationFindFirstArgs} args - Arguments to find a Invitation
-     * @example
-     * // Get one Invitation
-     * const invitation = await prisma.invitation.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends InvitationFindFirstArgs>(args?: SelectSubset<T, InvitationFindFirstArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Invitation that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationFindFirstOrThrowArgs} args - Arguments to find a Invitation
-     * @example
-     * // Get one Invitation
-     * const invitation = await prisma.invitation.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends InvitationFindFirstOrThrowArgs>(args?: SelectSubset<T, InvitationFindFirstOrThrowArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Invitations that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Invitations
-     * const invitations = await prisma.invitation.findMany()
-     * 
-     * // Get first 10 Invitations
-     * const invitations = await prisma.invitation.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const invitationWithIdOnly = await prisma.invitation.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends InvitationFindManyArgs>(args?: SelectSubset<T, InvitationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Invitation.
-     * @param {InvitationCreateArgs} args - Arguments to create a Invitation.
-     * @example
-     * // Create one Invitation
-     * const Invitation = await prisma.invitation.create({
-     *   data: {
-     *     // ... data to create a Invitation
-     *   }
-     * })
-     * 
-     */
-    create<T extends InvitationCreateArgs>(args: SelectSubset<T, InvitationCreateArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Invitations.
-     * @param {InvitationCreateManyArgs} args - Arguments to create many Invitations.
-     * @example
-     * // Create many Invitations
-     * const invitation = await prisma.invitation.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends InvitationCreateManyArgs>(args?: SelectSubset<T, InvitationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Invitations and returns the data saved in the database.
-     * @param {InvitationCreateManyAndReturnArgs} args - Arguments to create many Invitations.
-     * @example
-     * // Create many Invitations
-     * const invitation = await prisma.invitation.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Invitations and only return the `id`
-     * const invitationWithIdOnly = await prisma.invitation.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends InvitationCreateManyAndReturnArgs>(args?: SelectSubset<T, InvitationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Invitation.
-     * @param {InvitationDeleteArgs} args - Arguments to delete one Invitation.
-     * @example
-     * // Delete one Invitation
-     * const Invitation = await prisma.invitation.delete({
-     *   where: {
-     *     // ... filter to delete one Invitation
-     *   }
-     * })
-     * 
-     */
-    delete<T extends InvitationDeleteArgs>(args: SelectSubset<T, InvitationDeleteArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Invitation.
-     * @param {InvitationUpdateArgs} args - Arguments to update one Invitation.
-     * @example
-     * // Update one Invitation
-     * const invitation = await prisma.invitation.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends InvitationUpdateArgs>(args: SelectSubset<T, InvitationUpdateArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Invitations.
-     * @param {InvitationDeleteManyArgs} args - Arguments to filter Invitations to delete.
-     * @example
-     * // Delete a few Invitations
-     * const { count } = await prisma.invitation.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends InvitationDeleteManyArgs>(args?: SelectSubset<T, InvitationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Invitations.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Invitations
-     * const invitation = await prisma.invitation.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends InvitationUpdateManyArgs>(args: SelectSubset<T, InvitationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Invitations and returns the data updated in the database.
-     * @param {InvitationUpdateManyAndReturnArgs} args - Arguments to update many Invitations.
-     * @example
-     * // Update many Invitations
-     * const invitation = await prisma.invitation.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Invitations and only return the `id`
-     * const invitationWithIdOnly = await prisma.invitation.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends InvitationUpdateManyAndReturnArgs>(args: SelectSubset<T, InvitationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Invitation.
-     * @param {InvitationUpsertArgs} args - Arguments to update or create a Invitation.
-     * @example
-     * // Update or create a Invitation
-     * const invitation = await prisma.invitation.upsert({
-     *   create: {
-     *     // ... data to create a Invitation
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Invitation we want to update
-     *   }
-     * })
-     */
-    upsert<T extends InvitationUpsertArgs>(args: SelectSubset<T, InvitationUpsertArgs<ExtArgs>>): Prisma__InvitationClient<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Invitations.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationCountArgs} args - Arguments to filter Invitations to count.
-     * @example
-     * // Count the number of Invitations
-     * const count = await prisma.invitation.count({
-     *   where: {
-     *     // ... the filter for the Invitations we want to count
-     *   }
-     * })
-    **/
-    count<T extends InvitationCountArgs>(
-      args?: Subset<T, InvitationCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], InvitationCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Invitation.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends InvitationAggregateArgs>(args: Subset<T, InvitationAggregateArgs>): Prisma.PrismaPromise<GetInvitationAggregateType<T>>
-
-    /**
-     * Group by Invitation.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {InvitationGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends InvitationGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: InvitationGroupByArgs['orderBy'] }
-        : { orderBy?: InvitationGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, InvitationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInvitationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Invitation model
-   */
-  readonly fields: InvitationFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Invitation.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__InvitationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    association<T extends AssociationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AssociationDefaultArgs<ExtArgs>>): Prisma__AssociationClient<$Result.GetResult<Prisma.$AssociationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Invitation model
-   */
-  interface InvitationFieldRefs {
-    readonly id: FieldRef<"Invitation", 'String'>
-    readonly email: FieldRef<"Invitation", 'String'>
-    readonly role: FieldRef<"Invitation", 'String'>
-    readonly token: FieldRef<"Invitation", 'String'>
-    readonly expiresAt: FieldRef<"Invitation", 'DateTime'>
-    readonly used: FieldRef<"Invitation", 'Boolean'>
-    readonly associationId: FieldRef<"Invitation", 'String'>
-    readonly createdAt: FieldRef<"Invitation", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Invitation findUnique
-   */
-  export type InvitationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter, which Invitation to fetch.
-     */
-    where: InvitationWhereUniqueInput
-  }
-
-  /**
-   * Invitation findUniqueOrThrow
-   */
-  export type InvitationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter, which Invitation to fetch.
-     */
-    where: InvitationWhereUniqueInput
-  }
-
-  /**
-   * Invitation findFirst
-   */
-  export type InvitationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter, which Invitation to fetch.
-     */
-    where?: InvitationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Invitations to fetch.
-     */
-    orderBy?: InvitationOrderByWithRelationInput | InvitationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Invitations.
-     */
-    cursor?: InvitationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Invitations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Invitations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Invitations.
-     */
-    distinct?: InvitationScalarFieldEnum | InvitationScalarFieldEnum[]
-  }
-
-  /**
-   * Invitation findFirstOrThrow
-   */
-  export type InvitationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter, which Invitation to fetch.
-     */
-    where?: InvitationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Invitations to fetch.
-     */
-    orderBy?: InvitationOrderByWithRelationInput | InvitationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Invitations.
-     */
-    cursor?: InvitationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Invitations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Invitations.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Invitations.
-     */
-    distinct?: InvitationScalarFieldEnum | InvitationScalarFieldEnum[]
-  }
-
-  /**
-   * Invitation findMany
-   */
-  export type InvitationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter, which Invitations to fetch.
-     */
-    where?: InvitationWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Invitations to fetch.
-     */
-    orderBy?: InvitationOrderByWithRelationInput | InvitationOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Invitations.
-     */
-    cursor?: InvitationWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Invitations from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Invitations.
-     */
-    skip?: number
-    distinct?: InvitationScalarFieldEnum | InvitationScalarFieldEnum[]
-  }
-
-  /**
-   * Invitation create
-   */
-  export type InvitationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Invitation.
-     */
-    data: XOR<InvitationCreateInput, InvitationUncheckedCreateInput>
-  }
-
-  /**
-   * Invitation createMany
-   */
-  export type InvitationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Invitations.
-     */
-    data: InvitationCreateManyInput | InvitationCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Invitation createManyAndReturn
-   */
-  export type InvitationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * The data used to create many Invitations.
-     */
-    data: InvitationCreateManyInput | InvitationCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Invitation update
-   */
-  export type InvitationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Invitation.
-     */
-    data: XOR<InvitationUpdateInput, InvitationUncheckedUpdateInput>
-    /**
-     * Choose, which Invitation to update.
-     */
-    where: InvitationWhereUniqueInput
-  }
-
-  /**
-   * Invitation updateMany
-   */
-  export type InvitationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Invitations.
-     */
-    data: XOR<InvitationUpdateManyMutationInput, InvitationUncheckedUpdateManyInput>
-    /**
-     * Filter which Invitations to update
-     */
-    where?: InvitationWhereInput
-    /**
-     * Limit how many Invitations to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Invitation updateManyAndReturn
-   */
-  export type InvitationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * The data used to update Invitations.
-     */
-    data: XOR<InvitationUpdateManyMutationInput, InvitationUncheckedUpdateManyInput>
-    /**
-     * Filter which Invitations to update
-     */
-    where?: InvitationWhereInput
-    /**
-     * Limit how many Invitations to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Invitation upsert
-   */
-  export type InvitationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Invitation to update in case it exists.
-     */
-    where: InvitationWhereUniqueInput
-    /**
-     * In case the Invitation found by the `where` argument doesn't exist, create a new Invitation with this data.
-     */
-    create: XOR<InvitationCreateInput, InvitationUncheckedCreateInput>
-    /**
-     * In case the Invitation was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<InvitationUpdateInput, InvitationUncheckedUpdateInput>
-  }
-
-  /**
-   * Invitation delete
-   */
-  export type InvitationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-    /**
-     * Filter which Invitation to delete.
-     */
-    where: InvitationWhereUniqueInput
-  }
-
-  /**
-   * Invitation deleteMany
-   */
-  export type InvitationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Invitations to delete
-     */
-    where?: InvitationWhereInput
-    /**
-     * Limit how many Invitations to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Invitation without action
-   */
-  export type InvitationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Invitation
-     */
-    select?: InvitationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Invitation
-     */
-    omit?: InvitationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: InvitationInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model Presence
-   */
-
-  export type AggregatePresence = {
-    _count: PresenceCountAggregateOutputType | null
-    _min: PresenceMinAggregateOutputType | null
-    _max: PresenceMaxAggregateOutputType | null
-  }
-
-  export type PresenceMinAggregateOutputType = {
-    id: string | null
-    activityId: string | null
-    memberId: string | null
-    present: boolean | null
-    createdAt: Date | null
-  }
-
-  export type PresenceMaxAggregateOutputType = {
-    id: string | null
-    activityId: string | null
-    memberId: string | null
-    present: boolean | null
-    createdAt: Date | null
-  }
-
-  export type PresenceCountAggregateOutputType = {
-    id: number
-    activityId: number
-    memberId: number
-    present: number
-    createdAt: number
-    _all: number
-  }
-
-
-  export type PresenceMinAggregateInputType = {
-    id?: true
-    activityId?: true
-    memberId?: true
-    present?: true
-    createdAt?: true
-  }
-
-  export type PresenceMaxAggregateInputType = {
-    id?: true
-    activityId?: true
-    memberId?: true
-    present?: true
-    createdAt?: true
-  }
-
-  export type PresenceCountAggregateInputType = {
-    id?: true
-    activityId?: true
-    memberId?: true
-    present?: true
-    createdAt?: true
-    _all?: true
-  }
-
-  export type PresenceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Presence to aggregate.
-     */
-    where?: PresenceWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Presences to fetch.
-     */
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: PresenceWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Presences from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Presences.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Presences
-    **/
-    _count?: true | PresenceCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: PresenceMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: PresenceMaxAggregateInputType
-  }
-
-  export type GetPresenceAggregateType<T extends PresenceAggregateArgs> = {
-        [P in keyof T & keyof AggregatePresence]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregatePresence[P]>
-      : GetScalarType<T[P], AggregatePresence[P]>
-  }
-
-
-
-
-  export type PresenceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PresenceWhereInput
-    orderBy?: PresenceOrderByWithAggregationInput | PresenceOrderByWithAggregationInput[]
-    by: PresenceScalarFieldEnum[] | PresenceScalarFieldEnum
-    having?: PresenceScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: PresenceCountAggregateInputType | true
-    _min?: PresenceMinAggregateInputType
-    _max?: PresenceMaxAggregateInputType
-  }
-
-  export type PresenceGroupByOutputType = {
-    id: string
-    activityId: string
-    memberId: string
-    present: boolean
-    createdAt: Date
-    _count: PresenceCountAggregateOutputType | null
-    _min: PresenceMinAggregateOutputType | null
-    _max: PresenceMaxAggregateOutputType | null
-  }
-
-  type GetPresenceGroupByPayload<T extends PresenceGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<PresenceGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof PresenceGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], PresenceGroupByOutputType[P]>
-            : GetScalarType<T[P], PresenceGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type PresenceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    activityId?: boolean
-    memberId?: boolean
-    present?: boolean
-    createdAt?: boolean
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["presence"]>
-
-  export type PresenceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    activityId?: boolean
-    memberId?: boolean
-    present?: boolean
-    createdAt?: boolean
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["presence"]>
-
-  export type PresenceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    activityId?: boolean
-    memberId?: boolean
-    present?: boolean
-    createdAt?: boolean
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["presence"]>
-
-  export type PresenceSelectScalar = {
-    id?: boolean
-    activityId?: boolean
-    memberId?: boolean
-    present?: boolean
-    createdAt?: boolean
-  }
-
-  export type PresenceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "activityId" | "memberId" | "present" | "createdAt", ExtArgs["result"]["presence"]>
-  export type PresenceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }
-  export type PresenceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }
-  export type PresenceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    activity?: boolean | ActivityDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
-  }
-
-  export type $PresencePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Presence"
-    objects: {
-      activity: Prisma.$ActivityPayload<ExtArgs>
-      member: Prisma.$MemberPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      activityId: string
-      memberId: string
-      present: boolean
-      createdAt: Date
-    }, ExtArgs["result"]["presence"]>
-    composites: {}
-  }
-
-  type PresenceGetPayload<S extends boolean | null | undefined | PresenceDefaultArgs> = $Result.GetResult<Prisma.$PresencePayload, S>
-
-  type PresenceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PresenceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PresenceCountAggregateInputType | true
-    }
-
-  export interface PresenceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Presence'], meta: { name: 'Presence' } }
-    /**
-     * Find zero or one Presence that matches the filter.
-     * @param {PresenceFindUniqueArgs} args - Arguments to find a Presence
-     * @example
-     * // Get one Presence
-     * const presence = await prisma.presence.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends PresenceFindUniqueArgs>(args: SelectSubset<T, PresenceFindUniqueArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Presence that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {PresenceFindUniqueOrThrowArgs} args - Arguments to find a Presence
-     * @example
-     * // Get one Presence
-     * const presence = await prisma.presence.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends PresenceFindUniqueOrThrowArgs>(args: SelectSubset<T, PresenceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Presence that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceFindFirstArgs} args - Arguments to find a Presence
-     * @example
-     * // Get one Presence
-     * const presence = await prisma.presence.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends PresenceFindFirstArgs>(args?: SelectSubset<T, PresenceFindFirstArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Presence that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceFindFirstOrThrowArgs} args - Arguments to find a Presence
-     * @example
-     * // Get one Presence
-     * const presence = await prisma.presence.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends PresenceFindFirstOrThrowArgs>(args?: SelectSubset<T, PresenceFindFirstOrThrowArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Presences that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Presences
-     * const presences = await prisma.presence.findMany()
-     * 
-     * // Get first 10 Presences
-     * const presences = await prisma.presence.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const presenceWithIdOnly = await prisma.presence.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends PresenceFindManyArgs>(args?: SelectSubset<T, PresenceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Presence.
-     * @param {PresenceCreateArgs} args - Arguments to create a Presence.
-     * @example
-     * // Create one Presence
-     * const Presence = await prisma.presence.create({
-     *   data: {
-     *     // ... data to create a Presence
-     *   }
-     * })
-     * 
-     */
-    create<T extends PresenceCreateArgs>(args: SelectSubset<T, PresenceCreateArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Presences.
-     * @param {PresenceCreateManyArgs} args - Arguments to create many Presences.
-     * @example
-     * // Create many Presences
-     * const presence = await prisma.presence.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends PresenceCreateManyArgs>(args?: SelectSubset<T, PresenceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Presences and returns the data saved in the database.
-     * @param {PresenceCreateManyAndReturnArgs} args - Arguments to create many Presences.
-     * @example
-     * // Create many Presences
-     * const presence = await prisma.presence.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Presences and only return the `id`
-     * const presenceWithIdOnly = await prisma.presence.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends PresenceCreateManyAndReturnArgs>(args?: SelectSubset<T, PresenceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Presence.
-     * @param {PresenceDeleteArgs} args - Arguments to delete one Presence.
-     * @example
-     * // Delete one Presence
-     * const Presence = await prisma.presence.delete({
-     *   where: {
-     *     // ... filter to delete one Presence
-     *   }
-     * })
-     * 
-     */
-    delete<T extends PresenceDeleteArgs>(args: SelectSubset<T, PresenceDeleteArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Presence.
-     * @param {PresenceUpdateArgs} args - Arguments to update one Presence.
-     * @example
-     * // Update one Presence
-     * const presence = await prisma.presence.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends PresenceUpdateArgs>(args: SelectSubset<T, PresenceUpdateArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Presences.
-     * @param {PresenceDeleteManyArgs} args - Arguments to filter Presences to delete.
-     * @example
-     * // Delete a few Presences
-     * const { count } = await prisma.presence.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends PresenceDeleteManyArgs>(args?: SelectSubset<T, PresenceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Presences.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Presences
-     * const presence = await prisma.presence.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends PresenceUpdateManyArgs>(args: SelectSubset<T, PresenceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Presences and returns the data updated in the database.
-     * @param {PresenceUpdateManyAndReturnArgs} args - Arguments to update many Presences.
-     * @example
-     * // Update many Presences
-     * const presence = await prisma.presence.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Presences and only return the `id`
-     * const presenceWithIdOnly = await prisma.presence.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends PresenceUpdateManyAndReturnArgs>(args: SelectSubset<T, PresenceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Presence.
-     * @param {PresenceUpsertArgs} args - Arguments to update or create a Presence.
-     * @example
-     * // Update or create a Presence
-     * const presence = await prisma.presence.upsert({
-     *   create: {
-     *     // ... data to create a Presence
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Presence we want to update
-     *   }
-     * })
-     */
-    upsert<T extends PresenceUpsertArgs>(args: SelectSubset<T, PresenceUpsertArgs<ExtArgs>>): Prisma__PresenceClient<$Result.GetResult<Prisma.$PresencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Presences.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceCountArgs} args - Arguments to filter Presences to count.
-     * @example
-     * // Count the number of Presences
-     * const count = await prisma.presence.count({
-     *   where: {
-     *     // ... the filter for the Presences we want to count
-     *   }
-     * })
-    **/
-    count<T extends PresenceCountArgs>(
-      args?: Subset<T, PresenceCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], PresenceCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Presence.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends PresenceAggregateArgs>(args: Subset<T, PresenceAggregateArgs>): Prisma.PrismaPromise<GetPresenceAggregateType<T>>
-
-    /**
-     * Group by Presence.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {PresenceGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends PresenceGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PresenceGroupByArgs['orderBy'] }
-        : { orderBy?: PresenceGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, PresenceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPresenceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Presence model
-   */
-  readonly fields: PresenceFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Presence.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__PresenceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    activity<T extends ActivityDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActivityDefaultArgs<ExtArgs>>): Prisma__ActivityClient<$Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    member<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Presence model
-   */
-  interface PresenceFieldRefs {
-    readonly id: FieldRef<"Presence", 'String'>
-    readonly activityId: FieldRef<"Presence", 'String'>
-    readonly memberId: FieldRef<"Presence", 'String'>
-    readonly present: FieldRef<"Presence", 'Boolean'>
-    readonly createdAt: FieldRef<"Presence", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Presence findUnique
-   */
-  export type PresenceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter, which Presence to fetch.
-     */
-    where: PresenceWhereUniqueInput
-  }
-
-  /**
-   * Presence findUniqueOrThrow
-   */
-  export type PresenceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter, which Presence to fetch.
-     */
-    where: PresenceWhereUniqueInput
-  }
-
-  /**
-   * Presence findFirst
-   */
-  export type PresenceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter, which Presence to fetch.
-     */
-    where?: PresenceWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Presences to fetch.
-     */
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Presences.
-     */
-    cursor?: PresenceWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Presences from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Presences.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Presences.
-     */
-    distinct?: PresenceScalarFieldEnum | PresenceScalarFieldEnum[]
-  }
-
-  /**
-   * Presence findFirstOrThrow
-   */
-  export type PresenceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter, which Presence to fetch.
-     */
-    where?: PresenceWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Presences to fetch.
-     */
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Presences.
-     */
-    cursor?: PresenceWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Presences from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Presences.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Presences.
-     */
-    distinct?: PresenceScalarFieldEnum | PresenceScalarFieldEnum[]
-  }
-
-  /**
-   * Presence findMany
-   */
-  export type PresenceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter, which Presences to fetch.
-     */
-    where?: PresenceWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Presences to fetch.
-     */
-    orderBy?: PresenceOrderByWithRelationInput | PresenceOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Presences.
-     */
-    cursor?: PresenceWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Presences from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Presences.
-     */
-    skip?: number
-    distinct?: PresenceScalarFieldEnum | PresenceScalarFieldEnum[]
-  }
-
-  /**
-   * Presence create
-   */
-  export type PresenceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Presence.
-     */
-    data: XOR<PresenceCreateInput, PresenceUncheckedCreateInput>
-  }
-
-  /**
-   * Presence createMany
-   */
-  export type PresenceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Presences.
-     */
-    data: PresenceCreateManyInput | PresenceCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Presence createManyAndReturn
-   */
-  export type PresenceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * The data used to create many Presences.
-     */
-    data: PresenceCreateManyInput | PresenceCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Presence update
-   */
-  export type PresenceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Presence.
-     */
-    data: XOR<PresenceUpdateInput, PresenceUncheckedUpdateInput>
-    /**
-     * Choose, which Presence to update.
-     */
-    where: PresenceWhereUniqueInput
-  }
-
-  /**
-   * Presence updateMany
-   */
-  export type PresenceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Presences.
-     */
-    data: XOR<PresenceUpdateManyMutationInput, PresenceUncheckedUpdateManyInput>
-    /**
-     * Filter which Presences to update
-     */
-    where?: PresenceWhereInput
-    /**
-     * Limit how many Presences to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Presence updateManyAndReturn
-   */
-  export type PresenceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * The data used to update Presences.
-     */
-    data: XOR<PresenceUpdateManyMutationInput, PresenceUncheckedUpdateManyInput>
-    /**
-     * Filter which Presences to update
-     */
-    where?: PresenceWhereInput
-    /**
-     * Limit how many Presences to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Presence upsert
-   */
-  export type PresenceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Presence to update in case it exists.
-     */
-    where: PresenceWhereUniqueInput
-    /**
-     * In case the Presence found by the `where` argument doesn't exist, create a new Presence with this data.
-     */
-    create: XOR<PresenceCreateInput, PresenceUncheckedCreateInput>
-    /**
-     * In case the Presence was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<PresenceUpdateInput, PresenceUncheckedUpdateInput>
-  }
-
-  /**
-   * Presence delete
-   */
-  export type PresenceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
-    /**
-     * Filter which Presence to delete.
-     */
-    where: PresenceWhereUniqueInput
-  }
-
-  /**
-   * Presence deleteMany
-   */
-  export type PresenceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Presences to delete
-     */
-    where?: PresenceWhereInput
-    /**
-     * Limit how many Presences to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Presence without action
-   */
-  export type PresenceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Presence
-     */
-    select?: PresenceSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Presence
-     */
-    omit?: PresenceOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PresenceInclude<ExtArgs> | null
   }
 
 
@@ -9437,6 +5636,7 @@ export namespace Prisma {
   export const AssociationScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    description: 'description',
     createdAt: 'createdAt'
   };
 
@@ -9445,79 +5645,38 @@ export namespace Prisma {
 
   export const MemberScalarFieldEnum: {
     id: 'id',
-    name: 'name',
+    fullName: 'fullName',
     email: 'email',
-    role: 'role',
     associationId: 'associationId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    createdAt: 'createdAt'
   };
 
   export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
 
 
-  export const CotisationScalarFieldEnum: {
+  export const FeeScalarFieldEnum: {
     id: 'id',
     amount: 'amount',
-    paidAt: 'paidAt',
+    paid: 'paid',
+    dueDate: 'dueDate',
     memberId: 'memberId',
-    associationId: 'associationId'
+    associationId: 'associationId',
+    createdAt: 'createdAt'
   };
 
-  export type CotisationScalarFieldEnum = (typeof CotisationScalarFieldEnum)[keyof typeof CotisationScalarFieldEnum]
+  export type FeeScalarFieldEnum = (typeof FeeScalarFieldEnum)[keyof typeof FeeScalarFieldEnum]
 
 
   export const ActivityScalarFieldEnum: {
     id: 'id',
     title: 'title',
-    date: 'date',
     description: 'description',
+    date: 'date',
     associationId: 'associationId',
-    memberId: 'memberId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    createdAt: 'createdAt'
   };
 
   export type ActivityScalarFieldEnum = (typeof ActivityScalarFieldEnum)[keyof typeof ActivityScalarFieldEnum]
-
-
-  export const UserScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    email: 'email',
-    password: 'password',
-    emailVerified: 'emailVerified',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    memberId: 'memberId'
-  };
-
-  export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
-  export const InvitationScalarFieldEnum: {
-    id: 'id',
-    email: 'email',
-    role: 'role',
-    token: 'token',
-    expiresAt: 'expiresAt',
-    used: 'used',
-    associationId: 'associationId',
-    createdAt: 'createdAt'
-  };
-
-  export type InvitationScalarFieldEnum = (typeof InvitationScalarFieldEnum)[keyof typeof InvitationScalarFieldEnum]
-
-
-  export const PresenceScalarFieldEnum: {
-    id: 'id',
-    activityId: 'activityId',
-    memberId: 'memberId',
-    present: 'present',
-    createdAt: 'createdAt'
-  };
-
-  export type PresenceScalarFieldEnum = (typeof PresenceScalarFieldEnum)[keyof typeof PresenceScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -9621,21 +5780,21 @@ export namespace Prisma {
     NOT?: AssociationWhereInput | AssociationWhereInput[]
     id?: StringFilter<"Association"> | string
     name?: StringFilter<"Association"> | string
+    description?: StringNullableFilter<"Association"> | string | null
     createdAt?: DateTimeFilter<"Association"> | Date | string
     members?: MemberListRelationFilter
-    cotisations?: CotisationListRelationFilter
     activities?: ActivityListRelationFilter
-    invitations?: InvitationListRelationFilter
+    fees?: FeeListRelationFilter
   }
 
   export type AssociationOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    description?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     members?: MemberOrderByRelationAggregateInput
-    cotisations?: CotisationOrderByRelationAggregateInput
     activities?: ActivityOrderByRelationAggregateInput
-    invitations?: InvitationOrderByRelationAggregateInput
+    fees?: FeeOrderByRelationAggregateInput
   }
 
   export type AssociationWhereUniqueInput = Prisma.AtLeast<{
@@ -9644,16 +5803,17 @@ export namespace Prisma {
     OR?: AssociationWhereInput[]
     NOT?: AssociationWhereInput | AssociationWhereInput[]
     name?: StringFilter<"Association"> | string
+    description?: StringNullableFilter<"Association"> | string | null
     createdAt?: DateTimeFilter<"Association"> | Date | string
     members?: MemberListRelationFilter
-    cotisations?: CotisationListRelationFilter
     activities?: ActivityListRelationFilter
-    invitations?: InvitationListRelationFilter
+    fees?: FeeListRelationFilter
   }, "id">
 
   export type AssociationOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    description?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: AssociationCountOrderByAggregateInput
     _max?: AssociationMaxOrderByAggregateInput
@@ -9666,6 +5826,7 @@ export namespace Prisma {
     NOT?: AssociationScalarWhereWithAggregatesInput | AssociationScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Association"> | string
     name?: StringWithAggregatesFilter<"Association"> | string
+    description?: StringNullableWithAggregatesFilter<"Association"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Association"> | Date | string
   }
 
@@ -9674,32 +5835,22 @@ export namespace Prisma {
     OR?: MemberWhereInput[]
     NOT?: MemberWhereInput | MemberWhereInput[]
     id?: StringFilter<"Member"> | string
-    name?: StringFilter<"Member"> | string
+    fullName?: StringFilter<"Member"> | string
     email?: StringFilter<"Member"> | string
-    role?: StringFilter<"Member"> | string
     associationId?: StringFilter<"Member"> | string
     createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-    user?: UserListRelationFilter
-    cotisations?: CotisationListRelationFilter
-    activities?: ActivityListRelationFilter
-    presences?: PresenceListRelationFilter
+    fees?: FeeListRelationFilter
   }
 
   export type MemberOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
+    fullName?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     associationId?: SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
     association?: AssociationOrderByWithRelationInput
-    user?: UserOrderByRelationAggregateInput
-    cotisations?: CotisationOrderByRelationAggregateInput
-    activities?: ActivityOrderByRelationAggregateInput
-    presences?: PresenceOrderByRelationAggregateInput
+    fees?: FeeOrderByRelationAggregateInput
   }
 
   export type MemberWhereUniqueInput = Prisma.AtLeast<{
@@ -9708,26 +5859,19 @@ export namespace Prisma {
     AND?: MemberWhereInput | MemberWhereInput[]
     OR?: MemberWhereInput[]
     NOT?: MemberWhereInput | MemberWhereInput[]
-    name?: StringFilter<"Member"> | string
-    role?: StringFilter<"Member"> | string
+    fullName?: StringFilter<"Member"> | string
     associationId?: StringFilter<"Member"> | string
     createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-    user?: UserListRelationFilter
-    cotisations?: CotisationListRelationFilter
-    activities?: ActivityListRelationFilter
-    presences?: PresenceListRelationFilter
+    fees?: FeeListRelationFilter
   }, "id" | "email">
 
   export type MemberOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
+    fullName?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     associationId?: SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
     _count?: MemberCountOrderByAggregateInput
     _max?: MemberMaxOrderByAggregateInput
     _min?: MemberMinOrderByAggregateInput
@@ -9738,72 +5882,80 @@ export namespace Prisma {
     OR?: MemberScalarWhereWithAggregatesInput[]
     NOT?: MemberScalarWhereWithAggregatesInput | MemberScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Member"> | string
-    name?: StringWithAggregatesFilter<"Member"> | string
+    fullName?: StringWithAggregatesFilter<"Member"> | string
     email?: StringWithAggregatesFilter<"Member"> | string
-    role?: StringWithAggregatesFilter<"Member"> | string
     associationId?: StringWithAggregatesFilter<"Member"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
   }
 
-  export type CotisationWhereInput = {
-    AND?: CotisationWhereInput | CotisationWhereInput[]
-    OR?: CotisationWhereInput[]
-    NOT?: CotisationWhereInput | CotisationWhereInput[]
-    id?: StringFilter<"Cotisation"> | string
-    amount?: FloatFilter<"Cotisation"> | number
-    paidAt?: DateTimeFilter<"Cotisation"> | Date | string
-    memberId?: StringFilter<"Cotisation"> | string
-    associationId?: StringFilter<"Cotisation"> | string
+  export type FeeWhereInput = {
+    AND?: FeeWhereInput | FeeWhereInput[]
+    OR?: FeeWhereInput[]
+    NOT?: FeeWhereInput | FeeWhereInput[]
+    id?: StringFilter<"Fee"> | string
+    amount?: FloatFilter<"Fee"> | number
+    paid?: BoolFilter<"Fee"> | boolean
+    dueDate?: DateTimeFilter<"Fee"> | Date | string
+    memberId?: StringFilter<"Fee"> | string
+    associationId?: StringFilter<"Fee"> | string
+    createdAt?: DateTimeFilter<"Fee"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
   }
 
-  export type CotisationOrderByWithRelationInput = {
+  export type FeeOrderByWithRelationInput = {
     id?: SortOrder
     amount?: SortOrder
-    paidAt?: SortOrder
+    paid?: SortOrder
+    dueDate?: SortOrder
     memberId?: SortOrder
     associationId?: SortOrder
+    createdAt?: SortOrder
     member?: MemberOrderByWithRelationInput
     association?: AssociationOrderByWithRelationInput
   }
 
-  export type CotisationWhereUniqueInput = Prisma.AtLeast<{
+  export type FeeWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: CotisationWhereInput | CotisationWhereInput[]
-    OR?: CotisationWhereInput[]
-    NOT?: CotisationWhereInput | CotisationWhereInput[]
-    amount?: FloatFilter<"Cotisation"> | number
-    paidAt?: DateTimeFilter<"Cotisation"> | Date | string
-    memberId?: StringFilter<"Cotisation"> | string
-    associationId?: StringFilter<"Cotisation"> | string
+    AND?: FeeWhereInput | FeeWhereInput[]
+    OR?: FeeWhereInput[]
+    NOT?: FeeWhereInput | FeeWhereInput[]
+    amount?: FloatFilter<"Fee"> | number
+    paid?: BoolFilter<"Fee"> | boolean
+    dueDate?: DateTimeFilter<"Fee"> | Date | string
+    memberId?: StringFilter<"Fee"> | string
+    associationId?: StringFilter<"Fee"> | string
+    createdAt?: DateTimeFilter<"Fee"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
   }, "id">
 
-  export type CotisationOrderByWithAggregationInput = {
+  export type FeeOrderByWithAggregationInput = {
     id?: SortOrder
     amount?: SortOrder
-    paidAt?: SortOrder
+    paid?: SortOrder
+    dueDate?: SortOrder
     memberId?: SortOrder
     associationId?: SortOrder
-    _count?: CotisationCountOrderByAggregateInput
-    _avg?: CotisationAvgOrderByAggregateInput
-    _max?: CotisationMaxOrderByAggregateInput
-    _min?: CotisationMinOrderByAggregateInput
-    _sum?: CotisationSumOrderByAggregateInput
+    createdAt?: SortOrder
+    _count?: FeeCountOrderByAggregateInput
+    _avg?: FeeAvgOrderByAggregateInput
+    _max?: FeeMaxOrderByAggregateInput
+    _min?: FeeMinOrderByAggregateInput
+    _sum?: FeeSumOrderByAggregateInput
   }
 
-  export type CotisationScalarWhereWithAggregatesInput = {
-    AND?: CotisationScalarWhereWithAggregatesInput | CotisationScalarWhereWithAggregatesInput[]
-    OR?: CotisationScalarWhereWithAggregatesInput[]
-    NOT?: CotisationScalarWhereWithAggregatesInput | CotisationScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Cotisation"> | string
-    amount?: FloatWithAggregatesFilter<"Cotisation"> | number
-    paidAt?: DateTimeWithAggregatesFilter<"Cotisation"> | Date | string
-    memberId?: StringWithAggregatesFilter<"Cotisation"> | string
-    associationId?: StringWithAggregatesFilter<"Cotisation"> | string
+  export type FeeScalarWhereWithAggregatesInput = {
+    AND?: FeeScalarWhereWithAggregatesInput | FeeScalarWhereWithAggregatesInput[]
+    OR?: FeeScalarWhereWithAggregatesInput[]
+    NOT?: FeeScalarWhereWithAggregatesInput | FeeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Fee"> | string
+    amount?: FloatWithAggregatesFilter<"Fee"> | number
+    paid?: BoolWithAggregatesFilter<"Fee"> | boolean
+    dueDate?: DateTimeWithAggregatesFilter<"Fee"> | Date | string
+    memberId?: StringWithAggregatesFilter<"Fee"> | string
+    associationId?: StringWithAggregatesFilter<"Fee"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Fee"> | Date | string
   }
 
   export type ActivityWhereInput = {
@@ -9812,29 +5964,21 @@ export namespace Prisma {
     NOT?: ActivityWhereInput | ActivityWhereInput[]
     id?: StringFilter<"Activity"> | string
     title?: StringFilter<"Activity"> | string
-    date?: DateTimeFilter<"Activity"> | Date | string
     description?: StringNullableFilter<"Activity"> | string | null
+    date?: DateTimeFilter<"Activity"> | Date | string
     associationId?: StringFilter<"Activity"> | string
-    memberId?: StringNullableFilter<"Activity"> | string | null
     createdAt?: DateTimeFilter<"Activity"> | Date | string
-    updatedAt?: DateTimeFilter<"Activity"> | Date | string
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-    member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
-    presences?: PresenceListRelationFilter
   }
 
   export type ActivityOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
-    date?: SortOrder
     description?: SortOrderInput | SortOrder
+    date?: SortOrder
     associationId?: SortOrder
-    memberId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
     association?: AssociationOrderByWithRelationInput
-    member?: MemberOrderByWithRelationInput
-    presences?: PresenceOrderByRelationAggregateInput
   }
 
   export type ActivityWhereUniqueInput = Prisma.AtLeast<{
@@ -9843,26 +5987,20 @@ export namespace Prisma {
     OR?: ActivityWhereInput[]
     NOT?: ActivityWhereInput | ActivityWhereInput[]
     title?: StringFilter<"Activity"> | string
-    date?: DateTimeFilter<"Activity"> | Date | string
     description?: StringNullableFilter<"Activity"> | string | null
+    date?: DateTimeFilter<"Activity"> | Date | string
     associationId?: StringFilter<"Activity"> | string
-    memberId?: StringNullableFilter<"Activity"> | string | null
     createdAt?: DateTimeFilter<"Activity"> | Date | string
-    updatedAt?: DateTimeFilter<"Activity"> | Date | string
     association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-    member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
-    presences?: PresenceListRelationFilter
   }, "id">
 
   export type ActivityOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
-    date?: SortOrder
     description?: SortOrderInput | SortOrder
+    date?: SortOrder
     associationId?: SortOrder
-    memberId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
     _count?: ActivityCountOrderByAggregateInput
     _max?: ActivityMaxOrderByAggregateInput
     _min?: ActivityMinOrderByAggregateInput
@@ -9874,692 +6012,259 @@ export namespace Prisma {
     NOT?: ActivityScalarWhereWithAggregatesInput | ActivityScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Activity"> | string
     title?: StringWithAggregatesFilter<"Activity"> | string
-    date?: DateTimeWithAggregatesFilter<"Activity"> | Date | string
     description?: StringNullableWithAggregatesFilter<"Activity"> | string | null
+    date?: DateTimeWithAggregatesFilter<"Activity"> | Date | string
     associationId?: StringWithAggregatesFilter<"Activity"> | string
-    memberId?: StringNullableWithAggregatesFilter<"Activity"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Activity"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Activity"> | Date | string
-  }
-
-  export type UserWhereInput = {
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    id?: StringFilter<"User"> | string
-    name?: StringNullableFilter<"User"> | string | null
-    email?: StringFilter<"User"> | string
-    password?: StringFilter<"User"> | string
-    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    memberId?: StringNullableFilter<"User"> | string | null
-    member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
-  }
-
-  export type UserOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrderInput | SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    emailVerified?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    memberId?: SortOrderInput | SortOrder
-    member?: MemberOrderByWithRelationInput
-  }
-
-  export type UserWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    email?: string
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    name?: StringNullableFilter<"User"> | string | null
-    password?: StringFilter<"User"> | string
-    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    memberId?: StringNullableFilter<"User"> | string | null
-    member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
-  }, "id" | "email">
-
-  export type UserOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrderInput | SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    emailVerified?: SortOrderInput | SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    memberId?: SortOrderInput | SortOrder
-    _count?: UserCountOrderByAggregateInput
-    _max?: UserMaxOrderByAggregateInput
-    _min?: UserMinOrderByAggregateInput
-  }
-
-  export type UserScalarWhereWithAggregatesInput = {
-    AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    OR?: UserScalarWhereWithAggregatesInput[]
-    NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"User"> | string
-    name?: StringNullableWithAggregatesFilter<"User"> | string | null
-    email?: StringWithAggregatesFilter<"User"> | string
-    password?: StringWithAggregatesFilter<"User"> | string
-    emailVerified?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    memberId?: StringNullableWithAggregatesFilter<"User"> | string | null
-  }
-
-  export type InvitationWhereInput = {
-    AND?: InvitationWhereInput | InvitationWhereInput[]
-    OR?: InvitationWhereInput[]
-    NOT?: InvitationWhereInput | InvitationWhereInput[]
-    id?: StringFilter<"Invitation"> | string
-    email?: StringFilter<"Invitation"> | string
-    role?: StringFilter<"Invitation"> | string
-    token?: StringFilter<"Invitation"> | string
-    expiresAt?: DateTimeFilter<"Invitation"> | Date | string
-    used?: BoolFilter<"Invitation"> | boolean
-    associationId?: StringFilter<"Invitation"> | string
-    createdAt?: DateTimeFilter<"Invitation"> | Date | string
-    association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-  }
-
-  export type InvitationOrderByWithRelationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    used?: SortOrder
-    associationId?: SortOrder
-    createdAt?: SortOrder
-    association?: AssociationOrderByWithRelationInput
-  }
-
-  export type InvitationWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    token?: string
-    AND?: InvitationWhereInput | InvitationWhereInput[]
-    OR?: InvitationWhereInput[]
-    NOT?: InvitationWhereInput | InvitationWhereInput[]
-    email?: StringFilter<"Invitation"> | string
-    role?: StringFilter<"Invitation"> | string
-    expiresAt?: DateTimeFilter<"Invitation"> | Date | string
-    used?: BoolFilter<"Invitation"> | boolean
-    associationId?: StringFilter<"Invitation"> | string
-    createdAt?: DateTimeFilter<"Invitation"> | Date | string
-    association?: XOR<AssociationScalarRelationFilter, AssociationWhereInput>
-  }, "id" | "token">
-
-  export type InvitationOrderByWithAggregationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    used?: SortOrder
-    associationId?: SortOrder
-    createdAt?: SortOrder
-    _count?: InvitationCountOrderByAggregateInput
-    _max?: InvitationMaxOrderByAggregateInput
-    _min?: InvitationMinOrderByAggregateInput
-  }
-
-  export type InvitationScalarWhereWithAggregatesInput = {
-    AND?: InvitationScalarWhereWithAggregatesInput | InvitationScalarWhereWithAggregatesInput[]
-    OR?: InvitationScalarWhereWithAggregatesInput[]
-    NOT?: InvitationScalarWhereWithAggregatesInput | InvitationScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Invitation"> | string
-    email?: StringWithAggregatesFilter<"Invitation"> | string
-    role?: StringWithAggregatesFilter<"Invitation"> | string
-    token?: StringWithAggregatesFilter<"Invitation"> | string
-    expiresAt?: DateTimeWithAggregatesFilter<"Invitation"> | Date | string
-    used?: BoolWithAggregatesFilter<"Invitation"> | boolean
-    associationId?: StringWithAggregatesFilter<"Invitation"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Invitation"> | Date | string
-  }
-
-  export type PresenceWhereInput = {
-    AND?: PresenceWhereInput | PresenceWhereInput[]
-    OR?: PresenceWhereInput[]
-    NOT?: PresenceWhereInput | PresenceWhereInput[]
-    id?: StringFilter<"Presence"> | string
-    activityId?: StringFilter<"Presence"> | string
-    memberId?: StringFilter<"Presence"> | string
-    present?: BoolFilter<"Presence"> | boolean
-    createdAt?: DateTimeFilter<"Presence"> | Date | string
-    activity?: XOR<ActivityScalarRelationFilter, ActivityWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-  }
-
-  export type PresenceOrderByWithRelationInput = {
-    id?: SortOrder
-    activityId?: SortOrder
-    memberId?: SortOrder
-    present?: SortOrder
-    createdAt?: SortOrder
-    activity?: ActivityOrderByWithRelationInput
-    member?: MemberOrderByWithRelationInput
-  }
-
-  export type PresenceWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    activityId_memberId?: PresenceActivityIdMemberIdCompoundUniqueInput
-    AND?: PresenceWhereInput | PresenceWhereInput[]
-    OR?: PresenceWhereInput[]
-    NOT?: PresenceWhereInput | PresenceWhereInput[]
-    activityId?: StringFilter<"Presence"> | string
-    memberId?: StringFilter<"Presence"> | string
-    present?: BoolFilter<"Presence"> | boolean
-    createdAt?: DateTimeFilter<"Presence"> | Date | string
-    activity?: XOR<ActivityScalarRelationFilter, ActivityWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-  }, "id" | "activityId_memberId">
-
-  export type PresenceOrderByWithAggregationInput = {
-    id?: SortOrder
-    activityId?: SortOrder
-    memberId?: SortOrder
-    present?: SortOrder
-    createdAt?: SortOrder
-    _count?: PresenceCountOrderByAggregateInput
-    _max?: PresenceMaxOrderByAggregateInput
-    _min?: PresenceMinOrderByAggregateInput
-  }
-
-  export type PresenceScalarWhereWithAggregatesInput = {
-    AND?: PresenceScalarWhereWithAggregatesInput | PresenceScalarWhereWithAggregatesInput[]
-    OR?: PresenceScalarWhereWithAggregatesInput[]
-    NOT?: PresenceScalarWhereWithAggregatesInput | PresenceScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Presence"> | string
-    activityId?: StringWithAggregatesFilter<"Presence"> | string
-    memberId?: StringWithAggregatesFilter<"Presence"> | string
-    present?: BoolWithAggregatesFilter<"Presence"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"Presence"> | Date | string
   }
 
   export type AssociationCreateInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationCreateNestedManyWithoutAssociationInput
     activities?: ActivityCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationCreateNestedManyWithoutAssociationInput
+    fees?: FeeCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationUncheckedCreateInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberUncheckedCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutAssociationInput
     activities?: ActivityUncheckedCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationUncheckedCreateNestedManyWithoutAssociationInput
+    fees?: FeeUncheckedCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     members?: MemberUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUpdateManyWithoutAssociationNestedInput
   }
 
   export type AssociationUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     members?: MemberUncheckedUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUncheckedUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUncheckedUpdateManyWithoutAssociationNestedInput
   }
 
   export type AssociationCreateManyInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
   }
 
   export type AssociationUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AssociationUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MemberCreateInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     createdAt?: Date | string
-    updatedAt?: Date | string
     association: AssociationCreateNestedOneWithoutMembersInput
-    user?: UserCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationCreateNestedManyWithoutMemberInput
-    activities?: ActivityCreateNestedManyWithoutMemberInput
-    presences?: PresenceCreateNestedManyWithoutMemberInput
+    fees?: FeeCreateNestedManyWithoutMemberInput
   }
 
   export type MemberUncheckedCreateInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     associationId: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserUncheckedCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutMemberInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutMemberInput
-    presences?: PresenceUncheckedCreateNestedManyWithoutMemberInput
+    fees?: FeeUncheckedCreateNestedManyWithoutMemberInput
   }
 
   export type MemberUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     association?: AssociationUpdateOneRequiredWithoutMembersNestedInput
-    user?: UserUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUpdateManyWithoutMemberNestedInput
+    fees?: FeeUpdateManyWithoutMemberNestedInput
   }
 
   export type MemberUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     associationId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUncheckedUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUncheckedUpdateManyWithoutMemberNestedInput
+    fees?: FeeUncheckedUpdateManyWithoutMemberNestedInput
   }
 
   export type MemberCreateManyInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     associationId: string
     createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type MemberUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type MemberUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     associationId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CotisationCreateInput = {
+  export type FeeCreateInput = {
     id?: string
     amount: number
-    paidAt: Date | string
-    member: MemberCreateNestedOneWithoutCotisationsInput
-    association: AssociationCreateNestedOneWithoutCotisationsInput
+    paid?: boolean
+    dueDate: Date | string
+    createdAt?: Date | string
+    member: MemberCreateNestedOneWithoutFeesInput
+    association: AssociationCreateNestedOneWithoutFeesInput
   }
 
-  export type CotisationUncheckedCreateInput = {
+  export type FeeUncheckedCreateInput = {
     id?: string
     amount: number
-    paidAt: Date | string
+    paid?: boolean
+    dueDate: Date | string
     memberId: string
     associationId: string
+    createdAt?: Date | string
   }
 
-  export type CotisationUpdateInput = {
+  export type FeeUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneRequiredWithoutCotisationsNestedInput
-    association?: AssociationUpdateOneRequiredWithoutCotisationsNestedInput
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    member?: MemberUpdateOneRequiredWithoutFeesNestedInput
+    association?: AssociationUpdateOneRequiredWithoutFeesNestedInput
   }
 
-  export type CotisationUncheckedUpdateInput = {
+  export type FeeUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
     memberId?: StringFieldUpdateOperationsInput | string
     associationId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CotisationCreateManyInput = {
+  export type FeeCreateManyInput = {
     id?: string
     amount: number
-    paidAt: Date | string
+    paid?: boolean
+    dueDate: Date | string
     memberId: string
     associationId: string
+    createdAt?: Date | string
   }
 
-  export type CotisationUpdateManyMutationInput = {
+  export type FeeUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CotisationUncheckedUpdateManyInput = {
+  export type FeeUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
     memberId?: StringFieldUpdateOperationsInput | string
     associationId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ActivityCreateInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
+    date: Date | string
     createdAt?: Date | string
-    updatedAt?: Date | string
     association: AssociationCreateNestedOneWithoutActivitiesInput
-    member?: MemberCreateNestedOneWithoutActivitiesInput
-    presences?: PresenceCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
+    date: Date | string
     associationId: string
-    memberId?: string | null
     createdAt?: Date | string
-    updatedAt?: Date | string
-    presences?: PresenceUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     association?: AssociationUpdateOneRequiredWithoutActivitiesNestedInput
-    member?: MemberUpdateOneWithoutActivitiesNestedInput
-    presences?: PresenceUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     associationId?: StringFieldUpdateOperationsInput | string
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    presences?: PresenceUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityCreateManyInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
+    date: Date | string
     associationId: string
-    memberId?: string | null
     createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type ActivityUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ActivityUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     associationId?: StringFieldUpdateOperationsInput | string
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserCreateInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    member?: MemberCreateNestedOneWithoutUserInput
-  }
-
-  export type UserUncheckedCreateInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    memberId?: string | null
-  }
-
-  export type UserUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type UserCreateManyInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    memberId?: string | null
-  }
-
-  export type UserUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type InvitationCreateInput = {
-    id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
-    createdAt?: Date | string
-    association: AssociationCreateNestedOneWithoutInvitationsInput
-  }
-
-  export type InvitationUncheckedCreateInput = {
-    id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
-    associationId: string
-    createdAt?: Date | string
-  }
-
-  export type InvitationUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutInvitationsNestedInput
-  }
-
-  export type InvitationUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type InvitationCreateManyInput = {
-    id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
-    associationId: string
-    createdAt?: Date | string
-  }
-
-  export type InvitationUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type InvitationUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceCreateInput = {
-    id?: string
-    present: boolean
-    createdAt?: Date | string
-    activity: ActivityCreateNestedOneWithoutPresencesInput
-    member: MemberCreateNestedOneWithoutPresencesInput
-  }
-
-  export type PresenceUncheckedCreateInput = {
-    id?: string
-    activityId: string
-    memberId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type PresenceUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    activity?: ActivityUpdateOneRequiredWithoutPresencesNestedInput
-    member?: MemberUpdateOneRequiredWithoutPresencesNestedInput
-  }
-
-  export type PresenceUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    activityId?: StringFieldUpdateOperationsInput | string
-    memberId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceCreateManyInput = {
-    id?: string
-    activityId: string
-    memberId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type PresenceUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    activityId?: StringFieldUpdateOperationsInput | string
-    memberId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -10576,6 +6281,21 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -10595,29 +6315,24 @@ export namespace Prisma {
     none?: MemberWhereInput
   }
 
-  export type CotisationListRelationFilter = {
-    every?: CotisationWhereInput
-    some?: CotisationWhereInput
-    none?: CotisationWhereInput
-  }
-
   export type ActivityListRelationFilter = {
     every?: ActivityWhereInput
     some?: ActivityWhereInput
     none?: ActivityWhereInput
   }
 
-  export type InvitationListRelationFilter = {
-    every?: InvitationWhereInput
-    some?: InvitationWhereInput
-    none?: InvitationWhereInput
+  export type FeeListRelationFilter = {
+    every?: FeeWhereInput
+    some?: FeeWhereInput
+    none?: FeeWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type MemberOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type CotisationOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -10625,25 +6340,28 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type InvitationOrderByRelationAggregateInput = {
+  export type FeeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type AssociationCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
   export type AssociationMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
   export type AssociationMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -10665,6 +6383,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -10684,54 +6420,28 @@ export namespace Prisma {
     isNot?: AssociationWhereInput
   }
 
-  export type UserListRelationFilter = {
-    every?: UserWhereInput
-    some?: UserWhereInput
-    none?: UserWhereInput
-  }
-
-  export type PresenceListRelationFilter = {
-    every?: PresenceWhereInput
-    some?: PresenceWhereInput
-    none?: PresenceWhereInput
-  }
-
-  export type UserOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type PresenceOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type MemberCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    fullName?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     associationId?: SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type MemberMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    fullName?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     associationId?: SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type MemberMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    fullName?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     associationId?: SortOrder
     createdAt?: SortOrder
-    updatedAt?: SortOrder
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -10745,40 +6455,51 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type MemberScalarRelationFilter = {
     is?: MemberWhereInput
     isNot?: MemberWhereInput
   }
 
-  export type CotisationCountOrderByAggregateInput = {
+  export type FeeCountOrderByAggregateInput = {
     id?: SortOrder
     amount?: SortOrder
-    paidAt?: SortOrder
+    paid?: SortOrder
+    dueDate?: SortOrder
     memberId?: SortOrder
     associationId?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type CotisationAvgOrderByAggregateInput = {
+  export type FeeAvgOrderByAggregateInput = {
     amount?: SortOrder
   }
 
-  export type CotisationMaxOrderByAggregateInput = {
+  export type FeeMaxOrderByAggregateInput = {
     id?: SortOrder
     amount?: SortOrder
-    paidAt?: SortOrder
+    paid?: SortOrder
+    dueDate?: SortOrder
     memberId?: SortOrder
     associationId?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type CotisationMinOrderByAggregateInput = {
+  export type FeeMinOrderByAggregateInput = {
     id?: SortOrder
     amount?: SortOrder
-    paidAt?: SortOrder
+    paid?: SortOrder
+    dueDate?: SortOrder
     memberId?: SortOrder
     associationId?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type CotisationSumOrderByAggregateInput = {
+  export type FeeSumOrderByAggregateInput = {
     amount?: SortOrder
   }
 
@@ -10798,178 +6519,6 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type MemberNullableScalarRelationFilter = {
-    is?: MemberWhereInput | null
-    isNot?: MemberWhereInput | null
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
-  export type ActivityCountOrderByAggregateInput = {
-    id?: SortOrder
-    title?: SortOrder
-    date?: SortOrder
-    description?: SortOrder
-    associationId?: SortOrder
-    memberId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ActivityMaxOrderByAggregateInput = {
-    id?: SortOrder
-    title?: SortOrder
-    date?: SortOrder
-    description?: SortOrder
-    associationId?: SortOrder
-    memberId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ActivityMinOrderByAggregateInput = {
-    id?: SortOrder
-    title?: SortOrder
-    date?: SortOrder
-    description?: SortOrder
-    associationId?: SortOrder
-    memberId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
-  export type UserCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    emailVerified?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    memberId?: SortOrder
-  }
-
-  export type UserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    emailVerified?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    memberId?: SortOrder
-  }
-
-  export type UserMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    emailVerified?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    memberId?: SortOrder
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
-  export type InvitationCountOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    used?: SortOrder
-    associationId?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type InvitationMaxOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    used?: SortOrder
-    associationId?: SortOrder
-    createdAt?: SortOrder
-  }
-
-  export type InvitationMinOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-    token?: SortOrder
-    expiresAt?: SortOrder
-    used?: SortOrder
-    associationId?: SortOrder
-    createdAt?: SortOrder
-  }
-
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -10978,37 +6527,30 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type ActivityScalarRelationFilter = {
-    is?: ActivityWhereInput
-    isNot?: ActivityWhereInput
-  }
-
-  export type PresenceActivityIdMemberIdCompoundUniqueInput = {
-    activityId: string
-    memberId: string
-  }
-
-  export type PresenceCountOrderByAggregateInput = {
+  export type ActivityCountOrderByAggregateInput = {
     id?: SortOrder
-    activityId?: SortOrder
-    memberId?: SortOrder
-    present?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    date?: SortOrder
+    associationId?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type PresenceMaxOrderByAggregateInput = {
+  export type ActivityMaxOrderByAggregateInput = {
     id?: SortOrder
-    activityId?: SortOrder
-    memberId?: SortOrder
-    present?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    date?: SortOrder
+    associationId?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type PresenceMinOrderByAggregateInput = {
+  export type ActivityMinOrderByAggregateInput = {
     id?: SortOrder
-    activityId?: SortOrder
-    memberId?: SortOrder
-    present?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    date?: SortOrder
+    associationId?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -11019,13 +6561,6 @@ export namespace Prisma {
     connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
   }
 
-  export type CotisationCreateNestedManyWithoutAssociationInput = {
-    create?: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput> | CotisationCreateWithoutAssociationInput[] | CotisationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutAssociationInput | CotisationCreateOrConnectWithoutAssociationInput[]
-    createMany?: CotisationCreateManyAssociationInputEnvelope
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-  }
-
   export type ActivityCreateNestedManyWithoutAssociationInput = {
     create?: XOR<ActivityCreateWithoutAssociationInput, ActivityUncheckedCreateWithoutAssociationInput> | ActivityCreateWithoutAssociationInput[] | ActivityUncheckedCreateWithoutAssociationInput[]
     connectOrCreate?: ActivityCreateOrConnectWithoutAssociationInput | ActivityCreateOrConnectWithoutAssociationInput[]
@@ -11033,11 +6568,11 @@ export namespace Prisma {
     connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
   }
 
-  export type InvitationCreateNestedManyWithoutAssociationInput = {
-    create?: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput> | InvitationCreateWithoutAssociationInput[] | InvitationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: InvitationCreateOrConnectWithoutAssociationInput | InvitationCreateOrConnectWithoutAssociationInput[]
-    createMany?: InvitationCreateManyAssociationInputEnvelope
-    connect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
+  export type FeeCreateNestedManyWithoutAssociationInput = {
+    create?: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput> | FeeCreateWithoutAssociationInput[] | FeeUncheckedCreateWithoutAssociationInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutAssociationInput | FeeCreateOrConnectWithoutAssociationInput[]
+    createMany?: FeeCreateManyAssociationInputEnvelope
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
   }
 
   export type MemberUncheckedCreateNestedManyWithoutAssociationInput = {
@@ -11047,13 +6582,6 @@ export namespace Prisma {
     connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
   }
 
-  export type CotisationUncheckedCreateNestedManyWithoutAssociationInput = {
-    create?: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput> | CotisationCreateWithoutAssociationInput[] | CotisationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutAssociationInput | CotisationCreateOrConnectWithoutAssociationInput[]
-    createMany?: CotisationCreateManyAssociationInputEnvelope
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-  }
-
   export type ActivityUncheckedCreateNestedManyWithoutAssociationInput = {
     create?: XOR<ActivityCreateWithoutAssociationInput, ActivityUncheckedCreateWithoutAssociationInput> | ActivityCreateWithoutAssociationInput[] | ActivityUncheckedCreateWithoutAssociationInput[]
     connectOrCreate?: ActivityCreateOrConnectWithoutAssociationInput | ActivityCreateOrConnectWithoutAssociationInput[]
@@ -11061,15 +6589,19 @@ export namespace Prisma {
     connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
   }
 
-  export type InvitationUncheckedCreateNestedManyWithoutAssociationInput = {
-    create?: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput> | InvitationCreateWithoutAssociationInput[] | InvitationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: InvitationCreateOrConnectWithoutAssociationInput | InvitationCreateOrConnectWithoutAssociationInput[]
-    createMany?: InvitationCreateManyAssociationInputEnvelope
-    connect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
+  export type FeeUncheckedCreateNestedManyWithoutAssociationInput = {
+    create?: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput> | FeeCreateWithoutAssociationInput[] | FeeUncheckedCreateWithoutAssociationInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutAssociationInput | FeeCreateOrConnectWithoutAssociationInput[]
+    createMany?: FeeCreateManyAssociationInputEnvelope
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -11090,20 +6622,6 @@ export namespace Prisma {
     deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
   }
 
-  export type CotisationUpdateManyWithoutAssociationNestedInput = {
-    create?: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput> | CotisationCreateWithoutAssociationInput[] | CotisationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutAssociationInput | CotisationCreateOrConnectWithoutAssociationInput[]
-    upsert?: CotisationUpsertWithWhereUniqueWithoutAssociationInput | CotisationUpsertWithWhereUniqueWithoutAssociationInput[]
-    createMany?: CotisationCreateManyAssociationInputEnvelope
-    set?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    disconnect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    delete?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    update?: CotisationUpdateWithWhereUniqueWithoutAssociationInput | CotisationUpdateWithWhereUniqueWithoutAssociationInput[]
-    updateMany?: CotisationUpdateManyWithWhereWithoutAssociationInput | CotisationUpdateManyWithWhereWithoutAssociationInput[]
-    deleteMany?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
-  }
-
   export type ActivityUpdateManyWithoutAssociationNestedInput = {
     create?: XOR<ActivityCreateWithoutAssociationInput, ActivityUncheckedCreateWithoutAssociationInput> | ActivityCreateWithoutAssociationInput[] | ActivityUncheckedCreateWithoutAssociationInput[]
     connectOrCreate?: ActivityCreateOrConnectWithoutAssociationInput | ActivityCreateOrConnectWithoutAssociationInput[]
@@ -11118,18 +6636,18 @@ export namespace Prisma {
     deleteMany?: ActivityScalarWhereInput | ActivityScalarWhereInput[]
   }
 
-  export type InvitationUpdateManyWithoutAssociationNestedInput = {
-    create?: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput> | InvitationCreateWithoutAssociationInput[] | InvitationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: InvitationCreateOrConnectWithoutAssociationInput | InvitationCreateOrConnectWithoutAssociationInput[]
-    upsert?: InvitationUpsertWithWhereUniqueWithoutAssociationInput | InvitationUpsertWithWhereUniqueWithoutAssociationInput[]
-    createMany?: InvitationCreateManyAssociationInputEnvelope
-    set?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    disconnect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    delete?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    connect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    update?: InvitationUpdateWithWhereUniqueWithoutAssociationInput | InvitationUpdateWithWhereUniqueWithoutAssociationInput[]
-    updateMany?: InvitationUpdateManyWithWhereWithoutAssociationInput | InvitationUpdateManyWithWhereWithoutAssociationInput[]
-    deleteMany?: InvitationScalarWhereInput | InvitationScalarWhereInput[]
+  export type FeeUpdateManyWithoutAssociationNestedInput = {
+    create?: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput> | FeeCreateWithoutAssociationInput[] | FeeUncheckedCreateWithoutAssociationInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutAssociationInput | FeeCreateOrConnectWithoutAssociationInput[]
+    upsert?: FeeUpsertWithWhereUniqueWithoutAssociationInput | FeeUpsertWithWhereUniqueWithoutAssociationInput[]
+    createMany?: FeeCreateManyAssociationInputEnvelope
+    set?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    disconnect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    delete?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    update?: FeeUpdateWithWhereUniqueWithoutAssociationInput | FeeUpdateWithWhereUniqueWithoutAssociationInput[]
+    updateMany?: FeeUpdateManyWithWhereWithoutAssociationInput | FeeUpdateManyWithWhereWithoutAssociationInput[]
+    deleteMany?: FeeScalarWhereInput | FeeScalarWhereInput[]
   }
 
   export type MemberUncheckedUpdateManyWithoutAssociationNestedInput = {
@@ -11146,20 +6664,6 @@ export namespace Prisma {
     deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
   }
 
-  export type CotisationUncheckedUpdateManyWithoutAssociationNestedInput = {
-    create?: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput> | CotisationCreateWithoutAssociationInput[] | CotisationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutAssociationInput | CotisationCreateOrConnectWithoutAssociationInput[]
-    upsert?: CotisationUpsertWithWhereUniqueWithoutAssociationInput | CotisationUpsertWithWhereUniqueWithoutAssociationInput[]
-    createMany?: CotisationCreateManyAssociationInputEnvelope
-    set?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    disconnect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    delete?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    update?: CotisationUpdateWithWhereUniqueWithoutAssociationInput | CotisationUpdateWithWhereUniqueWithoutAssociationInput[]
-    updateMany?: CotisationUpdateManyWithWhereWithoutAssociationInput | CotisationUpdateManyWithWhereWithoutAssociationInput[]
-    deleteMany?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
-  }
-
   export type ActivityUncheckedUpdateManyWithoutAssociationNestedInput = {
     create?: XOR<ActivityCreateWithoutAssociationInput, ActivityUncheckedCreateWithoutAssociationInput> | ActivityCreateWithoutAssociationInput[] | ActivityUncheckedCreateWithoutAssociationInput[]
     connectOrCreate?: ActivityCreateOrConnectWithoutAssociationInput | ActivityCreateOrConnectWithoutAssociationInput[]
@@ -11174,18 +6678,18 @@ export namespace Prisma {
     deleteMany?: ActivityScalarWhereInput | ActivityScalarWhereInput[]
   }
 
-  export type InvitationUncheckedUpdateManyWithoutAssociationNestedInput = {
-    create?: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput> | InvitationCreateWithoutAssociationInput[] | InvitationUncheckedCreateWithoutAssociationInput[]
-    connectOrCreate?: InvitationCreateOrConnectWithoutAssociationInput | InvitationCreateOrConnectWithoutAssociationInput[]
-    upsert?: InvitationUpsertWithWhereUniqueWithoutAssociationInput | InvitationUpsertWithWhereUniqueWithoutAssociationInput[]
-    createMany?: InvitationCreateManyAssociationInputEnvelope
-    set?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    disconnect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    delete?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    connect?: InvitationWhereUniqueInput | InvitationWhereUniqueInput[]
-    update?: InvitationUpdateWithWhereUniqueWithoutAssociationInput | InvitationUpdateWithWhereUniqueWithoutAssociationInput[]
-    updateMany?: InvitationUpdateManyWithWhereWithoutAssociationInput | InvitationUpdateManyWithWhereWithoutAssociationInput[]
-    deleteMany?: InvitationScalarWhereInput | InvitationScalarWhereInput[]
+  export type FeeUncheckedUpdateManyWithoutAssociationNestedInput = {
+    create?: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput> | FeeCreateWithoutAssociationInput[] | FeeUncheckedCreateWithoutAssociationInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutAssociationInput | FeeCreateOrConnectWithoutAssociationInput[]
+    upsert?: FeeUpsertWithWhereUniqueWithoutAssociationInput | FeeUpsertWithWhereUniqueWithoutAssociationInput[]
+    createMany?: FeeCreateManyAssociationInputEnvelope
+    set?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    disconnect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    delete?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    update?: FeeUpdateWithWhereUniqueWithoutAssociationInput | FeeUpdateWithWhereUniqueWithoutAssociationInput[]
+    updateMany?: FeeUpdateManyWithWhereWithoutAssociationInput | FeeUpdateManyWithWhereWithoutAssociationInput[]
+    deleteMany?: FeeScalarWhereInput | FeeScalarWhereInput[]
   }
 
   export type AssociationCreateNestedOneWithoutMembersInput = {
@@ -11194,60 +6698,18 @@ export namespace Prisma {
     connect?: AssociationWhereUniqueInput
   }
 
-  export type UserCreateNestedManyWithoutMemberInput = {
-    create?: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput> | UserCreateWithoutMemberInput[] | UserUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutMemberInput | UserCreateOrConnectWithoutMemberInput[]
-    createMany?: UserCreateManyMemberInputEnvelope
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  export type FeeCreateNestedManyWithoutMemberInput = {
+    create?: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput> | FeeCreateWithoutMemberInput[] | FeeUncheckedCreateWithoutMemberInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutMemberInput | FeeCreateOrConnectWithoutMemberInput[]
+    createMany?: FeeCreateManyMemberInputEnvelope
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
   }
 
-  export type CotisationCreateNestedManyWithoutMemberInput = {
-    create?: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput> | CotisationCreateWithoutMemberInput[] | CotisationUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutMemberInput | CotisationCreateOrConnectWithoutMemberInput[]
-    createMany?: CotisationCreateManyMemberInputEnvelope
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-  }
-
-  export type ActivityCreateNestedManyWithoutMemberInput = {
-    create?: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput> | ActivityCreateWithoutMemberInput[] | ActivityUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: ActivityCreateOrConnectWithoutMemberInput | ActivityCreateOrConnectWithoutMemberInput[]
-    createMany?: ActivityCreateManyMemberInputEnvelope
-    connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-  }
-
-  export type PresenceCreateNestedManyWithoutMemberInput = {
-    create?: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput> | PresenceCreateWithoutMemberInput[] | PresenceUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutMemberInput | PresenceCreateOrConnectWithoutMemberInput[]
-    createMany?: PresenceCreateManyMemberInputEnvelope
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-  }
-
-  export type UserUncheckedCreateNestedManyWithoutMemberInput = {
-    create?: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput> | UserCreateWithoutMemberInput[] | UserUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutMemberInput | UserCreateOrConnectWithoutMemberInput[]
-    createMany?: UserCreateManyMemberInputEnvelope
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-  }
-
-  export type CotisationUncheckedCreateNestedManyWithoutMemberInput = {
-    create?: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput> | CotisationCreateWithoutMemberInput[] | CotisationUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutMemberInput | CotisationCreateOrConnectWithoutMemberInput[]
-    createMany?: CotisationCreateManyMemberInputEnvelope
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-  }
-
-  export type ActivityUncheckedCreateNestedManyWithoutMemberInput = {
-    create?: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput> | ActivityCreateWithoutMemberInput[] | ActivityUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: ActivityCreateOrConnectWithoutMemberInput | ActivityCreateOrConnectWithoutMemberInput[]
-    createMany?: ActivityCreateManyMemberInputEnvelope
-    connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-  }
-
-  export type PresenceUncheckedCreateNestedManyWithoutMemberInput = {
-    create?: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput> | PresenceCreateWithoutMemberInput[] | PresenceUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutMemberInput | PresenceCreateOrConnectWithoutMemberInput[]
-    createMany?: PresenceCreateManyMemberInputEnvelope
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
+  export type FeeUncheckedCreateNestedManyWithoutMemberInput = {
+    create?: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput> | FeeCreateWithoutMemberInput[] | FeeUncheckedCreateWithoutMemberInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutMemberInput | FeeCreateOrConnectWithoutMemberInput[]
+    createMany?: FeeCreateManyMemberInputEnvelope
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
   }
 
   export type AssociationUpdateOneRequiredWithoutMembersNestedInput = {
@@ -11258,127 +6720,43 @@ export namespace Prisma {
     update?: XOR<XOR<AssociationUpdateToOneWithWhereWithoutMembersInput, AssociationUpdateWithoutMembersInput>, AssociationUncheckedUpdateWithoutMembersInput>
   }
 
-  export type UserUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput> | UserCreateWithoutMemberInput[] | UserUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutMemberInput | UserCreateOrConnectWithoutMemberInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutMemberInput | UserUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: UserCreateManyMemberInputEnvelope
-    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutMemberInput | UserUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutMemberInput | UserUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
+  export type FeeUpdateManyWithoutMemberNestedInput = {
+    create?: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput> | FeeCreateWithoutMemberInput[] | FeeUncheckedCreateWithoutMemberInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutMemberInput | FeeCreateOrConnectWithoutMemberInput[]
+    upsert?: FeeUpsertWithWhereUniqueWithoutMemberInput | FeeUpsertWithWhereUniqueWithoutMemberInput[]
+    createMany?: FeeCreateManyMemberInputEnvelope
+    set?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    disconnect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    delete?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    update?: FeeUpdateWithWhereUniqueWithoutMemberInput | FeeUpdateWithWhereUniqueWithoutMemberInput[]
+    updateMany?: FeeUpdateManyWithWhereWithoutMemberInput | FeeUpdateManyWithWhereWithoutMemberInput[]
+    deleteMany?: FeeScalarWhereInput | FeeScalarWhereInput[]
   }
 
-  export type CotisationUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput> | CotisationCreateWithoutMemberInput[] | CotisationUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutMemberInput | CotisationCreateOrConnectWithoutMemberInput[]
-    upsert?: CotisationUpsertWithWhereUniqueWithoutMemberInput | CotisationUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: CotisationCreateManyMemberInputEnvelope
-    set?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    disconnect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    delete?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    update?: CotisationUpdateWithWhereUniqueWithoutMemberInput | CotisationUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: CotisationUpdateManyWithWhereWithoutMemberInput | CotisationUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
+  export type FeeUncheckedUpdateManyWithoutMemberNestedInput = {
+    create?: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput> | FeeCreateWithoutMemberInput[] | FeeUncheckedCreateWithoutMemberInput[]
+    connectOrCreate?: FeeCreateOrConnectWithoutMemberInput | FeeCreateOrConnectWithoutMemberInput[]
+    upsert?: FeeUpsertWithWhereUniqueWithoutMemberInput | FeeUpsertWithWhereUniqueWithoutMemberInput[]
+    createMany?: FeeCreateManyMemberInputEnvelope
+    set?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    disconnect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    delete?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    connect?: FeeWhereUniqueInput | FeeWhereUniqueInput[]
+    update?: FeeUpdateWithWhereUniqueWithoutMemberInput | FeeUpdateWithWhereUniqueWithoutMemberInput[]
+    updateMany?: FeeUpdateManyWithWhereWithoutMemberInput | FeeUpdateManyWithWhereWithoutMemberInput[]
+    deleteMany?: FeeScalarWhereInput | FeeScalarWhereInput[]
   }
 
-  export type ActivityUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput> | ActivityCreateWithoutMemberInput[] | ActivityUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: ActivityCreateOrConnectWithoutMemberInput | ActivityCreateOrConnectWithoutMemberInput[]
-    upsert?: ActivityUpsertWithWhereUniqueWithoutMemberInput | ActivityUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: ActivityCreateManyMemberInputEnvelope
-    set?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    disconnect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    delete?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    update?: ActivityUpdateWithWhereUniqueWithoutMemberInput | ActivityUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: ActivityUpdateManyWithWhereWithoutMemberInput | ActivityUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: ActivityScalarWhereInput | ActivityScalarWhereInput[]
-  }
-
-  export type PresenceUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput> | PresenceCreateWithoutMemberInput[] | PresenceUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutMemberInput | PresenceCreateOrConnectWithoutMemberInput[]
-    upsert?: PresenceUpsertWithWhereUniqueWithoutMemberInput | PresenceUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: PresenceCreateManyMemberInputEnvelope
-    set?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    disconnect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    delete?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    update?: PresenceUpdateWithWhereUniqueWithoutMemberInput | PresenceUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: PresenceUpdateManyWithWhereWithoutMemberInput | PresenceUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-  }
-
-  export type UserUncheckedUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput> | UserCreateWithoutMemberInput[] | UserUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutMemberInput | UserCreateOrConnectWithoutMemberInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutMemberInput | UserUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: UserCreateManyMemberInputEnvelope
-    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutMemberInput | UserUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutMemberInput | UserUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
-  }
-
-  export type CotisationUncheckedUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput> | CotisationCreateWithoutMemberInput[] | CotisationUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: CotisationCreateOrConnectWithoutMemberInput | CotisationCreateOrConnectWithoutMemberInput[]
-    upsert?: CotisationUpsertWithWhereUniqueWithoutMemberInput | CotisationUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: CotisationCreateManyMemberInputEnvelope
-    set?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    disconnect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    delete?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    connect?: CotisationWhereUniqueInput | CotisationWhereUniqueInput[]
-    update?: CotisationUpdateWithWhereUniqueWithoutMemberInput | CotisationUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: CotisationUpdateManyWithWhereWithoutMemberInput | CotisationUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
-  }
-
-  export type ActivityUncheckedUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput> | ActivityCreateWithoutMemberInput[] | ActivityUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: ActivityCreateOrConnectWithoutMemberInput | ActivityCreateOrConnectWithoutMemberInput[]
-    upsert?: ActivityUpsertWithWhereUniqueWithoutMemberInput | ActivityUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: ActivityCreateManyMemberInputEnvelope
-    set?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    disconnect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    delete?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    connect?: ActivityWhereUniqueInput | ActivityWhereUniqueInput[]
-    update?: ActivityUpdateWithWhereUniqueWithoutMemberInput | ActivityUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: ActivityUpdateManyWithWhereWithoutMemberInput | ActivityUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: ActivityScalarWhereInput | ActivityScalarWhereInput[]
-  }
-
-  export type PresenceUncheckedUpdateManyWithoutMemberNestedInput = {
-    create?: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput> | PresenceCreateWithoutMemberInput[] | PresenceUncheckedCreateWithoutMemberInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutMemberInput | PresenceCreateOrConnectWithoutMemberInput[]
-    upsert?: PresenceUpsertWithWhereUniqueWithoutMemberInput | PresenceUpsertWithWhereUniqueWithoutMemberInput[]
-    createMany?: PresenceCreateManyMemberInputEnvelope
-    set?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    disconnect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    delete?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    update?: PresenceUpdateWithWhereUniqueWithoutMemberInput | PresenceUpdateWithWhereUniqueWithoutMemberInput[]
-    updateMany?: PresenceUpdateManyWithWhereWithoutMemberInput | PresenceUpdateManyWithWhereWithoutMemberInput[]
-    deleteMany?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-  }
-
-  export type MemberCreateNestedOneWithoutCotisationsInput = {
-    create?: XOR<MemberCreateWithoutCotisationsInput, MemberUncheckedCreateWithoutCotisationsInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutCotisationsInput
+  export type MemberCreateNestedOneWithoutFeesInput = {
+    create?: XOR<MemberCreateWithoutFeesInput, MemberUncheckedCreateWithoutFeesInput>
+    connectOrCreate?: MemberCreateOrConnectWithoutFeesInput
     connect?: MemberWhereUniqueInput
   }
 
-  export type AssociationCreateNestedOneWithoutCotisationsInput = {
-    create?: XOR<AssociationCreateWithoutCotisationsInput, AssociationUncheckedCreateWithoutCotisationsInput>
-    connectOrCreate?: AssociationCreateOrConnectWithoutCotisationsInput
+  export type AssociationCreateNestedOneWithoutFeesInput = {
+    create?: XOR<AssociationCreateWithoutFeesInput, AssociationUncheckedCreateWithoutFeesInput>
+    connectOrCreate?: AssociationCreateOrConnectWithoutFeesInput
     connect?: AssociationWhereUniqueInput
   }
 
@@ -11390,20 +6768,24 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type MemberUpdateOneRequiredWithoutCotisationsNestedInput = {
-    create?: XOR<MemberCreateWithoutCotisationsInput, MemberUncheckedCreateWithoutCotisationsInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutCotisationsInput
-    upsert?: MemberUpsertWithoutCotisationsInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutCotisationsInput, MemberUpdateWithoutCotisationsInput>, MemberUncheckedUpdateWithoutCotisationsInput>
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
-  export type AssociationUpdateOneRequiredWithoutCotisationsNestedInput = {
-    create?: XOR<AssociationCreateWithoutCotisationsInput, AssociationUncheckedCreateWithoutCotisationsInput>
-    connectOrCreate?: AssociationCreateOrConnectWithoutCotisationsInput
-    upsert?: AssociationUpsertWithoutCotisationsInput
+  export type MemberUpdateOneRequiredWithoutFeesNestedInput = {
+    create?: XOR<MemberCreateWithoutFeesInput, MemberUncheckedCreateWithoutFeesInput>
+    connectOrCreate?: MemberCreateOrConnectWithoutFeesInput
+    upsert?: MemberUpsertWithoutFeesInput
+    connect?: MemberWhereUniqueInput
+    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutFeesInput, MemberUpdateWithoutFeesInput>, MemberUncheckedUpdateWithoutFeesInput>
+  }
+
+  export type AssociationUpdateOneRequiredWithoutFeesNestedInput = {
+    create?: XOR<AssociationCreateWithoutFeesInput, AssociationUncheckedCreateWithoutFeesInput>
+    connectOrCreate?: AssociationCreateOrConnectWithoutFeesInput
+    upsert?: AssociationUpsertWithoutFeesInput
     connect?: AssociationWhereUniqueInput
-    update?: XOR<XOR<AssociationUpdateToOneWithWhereWithoutCotisationsInput, AssociationUpdateWithoutCotisationsInput>, AssociationUncheckedUpdateWithoutCotisationsInput>
+    update?: XOR<XOR<AssociationUpdateToOneWithWhereWithoutFeesInput, AssociationUpdateWithoutFeesInput>, AssociationUncheckedUpdateWithoutFeesInput>
   }
 
   export type AssociationCreateNestedOneWithoutActivitiesInput = {
@@ -11412,140 +6794,12 @@ export namespace Prisma {
     connect?: AssociationWhereUniqueInput
   }
 
-  export type MemberCreateNestedOneWithoutActivitiesInput = {
-    create?: XOR<MemberCreateWithoutActivitiesInput, MemberUncheckedCreateWithoutActivitiesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutActivitiesInput
-    connect?: MemberWhereUniqueInput
-  }
-
-  export type PresenceCreateNestedManyWithoutActivityInput = {
-    create?: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput> | PresenceCreateWithoutActivityInput[] | PresenceUncheckedCreateWithoutActivityInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutActivityInput | PresenceCreateOrConnectWithoutActivityInput[]
-    createMany?: PresenceCreateManyActivityInputEnvelope
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-  }
-
-  export type PresenceUncheckedCreateNestedManyWithoutActivityInput = {
-    create?: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput> | PresenceCreateWithoutActivityInput[] | PresenceUncheckedCreateWithoutActivityInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutActivityInput | PresenceCreateOrConnectWithoutActivityInput[]
-    createMany?: PresenceCreateManyActivityInputEnvelope
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
   export type AssociationUpdateOneRequiredWithoutActivitiesNestedInput = {
     create?: XOR<AssociationCreateWithoutActivitiesInput, AssociationUncheckedCreateWithoutActivitiesInput>
     connectOrCreate?: AssociationCreateOrConnectWithoutActivitiesInput
     upsert?: AssociationUpsertWithoutActivitiesInput
     connect?: AssociationWhereUniqueInput
     update?: XOR<XOR<AssociationUpdateToOneWithWhereWithoutActivitiesInput, AssociationUpdateWithoutActivitiesInput>, AssociationUncheckedUpdateWithoutActivitiesInput>
-  }
-
-  export type MemberUpdateOneWithoutActivitiesNestedInput = {
-    create?: XOR<MemberCreateWithoutActivitiesInput, MemberUncheckedCreateWithoutActivitiesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutActivitiesInput
-    upsert?: MemberUpsertWithoutActivitiesInput
-    disconnect?: MemberWhereInput | boolean
-    delete?: MemberWhereInput | boolean
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutActivitiesInput, MemberUpdateWithoutActivitiesInput>, MemberUncheckedUpdateWithoutActivitiesInput>
-  }
-
-  export type PresenceUpdateManyWithoutActivityNestedInput = {
-    create?: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput> | PresenceCreateWithoutActivityInput[] | PresenceUncheckedCreateWithoutActivityInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutActivityInput | PresenceCreateOrConnectWithoutActivityInput[]
-    upsert?: PresenceUpsertWithWhereUniqueWithoutActivityInput | PresenceUpsertWithWhereUniqueWithoutActivityInput[]
-    createMany?: PresenceCreateManyActivityInputEnvelope
-    set?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    disconnect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    delete?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    update?: PresenceUpdateWithWhereUniqueWithoutActivityInput | PresenceUpdateWithWhereUniqueWithoutActivityInput[]
-    updateMany?: PresenceUpdateManyWithWhereWithoutActivityInput | PresenceUpdateManyWithWhereWithoutActivityInput[]
-    deleteMany?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-  }
-
-  export type PresenceUncheckedUpdateManyWithoutActivityNestedInput = {
-    create?: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput> | PresenceCreateWithoutActivityInput[] | PresenceUncheckedCreateWithoutActivityInput[]
-    connectOrCreate?: PresenceCreateOrConnectWithoutActivityInput | PresenceCreateOrConnectWithoutActivityInput[]
-    upsert?: PresenceUpsertWithWhereUniqueWithoutActivityInput | PresenceUpsertWithWhereUniqueWithoutActivityInput[]
-    createMany?: PresenceCreateManyActivityInputEnvelope
-    set?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    disconnect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    delete?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    connect?: PresenceWhereUniqueInput | PresenceWhereUniqueInput[]
-    update?: PresenceUpdateWithWhereUniqueWithoutActivityInput | PresenceUpdateWithWhereUniqueWithoutActivityInput[]
-    updateMany?: PresenceUpdateManyWithWhereWithoutActivityInput | PresenceUpdateManyWithWhereWithoutActivityInput[]
-    deleteMany?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-  }
-
-  export type MemberCreateNestedOneWithoutUserInput = {
-    create?: XOR<MemberCreateWithoutUserInput, MemberUncheckedCreateWithoutUserInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutUserInput
-    connect?: MemberWhereUniqueInput
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
-  export type MemberUpdateOneWithoutUserNestedInput = {
-    create?: XOR<MemberCreateWithoutUserInput, MemberUncheckedCreateWithoutUserInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutUserInput
-    upsert?: MemberUpsertWithoutUserInput
-    disconnect?: MemberWhereInput | boolean
-    delete?: MemberWhereInput | boolean
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutUserInput, MemberUpdateWithoutUserInput>, MemberUncheckedUpdateWithoutUserInput>
-  }
-
-  export type AssociationCreateNestedOneWithoutInvitationsInput = {
-    create?: XOR<AssociationCreateWithoutInvitationsInput, AssociationUncheckedCreateWithoutInvitationsInput>
-    connectOrCreate?: AssociationCreateOrConnectWithoutInvitationsInput
-    connect?: AssociationWhereUniqueInput
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
-  export type AssociationUpdateOneRequiredWithoutInvitationsNestedInput = {
-    create?: XOR<AssociationCreateWithoutInvitationsInput, AssociationUncheckedCreateWithoutInvitationsInput>
-    connectOrCreate?: AssociationCreateOrConnectWithoutInvitationsInput
-    upsert?: AssociationUpsertWithoutInvitationsInput
-    connect?: AssociationWhereUniqueInput
-    update?: XOR<XOR<AssociationUpdateToOneWithWhereWithoutInvitationsInput, AssociationUpdateWithoutInvitationsInput>, AssociationUncheckedUpdateWithoutInvitationsInput>
-  }
-
-  export type ActivityCreateNestedOneWithoutPresencesInput = {
-    create?: XOR<ActivityCreateWithoutPresencesInput, ActivityUncheckedCreateWithoutPresencesInput>
-    connectOrCreate?: ActivityCreateOrConnectWithoutPresencesInput
-    connect?: ActivityWhereUniqueInput
-  }
-
-  export type MemberCreateNestedOneWithoutPresencesInput = {
-    create?: XOR<MemberCreateWithoutPresencesInput, MemberUncheckedCreateWithoutPresencesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutPresencesInput
-    connect?: MemberWhereUniqueInput
-  }
-
-  export type ActivityUpdateOneRequiredWithoutPresencesNestedInput = {
-    create?: XOR<ActivityCreateWithoutPresencesInput, ActivityUncheckedCreateWithoutPresencesInput>
-    connectOrCreate?: ActivityCreateOrConnectWithoutPresencesInput
-    upsert?: ActivityUpsertWithoutPresencesInput
-    connect?: ActivityWhereUniqueInput
-    update?: XOR<XOR<ActivityUpdateToOneWithWhereWithoutPresencesInput, ActivityUpdateWithoutPresencesInput>, ActivityUncheckedUpdateWithoutPresencesInput>
-  }
-
-  export type MemberUpdateOneRequiredWithoutPresencesNestedInput = {
-    create?: XOR<MemberCreateWithoutPresencesInput, MemberUncheckedCreateWithoutPresencesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutPresencesInput
-    upsert?: MemberUpsertWithoutPresencesInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutPresencesInput, MemberUpdateWithoutPresencesInput>, MemberUncheckedUpdateWithoutPresencesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -11560,6 +6814,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -11601,61 +6869,6 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -11684,34 +6897,50 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -11724,28 +6953,18 @@ export namespace Prisma {
 
   export type MemberCreateWithoutAssociationInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationCreateNestedManyWithoutMemberInput
-    activities?: ActivityCreateNestedManyWithoutMemberInput
-    presences?: PresenceCreateNestedManyWithoutMemberInput
+    fees?: FeeCreateNestedManyWithoutMemberInput
   }
 
   export type MemberUncheckedCreateWithoutAssociationInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserUncheckedCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutMemberInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutMemberInput
-    presences?: PresenceUncheckedCreateNestedManyWithoutMemberInput
+    fees?: FeeUncheckedCreateNestedManyWithoutMemberInput
   }
 
   export type MemberCreateOrConnectWithoutAssociationInput = {
@@ -11758,50 +6977,20 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type CotisationCreateWithoutAssociationInput = {
-    id?: string
-    amount: number
-    paidAt: Date | string
-    member: MemberCreateNestedOneWithoutCotisationsInput
-  }
-
-  export type CotisationUncheckedCreateWithoutAssociationInput = {
-    id?: string
-    amount: number
-    paidAt: Date | string
-    memberId: string
-  }
-
-  export type CotisationCreateOrConnectWithoutAssociationInput = {
-    where: CotisationWhereUniqueInput
-    create: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput>
-  }
-
-  export type CotisationCreateManyAssociationInputEnvelope = {
-    data: CotisationCreateManyAssociationInput | CotisationCreateManyAssociationInput[]
-    skipDuplicates?: boolean
-  }
-
   export type ActivityCreateWithoutAssociationInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
+    date: Date | string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    member?: MemberCreateNestedOneWithoutActivitiesInput
-    presences?: PresenceCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateWithoutAssociationInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
-    memberId?: string | null
+    date: Date | string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    presences?: PresenceUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityCreateOrConnectWithoutAssociationInput = {
@@ -11814,33 +7003,31 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type InvitationCreateWithoutAssociationInput = {
+  export type FeeCreateWithoutAssociationInput = {
     id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
+    amount: number
+    paid?: boolean
+    dueDate: Date | string
+    createdAt?: Date | string
+    member: MemberCreateNestedOneWithoutFeesInput
+  }
+
+  export type FeeUncheckedCreateWithoutAssociationInput = {
+    id?: string
+    amount: number
+    paid?: boolean
+    dueDate: Date | string
+    memberId: string
     createdAt?: Date | string
   }
 
-  export type InvitationUncheckedCreateWithoutAssociationInput = {
-    id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
-    createdAt?: Date | string
+  export type FeeCreateOrConnectWithoutAssociationInput = {
+    where: FeeWhereUniqueInput
+    create: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput>
   }
 
-  export type InvitationCreateOrConnectWithoutAssociationInput = {
-    where: InvitationWhereUniqueInput
-    create: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput>
-  }
-
-  export type InvitationCreateManyAssociationInputEnvelope = {
-    data: InvitationCreateManyAssociationInput | InvitationCreateManyAssociationInput[]
+  export type FeeCreateManyAssociationInputEnvelope = {
+    data: FeeCreateManyAssociationInput | FeeCreateManyAssociationInput[]
     skipDuplicates?: boolean
   }
 
@@ -11865,39 +7052,10 @@ export namespace Prisma {
     OR?: MemberScalarWhereInput[]
     NOT?: MemberScalarWhereInput | MemberScalarWhereInput[]
     id?: StringFilter<"Member"> | string
-    name?: StringFilter<"Member"> | string
+    fullName?: StringFilter<"Member"> | string
     email?: StringFilter<"Member"> | string
-    role?: StringFilter<"Member"> | string
     associationId?: StringFilter<"Member"> | string
     createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
-  }
-
-  export type CotisationUpsertWithWhereUniqueWithoutAssociationInput = {
-    where: CotisationWhereUniqueInput
-    update: XOR<CotisationUpdateWithoutAssociationInput, CotisationUncheckedUpdateWithoutAssociationInput>
-    create: XOR<CotisationCreateWithoutAssociationInput, CotisationUncheckedCreateWithoutAssociationInput>
-  }
-
-  export type CotisationUpdateWithWhereUniqueWithoutAssociationInput = {
-    where: CotisationWhereUniqueInput
-    data: XOR<CotisationUpdateWithoutAssociationInput, CotisationUncheckedUpdateWithoutAssociationInput>
-  }
-
-  export type CotisationUpdateManyWithWhereWithoutAssociationInput = {
-    where: CotisationScalarWhereInput
-    data: XOR<CotisationUpdateManyMutationInput, CotisationUncheckedUpdateManyWithoutAssociationInput>
-  }
-
-  export type CotisationScalarWhereInput = {
-    AND?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
-    OR?: CotisationScalarWhereInput[]
-    NOT?: CotisationScalarWhereInput | CotisationScalarWhereInput[]
-    id?: StringFilter<"Cotisation"> | string
-    amount?: FloatFilter<"Cotisation"> | number
-    paidAt?: DateTimeFilter<"Cotisation"> | Date | string
-    memberId?: StringFilter<"Cotisation"> | string
-    associationId?: StringFilter<"Cotisation"> | string
   }
 
   export type ActivityUpsertWithWhereUniqueWithoutAssociationInput = {
@@ -11922,60 +7080,57 @@ export namespace Prisma {
     NOT?: ActivityScalarWhereInput | ActivityScalarWhereInput[]
     id?: StringFilter<"Activity"> | string
     title?: StringFilter<"Activity"> | string
-    date?: DateTimeFilter<"Activity"> | Date | string
     description?: StringNullableFilter<"Activity"> | string | null
+    date?: DateTimeFilter<"Activity"> | Date | string
     associationId?: StringFilter<"Activity"> | string
-    memberId?: StringNullableFilter<"Activity"> | string | null
     createdAt?: DateTimeFilter<"Activity"> | Date | string
-    updatedAt?: DateTimeFilter<"Activity"> | Date | string
   }
 
-  export type InvitationUpsertWithWhereUniqueWithoutAssociationInput = {
-    where: InvitationWhereUniqueInput
-    update: XOR<InvitationUpdateWithoutAssociationInput, InvitationUncheckedUpdateWithoutAssociationInput>
-    create: XOR<InvitationCreateWithoutAssociationInput, InvitationUncheckedCreateWithoutAssociationInput>
+  export type FeeUpsertWithWhereUniqueWithoutAssociationInput = {
+    where: FeeWhereUniqueInput
+    update: XOR<FeeUpdateWithoutAssociationInput, FeeUncheckedUpdateWithoutAssociationInput>
+    create: XOR<FeeCreateWithoutAssociationInput, FeeUncheckedCreateWithoutAssociationInput>
   }
 
-  export type InvitationUpdateWithWhereUniqueWithoutAssociationInput = {
-    where: InvitationWhereUniqueInput
-    data: XOR<InvitationUpdateWithoutAssociationInput, InvitationUncheckedUpdateWithoutAssociationInput>
+  export type FeeUpdateWithWhereUniqueWithoutAssociationInput = {
+    where: FeeWhereUniqueInput
+    data: XOR<FeeUpdateWithoutAssociationInput, FeeUncheckedUpdateWithoutAssociationInput>
   }
 
-  export type InvitationUpdateManyWithWhereWithoutAssociationInput = {
-    where: InvitationScalarWhereInput
-    data: XOR<InvitationUpdateManyMutationInput, InvitationUncheckedUpdateManyWithoutAssociationInput>
+  export type FeeUpdateManyWithWhereWithoutAssociationInput = {
+    where: FeeScalarWhereInput
+    data: XOR<FeeUpdateManyMutationInput, FeeUncheckedUpdateManyWithoutAssociationInput>
   }
 
-  export type InvitationScalarWhereInput = {
-    AND?: InvitationScalarWhereInput | InvitationScalarWhereInput[]
-    OR?: InvitationScalarWhereInput[]
-    NOT?: InvitationScalarWhereInput | InvitationScalarWhereInput[]
-    id?: StringFilter<"Invitation"> | string
-    email?: StringFilter<"Invitation"> | string
-    role?: StringFilter<"Invitation"> | string
-    token?: StringFilter<"Invitation"> | string
-    expiresAt?: DateTimeFilter<"Invitation"> | Date | string
-    used?: BoolFilter<"Invitation"> | boolean
-    associationId?: StringFilter<"Invitation"> | string
-    createdAt?: DateTimeFilter<"Invitation"> | Date | string
+  export type FeeScalarWhereInput = {
+    AND?: FeeScalarWhereInput | FeeScalarWhereInput[]
+    OR?: FeeScalarWhereInput[]
+    NOT?: FeeScalarWhereInput | FeeScalarWhereInput[]
+    id?: StringFilter<"Fee"> | string
+    amount?: FloatFilter<"Fee"> | number
+    paid?: BoolFilter<"Fee"> | boolean
+    dueDate?: DateTimeFilter<"Fee"> | Date | string
+    memberId?: StringFilter<"Fee"> | string
+    associationId?: StringFilter<"Fee"> | string
+    createdAt?: DateTimeFilter<"Fee"> | Date | string
   }
 
   export type AssociationCreateWithoutMembersInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
-    cotisations?: CotisationCreateNestedManyWithoutAssociationInput
     activities?: ActivityCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationCreateNestedManyWithoutAssociationInput
+    fees?: FeeCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationUncheckedCreateWithoutMembersInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutAssociationInput
     activities?: ActivityUncheckedCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationUncheckedCreateNestedManyWithoutAssociationInput
+    fees?: FeeUncheckedCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationCreateOrConnectWithoutMembersInput = {
@@ -11983,113 +7138,31 @@ export namespace Prisma {
     create: XOR<AssociationCreateWithoutMembersInput, AssociationUncheckedCreateWithoutMembersInput>
   }
 
-  export type UserCreateWithoutMemberInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type UserUncheckedCreateWithoutMemberInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type UserCreateOrConnectWithoutMemberInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput>
-  }
-
-  export type UserCreateManyMemberInputEnvelope = {
-    data: UserCreateManyMemberInput | UserCreateManyMemberInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type CotisationCreateWithoutMemberInput = {
+  export type FeeCreateWithoutMemberInput = {
     id?: string
     amount: number
-    paidAt: Date | string
-    association: AssociationCreateNestedOneWithoutCotisationsInput
+    paid?: boolean
+    dueDate: Date | string
+    createdAt?: Date | string
+    association: AssociationCreateNestedOneWithoutFeesInput
   }
 
-  export type CotisationUncheckedCreateWithoutMemberInput = {
+  export type FeeUncheckedCreateWithoutMemberInput = {
     id?: string
     amount: number
-    paidAt: Date | string
-    associationId: string
-  }
-
-  export type CotisationCreateOrConnectWithoutMemberInput = {
-    where: CotisationWhereUniqueInput
-    create: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput>
-  }
-
-  export type CotisationCreateManyMemberInputEnvelope = {
-    data: CotisationCreateManyMemberInput | CotisationCreateManyMemberInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ActivityCreateWithoutMemberInput = {
-    id?: string
-    title: string
-    date: Date | string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    association: AssociationCreateNestedOneWithoutActivitiesInput
-    presences?: PresenceCreateNestedManyWithoutActivityInput
-  }
-
-  export type ActivityUncheckedCreateWithoutMemberInput = {
-    id?: string
-    title: string
-    date: Date | string
-    description?: string | null
+    paid?: boolean
+    dueDate: Date | string
     associationId: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    presences?: PresenceUncheckedCreateNestedManyWithoutActivityInput
   }
 
-  export type ActivityCreateOrConnectWithoutMemberInput = {
-    where: ActivityWhereUniqueInput
-    create: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput>
+  export type FeeCreateOrConnectWithoutMemberInput = {
+    where: FeeWhereUniqueInput
+    create: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput>
   }
 
-  export type ActivityCreateManyMemberInputEnvelope = {
-    data: ActivityCreateManyMemberInput | ActivityCreateManyMemberInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type PresenceCreateWithoutMemberInput = {
-    id?: string
-    present: boolean
-    createdAt?: Date | string
-    activity: ActivityCreateNestedOneWithoutPresencesInput
-  }
-
-  export type PresenceUncheckedCreateWithoutMemberInput = {
-    id?: string
-    activityId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type PresenceCreateOrConnectWithoutMemberInput = {
-    where: PresenceWhereUniqueInput
-    create: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput>
-  }
-
-  export type PresenceCreateManyMemberInputEnvelope = {
-    data: PresenceCreateManyMemberInput | PresenceCreateManyMemberInput[]
+  export type FeeCreateManyMemberInputEnvelope = {
+    data: FeeCreateManyMemberInput | FeeCreateManyMemberInput[]
     skipDuplicates?: boolean
   }
 
@@ -12107,306 +7180,158 @@ export namespace Prisma {
   export type AssociationUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    cotisations?: CotisationUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUpdateManyWithoutAssociationNestedInput
   }
 
   export type AssociationUncheckedUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    cotisations?: CotisationUncheckedUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUncheckedUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUncheckedUpdateManyWithoutAssociationNestedInput
   }
 
-  export type UserUpsertWithWhereUniqueWithoutMemberInput = {
-    where: UserWhereUniqueInput
-    update: XOR<UserUpdateWithoutMemberInput, UserUncheckedUpdateWithoutMemberInput>
-    create: XOR<UserCreateWithoutMemberInput, UserUncheckedCreateWithoutMemberInput>
+  export type FeeUpsertWithWhereUniqueWithoutMemberInput = {
+    where: FeeWhereUniqueInput
+    update: XOR<FeeUpdateWithoutMemberInput, FeeUncheckedUpdateWithoutMemberInput>
+    create: XOR<FeeCreateWithoutMemberInput, FeeUncheckedCreateWithoutMemberInput>
   }
 
-  export type UserUpdateWithWhereUniqueWithoutMemberInput = {
-    where: UserWhereUniqueInput
-    data: XOR<UserUpdateWithoutMemberInput, UserUncheckedUpdateWithoutMemberInput>
+  export type FeeUpdateWithWhereUniqueWithoutMemberInput = {
+    where: FeeWhereUniqueInput
+    data: XOR<FeeUpdateWithoutMemberInput, FeeUncheckedUpdateWithoutMemberInput>
   }
 
-  export type UserUpdateManyWithWhereWithoutMemberInput = {
-    where: UserScalarWhereInput
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutMemberInput>
+  export type FeeUpdateManyWithWhereWithoutMemberInput = {
+    where: FeeScalarWhereInput
+    data: XOR<FeeUpdateManyMutationInput, FeeUncheckedUpdateManyWithoutMemberInput>
   }
 
-  export type UserScalarWhereInput = {
-    AND?: UserScalarWhereInput | UserScalarWhereInput[]
-    OR?: UserScalarWhereInput[]
-    NOT?: UserScalarWhereInput | UserScalarWhereInput[]
-    id?: StringFilter<"User"> | string
-    name?: StringNullableFilter<"User"> | string | null
-    email?: StringFilter<"User"> | string
-    password?: StringFilter<"User"> | string
-    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    memberId?: StringNullableFilter<"User"> | string | null
-  }
-
-  export type CotisationUpsertWithWhereUniqueWithoutMemberInput = {
-    where: CotisationWhereUniqueInput
-    update: XOR<CotisationUpdateWithoutMemberInput, CotisationUncheckedUpdateWithoutMemberInput>
-    create: XOR<CotisationCreateWithoutMemberInput, CotisationUncheckedCreateWithoutMemberInput>
-  }
-
-  export type CotisationUpdateWithWhereUniqueWithoutMemberInput = {
-    where: CotisationWhereUniqueInput
-    data: XOR<CotisationUpdateWithoutMemberInput, CotisationUncheckedUpdateWithoutMemberInput>
-  }
-
-  export type CotisationUpdateManyWithWhereWithoutMemberInput = {
-    where: CotisationScalarWhereInput
-    data: XOR<CotisationUpdateManyMutationInput, CotisationUncheckedUpdateManyWithoutMemberInput>
-  }
-
-  export type ActivityUpsertWithWhereUniqueWithoutMemberInput = {
-    where: ActivityWhereUniqueInput
-    update: XOR<ActivityUpdateWithoutMemberInput, ActivityUncheckedUpdateWithoutMemberInput>
-    create: XOR<ActivityCreateWithoutMemberInput, ActivityUncheckedCreateWithoutMemberInput>
-  }
-
-  export type ActivityUpdateWithWhereUniqueWithoutMemberInput = {
-    where: ActivityWhereUniqueInput
-    data: XOR<ActivityUpdateWithoutMemberInput, ActivityUncheckedUpdateWithoutMemberInput>
-  }
-
-  export type ActivityUpdateManyWithWhereWithoutMemberInput = {
-    where: ActivityScalarWhereInput
-    data: XOR<ActivityUpdateManyMutationInput, ActivityUncheckedUpdateManyWithoutMemberInput>
-  }
-
-  export type PresenceUpsertWithWhereUniqueWithoutMemberInput = {
-    where: PresenceWhereUniqueInput
-    update: XOR<PresenceUpdateWithoutMemberInput, PresenceUncheckedUpdateWithoutMemberInput>
-    create: XOR<PresenceCreateWithoutMemberInput, PresenceUncheckedCreateWithoutMemberInput>
-  }
-
-  export type PresenceUpdateWithWhereUniqueWithoutMemberInput = {
-    where: PresenceWhereUniqueInput
-    data: XOR<PresenceUpdateWithoutMemberInput, PresenceUncheckedUpdateWithoutMemberInput>
-  }
-
-  export type PresenceUpdateManyWithWhereWithoutMemberInput = {
-    where: PresenceScalarWhereInput
-    data: XOR<PresenceUpdateManyMutationInput, PresenceUncheckedUpdateManyWithoutMemberInput>
-  }
-
-  export type PresenceScalarWhereInput = {
-    AND?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-    OR?: PresenceScalarWhereInput[]
-    NOT?: PresenceScalarWhereInput | PresenceScalarWhereInput[]
-    id?: StringFilter<"Presence"> | string
-    activityId?: StringFilter<"Presence"> | string
-    memberId?: StringFilter<"Presence"> | string
-    present?: BoolFilter<"Presence"> | boolean
-    createdAt?: DateTimeFilter<"Presence"> | Date | string
-  }
-
-  export type MemberCreateWithoutCotisationsInput = {
+  export type MemberCreateWithoutFeesInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     createdAt?: Date | string
-    updatedAt?: Date | string
     association: AssociationCreateNestedOneWithoutMembersInput
-    user?: UserCreateNestedManyWithoutMemberInput
-    activities?: ActivityCreateNestedManyWithoutMemberInput
-    presences?: PresenceCreateNestedManyWithoutMemberInput
   }
 
-  export type MemberUncheckedCreateWithoutCotisationsInput = {
+  export type MemberUncheckedCreateWithoutFeesInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     associationId: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserUncheckedCreateNestedManyWithoutMemberInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutMemberInput
-    presences?: PresenceUncheckedCreateNestedManyWithoutMemberInput
   }
 
-  export type MemberCreateOrConnectWithoutCotisationsInput = {
+  export type MemberCreateOrConnectWithoutFeesInput = {
     where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutCotisationsInput, MemberUncheckedCreateWithoutCotisationsInput>
+    create: XOR<MemberCreateWithoutFeesInput, MemberUncheckedCreateWithoutFeesInput>
   }
 
-  export type AssociationCreateWithoutCotisationsInput = {
+  export type AssociationCreateWithoutFeesInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberCreateNestedManyWithoutAssociationInput
     activities?: ActivityCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationCreateNestedManyWithoutAssociationInput
   }
 
-  export type AssociationUncheckedCreateWithoutCotisationsInput = {
+  export type AssociationUncheckedCreateWithoutFeesInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberUncheckedCreateNestedManyWithoutAssociationInput
     activities?: ActivityUncheckedCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationUncheckedCreateNestedManyWithoutAssociationInput
   }
 
-  export type AssociationCreateOrConnectWithoutCotisationsInput = {
+  export type AssociationCreateOrConnectWithoutFeesInput = {
     where: AssociationWhereUniqueInput
-    create: XOR<AssociationCreateWithoutCotisationsInput, AssociationUncheckedCreateWithoutCotisationsInput>
+    create: XOR<AssociationCreateWithoutFeesInput, AssociationUncheckedCreateWithoutFeesInput>
   }
 
-  export type MemberUpsertWithoutCotisationsInput = {
-    update: XOR<MemberUpdateWithoutCotisationsInput, MemberUncheckedUpdateWithoutCotisationsInput>
-    create: XOR<MemberCreateWithoutCotisationsInput, MemberUncheckedCreateWithoutCotisationsInput>
+  export type MemberUpsertWithoutFeesInput = {
+    update: XOR<MemberUpdateWithoutFeesInput, MemberUncheckedUpdateWithoutFeesInput>
+    create: XOR<MemberCreateWithoutFeesInput, MemberUncheckedCreateWithoutFeesInput>
     where?: MemberWhereInput
   }
 
-  export type MemberUpdateToOneWithWhereWithoutCotisationsInput = {
+  export type MemberUpdateToOneWithWhereWithoutFeesInput = {
     where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutCotisationsInput, MemberUncheckedUpdateWithoutCotisationsInput>
+    data: XOR<MemberUpdateWithoutFeesInput, MemberUncheckedUpdateWithoutFeesInput>
   }
 
-  export type MemberUpdateWithoutCotisationsInput = {
+  export type MemberUpdateWithoutFeesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     association?: AssociationUpdateOneRequiredWithoutMembersNestedInput
-    user?: UserUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUpdateManyWithoutMemberNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutCotisationsInput = {
+  export type MemberUncheckedUpdateWithoutFeesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     associationId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUncheckedUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUncheckedUpdateManyWithoutMemberNestedInput
   }
 
-  export type AssociationUpsertWithoutCotisationsInput = {
-    update: XOR<AssociationUpdateWithoutCotisationsInput, AssociationUncheckedUpdateWithoutCotisationsInput>
-    create: XOR<AssociationCreateWithoutCotisationsInput, AssociationUncheckedCreateWithoutCotisationsInput>
+  export type AssociationUpsertWithoutFeesInput = {
+    update: XOR<AssociationUpdateWithoutFeesInput, AssociationUncheckedUpdateWithoutFeesInput>
+    create: XOR<AssociationCreateWithoutFeesInput, AssociationUncheckedCreateWithoutFeesInput>
     where?: AssociationWhereInput
   }
 
-  export type AssociationUpdateToOneWithWhereWithoutCotisationsInput = {
+  export type AssociationUpdateToOneWithWhereWithoutFeesInput = {
     where?: AssociationWhereInput
-    data: XOR<AssociationUpdateWithoutCotisationsInput, AssociationUncheckedUpdateWithoutCotisationsInput>
+    data: XOR<AssociationUpdateWithoutFeesInput, AssociationUncheckedUpdateWithoutFeesInput>
   }
 
-  export type AssociationUpdateWithoutCotisationsInput = {
+  export type AssociationUpdateWithoutFeesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     members?: MemberUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUpdateManyWithoutAssociationNestedInput
   }
 
-  export type AssociationUncheckedUpdateWithoutCotisationsInput = {
+  export type AssociationUncheckedUpdateWithoutFeesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     members?: MemberUncheckedUpdateManyWithoutAssociationNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUncheckedUpdateManyWithoutAssociationNestedInput
   }
 
   export type AssociationCreateWithoutActivitiesInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationCreateNestedManyWithoutAssociationInput
+    fees?: FeeCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationUncheckedCreateWithoutActivitiesInput = {
     id?: string
     name: string
+    description?: string | null
     createdAt?: Date | string
     members?: MemberUncheckedCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutAssociationInput
-    invitations?: InvitationUncheckedCreateNestedManyWithoutAssociationInput
+    fees?: FeeUncheckedCreateNestedManyWithoutAssociationInput
   }
 
   export type AssociationCreateOrConnectWithoutActivitiesInput = {
     where: AssociationWhereUniqueInput
     create: XOR<AssociationCreateWithoutActivitiesInput, AssociationUncheckedCreateWithoutActivitiesInput>
-  }
-
-  export type MemberCreateWithoutActivitiesInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    association: AssociationCreateNestedOneWithoutMembersInput
-    user?: UserCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationCreateNestedManyWithoutMemberInput
-    presences?: PresenceCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberUncheckedCreateWithoutActivitiesInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    associationId: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserUncheckedCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutMemberInput
-    presences?: PresenceUncheckedCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberCreateOrConnectWithoutActivitiesInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutActivitiesInput, MemberUncheckedCreateWithoutActivitiesInput>
-  }
-
-  export type PresenceCreateWithoutActivityInput = {
-    id?: string
-    present: boolean
-    createdAt?: Date | string
-    member: MemberCreateNestedOneWithoutPresencesInput
-  }
-
-  export type PresenceUncheckedCreateWithoutActivityInput = {
-    id?: string
-    memberId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type PresenceCreateOrConnectWithoutActivityInput = {
-    where: PresenceWhereUniqueInput
-    create: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput>
-  }
-
-  export type PresenceCreateManyActivityInputEnvelope = {
-    data: PresenceCreateManyActivityInput | PresenceCreateManyActivityInput[]
-    skipDuplicates?: boolean
   }
 
   export type AssociationUpsertWithoutActivitiesInput = {
@@ -12423,639 +7348,152 @@ export namespace Prisma {
   export type AssociationUpdateWithoutActivitiesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     members?: MemberUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUpdateManyWithoutAssociationNestedInput
   }
 
   export type AssociationUncheckedUpdateWithoutActivitiesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    members?: MemberUncheckedUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutAssociationNestedInput
-    invitations?: InvitationUncheckedUpdateManyWithoutAssociationNestedInput
-  }
-
-  export type MemberUpsertWithoutActivitiesInput = {
-    update: XOR<MemberUpdateWithoutActivitiesInput, MemberUncheckedUpdateWithoutActivitiesInput>
-    create: XOR<MemberCreateWithoutActivitiesInput, MemberUncheckedCreateWithoutActivitiesInput>
-    where?: MemberWhereInput
-  }
-
-  export type MemberUpdateToOneWithWhereWithoutActivitiesInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutActivitiesInput, MemberUncheckedUpdateWithoutActivitiesInput>
-  }
-
-  export type MemberUpdateWithoutActivitiesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutMembersNestedInput
-    user?: UserUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUpdateManyWithoutMemberNestedInput
-  }
-
-  export type MemberUncheckedUpdateWithoutActivitiesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUncheckedUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUncheckedUpdateManyWithoutMemberNestedInput
-  }
-
-  export type PresenceUpsertWithWhereUniqueWithoutActivityInput = {
-    where: PresenceWhereUniqueInput
-    update: XOR<PresenceUpdateWithoutActivityInput, PresenceUncheckedUpdateWithoutActivityInput>
-    create: XOR<PresenceCreateWithoutActivityInput, PresenceUncheckedCreateWithoutActivityInput>
-  }
-
-  export type PresenceUpdateWithWhereUniqueWithoutActivityInput = {
-    where: PresenceWhereUniqueInput
-    data: XOR<PresenceUpdateWithoutActivityInput, PresenceUncheckedUpdateWithoutActivityInput>
-  }
-
-  export type PresenceUpdateManyWithWhereWithoutActivityInput = {
-    where: PresenceScalarWhereInput
-    data: XOR<PresenceUpdateManyMutationInput, PresenceUncheckedUpdateManyWithoutActivityInput>
-  }
-
-  export type MemberCreateWithoutUserInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    association: AssociationCreateNestedOneWithoutMembersInput
-    cotisations?: CotisationCreateNestedManyWithoutMemberInput
-    activities?: ActivityCreateNestedManyWithoutMemberInput
-    presences?: PresenceCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberUncheckedCreateWithoutUserInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    associationId: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutMemberInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutMemberInput
-    presences?: PresenceUncheckedCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberCreateOrConnectWithoutUserInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutUserInput, MemberUncheckedCreateWithoutUserInput>
-  }
-
-  export type MemberUpsertWithoutUserInput = {
-    update: XOR<MemberUpdateWithoutUserInput, MemberUncheckedUpdateWithoutUserInput>
-    create: XOR<MemberCreateWithoutUserInput, MemberUncheckedCreateWithoutUserInput>
-    where?: MemberWhereInput
-  }
-
-  export type MemberUpdateToOneWithWhereWithoutUserInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutUserInput, MemberUncheckedUpdateWithoutUserInput>
-  }
-
-  export type MemberUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutMembersNestedInput
-    cotisations?: CotisationUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUpdateManyWithoutMemberNestedInput
-  }
-
-  export type MemberUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    cotisations?: CotisationUncheckedUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUncheckedUpdateManyWithoutMemberNestedInput
-  }
-
-  export type AssociationCreateWithoutInvitationsInput = {
-    id?: string
-    name: string
-    createdAt?: Date | string
-    members?: MemberCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationCreateNestedManyWithoutAssociationInput
-    activities?: ActivityCreateNestedManyWithoutAssociationInput
-  }
-
-  export type AssociationUncheckedCreateWithoutInvitationsInput = {
-    id?: string
-    name: string
-    createdAt?: Date | string
-    members?: MemberUncheckedCreateNestedManyWithoutAssociationInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutAssociationInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutAssociationInput
-  }
-
-  export type AssociationCreateOrConnectWithoutInvitationsInput = {
-    where: AssociationWhereUniqueInput
-    create: XOR<AssociationCreateWithoutInvitationsInput, AssociationUncheckedCreateWithoutInvitationsInput>
-  }
-
-  export type AssociationUpsertWithoutInvitationsInput = {
-    update: XOR<AssociationUpdateWithoutInvitationsInput, AssociationUncheckedUpdateWithoutInvitationsInput>
-    create: XOR<AssociationCreateWithoutInvitationsInput, AssociationUncheckedCreateWithoutInvitationsInput>
-    where?: AssociationWhereInput
-  }
-
-  export type AssociationUpdateToOneWithWhereWithoutInvitationsInput = {
-    where?: AssociationWhereInput
-    data: XOR<AssociationUpdateWithoutInvitationsInput, AssociationUncheckedUpdateWithoutInvitationsInput>
-  }
-
-  export type AssociationUpdateWithoutInvitationsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    members?: MemberUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUpdateManyWithoutAssociationNestedInput
-    activities?: ActivityUpdateManyWithoutAssociationNestedInput
-  }
-
-  export type AssociationUncheckedUpdateWithoutInvitationsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    members?: MemberUncheckedUpdateManyWithoutAssociationNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutAssociationNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutAssociationNestedInput
-  }
-
-  export type ActivityCreateWithoutPresencesInput = {
-    id?: string
-    title: string
-    date: Date | string
-    description?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    association: AssociationCreateNestedOneWithoutActivitiesInput
-    member?: MemberCreateNestedOneWithoutActivitiesInput
-  }
-
-  export type ActivityUncheckedCreateWithoutPresencesInput = {
-    id?: string
-    title: string
-    date: Date | string
-    description?: string | null
-    associationId: string
-    memberId?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ActivityCreateOrConnectWithoutPresencesInput = {
-    where: ActivityWhereUniqueInput
-    create: XOR<ActivityCreateWithoutPresencesInput, ActivityUncheckedCreateWithoutPresencesInput>
-  }
-
-  export type MemberCreateWithoutPresencesInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    association: AssociationCreateNestedOneWithoutMembersInput
-    user?: UserCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationCreateNestedManyWithoutMemberInput
-    activities?: ActivityCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberUncheckedCreateWithoutPresencesInput = {
-    id?: string
-    name: string
-    email: string
-    role: string
-    associationId: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    user?: UserUncheckedCreateNestedManyWithoutMemberInput
-    cotisations?: CotisationUncheckedCreateNestedManyWithoutMemberInput
-    activities?: ActivityUncheckedCreateNestedManyWithoutMemberInput
-  }
-
-  export type MemberCreateOrConnectWithoutPresencesInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutPresencesInput, MemberUncheckedCreateWithoutPresencesInput>
-  }
-
-  export type ActivityUpsertWithoutPresencesInput = {
-    update: XOR<ActivityUpdateWithoutPresencesInput, ActivityUncheckedUpdateWithoutPresencesInput>
-    create: XOR<ActivityCreateWithoutPresencesInput, ActivityUncheckedCreateWithoutPresencesInput>
-    where?: ActivityWhereInput
-  }
-
-  export type ActivityUpdateToOneWithWhereWithoutPresencesInput = {
-    where?: ActivityWhereInput
-    data: XOR<ActivityUpdateWithoutPresencesInput, ActivityUncheckedUpdateWithoutPresencesInput>
-  }
-
-  export type ActivityUpdateWithoutPresencesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutActivitiesNestedInput
-    member?: MemberUpdateOneWithoutActivitiesNestedInput
-  }
-
-  export type ActivityUncheckedUpdateWithoutPresencesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    associationId?: StringFieldUpdateOperationsInput | string
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type MemberUpsertWithoutPresencesInput = {
-    update: XOR<MemberUpdateWithoutPresencesInput, MemberUncheckedUpdateWithoutPresencesInput>
-    create: XOR<MemberCreateWithoutPresencesInput, MemberUncheckedCreateWithoutPresencesInput>
-    where?: MemberWhereInput
-  }
-
-  export type MemberUpdateToOneWithWhereWithoutPresencesInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutPresencesInput, MemberUncheckedUpdateWithoutPresencesInput>
-  }
-
-  export type MemberUpdateWithoutPresencesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutMembersNestedInput
-    user?: UserUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUpdateManyWithoutMemberNestedInput
-  }
-
-  export type MemberUncheckedUpdateWithoutPresencesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUncheckedUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutMemberNestedInput
+    members?: MemberUncheckedUpdateManyWithoutAssociationNestedInput
+    fees?: FeeUncheckedUpdateManyWithoutAssociationNestedInput
   }
 
   export type MemberCreateManyAssociationInput = {
     id?: string
-    name: string
+    fullName: string
     email: string
-    role: string
     createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type CotisationCreateManyAssociationInput = {
-    id?: string
-    amount: number
-    paidAt: Date | string
-    memberId: string
   }
 
   export type ActivityCreateManyAssociationInput = {
     id?: string
     title: string
-    date: Date | string
     description?: string | null
-    memberId?: string | null
+    date: Date | string
     createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
-  export type InvitationCreateManyAssociationInput = {
+  export type FeeCreateManyAssociationInput = {
     id?: string
-    email: string
-    role: string
-    token: string
-    expiresAt: Date | string
-    used?: boolean
+    amount: number
+    paid?: boolean
+    dueDate: Date | string
+    memberId: string
     createdAt?: Date | string
   }
 
   export type MemberUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUpdateManyWithoutMemberNestedInput
+    fees?: FeeUpdateManyWithoutMemberNestedInput
   }
 
   export type MemberUncheckedUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUncheckedUpdateManyWithoutMemberNestedInput
-    cotisations?: CotisationUncheckedUpdateManyWithoutMemberNestedInput
-    activities?: ActivityUncheckedUpdateManyWithoutMemberNestedInput
-    presences?: PresenceUncheckedUpdateManyWithoutMemberNestedInput
+    fees?: FeeUncheckedUpdateManyWithoutMemberNestedInput
   }
 
   export type MemberUncheckedUpdateManyWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    fullName?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type CotisationUpdateWithoutAssociationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneRequiredWithoutCotisationsNestedInput
-  }
-
-  export type CotisationUncheckedUpdateWithoutAssociationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type CotisationUncheckedUpdateManyWithoutAssociationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ActivityUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneWithoutActivitiesNestedInput
-    presences?: PresenceUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    presences?: PresenceUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateManyWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    memberId?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type InvitationUpdateWithoutAssociationInput = {
+  export type FeeUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
+    amount?: FloatFieldUpdateOperationsInput | number
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    member?: MemberUpdateOneRequiredWithoutFeesNestedInput
   }
 
-  export type InvitationUncheckedUpdateWithoutAssociationInput = {
+  export type FeeUncheckedUpdateWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
+    amount?: FloatFieldUpdateOperationsInput | number
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    memberId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type InvitationUncheckedUpdateManyWithoutAssociationInput = {
+  export type FeeUncheckedUpdateManyWithoutAssociationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    used?: BoolFieldUpdateOperationsInput | boolean
+    amount?: FloatFieldUpdateOperationsInput | number
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    memberId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserCreateManyMemberInput = {
-    id?: string
-    name?: string | null
-    email: string
-    password: string
-    emailVerified?: Date | string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type CotisationCreateManyMemberInput = {
+  export type FeeCreateManyMemberInput = {
     id?: string
     amount: number
-    paidAt: Date | string
-    associationId: string
-  }
-
-  export type ActivityCreateManyMemberInput = {
-    id?: string
-    title: string
-    date: Date | string
-    description?: string | null
+    paid?: boolean
+    dueDate: Date | string
     associationId: string
     createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
-  export type PresenceCreateManyMemberInput = {
-    id?: string
-    activityId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type UserUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserUncheckedUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserUncheckedUpdateManyWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
-    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type CotisationUpdateWithoutMemberInput = {
+  export type FeeUpdateWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutCotisationsNestedInput
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    association?: AssociationUpdateOneRequiredWithoutFeesNestedInput
   }
 
-  export type CotisationUncheckedUpdateWithoutMemberInput = {
+  export type FeeUncheckedUpdateWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
     associationId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type CotisationUncheckedUpdateManyWithoutMemberInput = {
+  export type FeeUncheckedUpdateManyWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     amount?: FloatFieldUpdateOperationsInput | number
-    paidAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    paid?: BoolFieldUpdateOperationsInput | boolean
+    dueDate?: DateTimeFieldUpdateOperationsInput | Date | string
     associationId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ActivityUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    association?: AssociationUpdateOneRequiredWithoutActivitiesNestedInput
-    presences?: PresenceUpdateManyWithoutActivityNestedInput
-  }
-
-  export type ActivityUncheckedUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    presences?: PresenceUncheckedUpdateManyWithoutActivityNestedInput
-  }
-
-  export type ActivityUncheckedUpdateManyWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    associationId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    activity?: ActivityUpdateOneRequiredWithoutPresencesNestedInput
-  }
-
-  export type PresenceUncheckedUpdateWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    activityId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceUncheckedUpdateManyWithoutMemberInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    activityId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceCreateManyActivityInput = {
-    id?: string
-    memberId: string
-    present: boolean
-    createdAt?: Date | string
-  }
-
-  export type PresenceUpdateWithoutActivityInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneRequiredWithoutPresencesNestedInput
-  }
-
-  export type PresenceUncheckedUpdateWithoutActivityInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    memberId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PresenceUncheckedUpdateManyWithoutActivityInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    memberId?: StringFieldUpdateOperationsInput | string
-    present?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
