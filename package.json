@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon src/index.js",
+    "start": "npx ts-node index.ts",
+    "dev": "nodemon src/index.ts",
     "build": "echo 'Build étape non nécessaire pour Express'",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy"
